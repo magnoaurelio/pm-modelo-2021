@@ -200,8 +200,8 @@ $hoje =  date('d-m-Y');
                 <li class="{home_current}">
                     <a href="index.php"><i  class="fa fa-hospital-o fa-lg"></i></i> Cidade</a>
                     <ul>
-                    <li><a href="./historia" title="História de: "><i class="fa fa-history  fl-fg"></i> História</a></li>
-                    <li><a href="./hino" title="Hino Oficial de: "><i class="fa fa-music fl-fg"></i> Hino</a></li>
+                    <li><a href="?p=historia" title="História de: "><i class="fa fa-history  fl-fg"></i> História de AGRICOLÂNDIA</a></li>
+                    <li><a href="?p=hino" title="Hino Oficial de: "><i class="fa fa-music fl-fg"></i> Hino Oficial de AGRICOLÂNDIA</a></li>
                     <li><a href="http://www.cidades.ibge.gov.br/xtras/perfil.php?lang=&codmun=2200103&search=piaui|Agricolândia" target="_blank" title="IBGE-Dados Estatísticos de: {header_nome}"><i class="fa fa-line-chart fl-fg"></i> Perfil IBGE</a></li>
                     <li><a href="https://www.melhoresrotas.com/s/distancia-entre-cidades"  target="_blank" title="Distâncias de  a ..."><i class="fa fa-map-o  fl-fg"></i> Mapa-Localização</a></li>
                     <li><a href="?p=esporte" title="Campos de Futebol e Ginásios de ESPORTE de: "><i class="fa fa-futbol-o fl-fg"></i> Esportes</a></li>
@@ -211,9 +211,9 @@ $hoje =  date('d-m-Y');
                 <li  class="{gestao_current}">
                     <a href="index.php"><i  class="fa fa-line-chart   fa-lg"></i> Gestão</a>
                     <ul>
-                        <li><a href="?p=erro_404" title="Prefeito(a) de: {header_nome}"><i class="icon-user"></i> Prefeito</a></li>
-                        <li><a href="contact.html" title="Vice-Prefeito(a) de: {header_nome}"><i class="fa fa-user-circle-o  fl-fg"></i> Vice</a></li>
-                        <li><a href="element.html"><i class="icon-home"></i> Secretários e Gestores</a></li>
+                        <li><a href="?p=prefeito" title="Prefeito(a) de: {header_nome}"><i class="icon-user"></i> Prefeito</a></li>
+                        <li><a href="?p=prefeito_vice" title="Vice-Prefeito(a) de: {header_nome}"><i class="fa fa-user-circle-o  fl-fg"></i> Vice</a></li>
+                        <li><a href="?p=secretaria_geral"><i class="icon-home"></i> Secretários e Gestores</a></li>
                         <li><a href="https://www.municipiaui.com/index.php?p=cidade&codigoUnidGestora=101002" title="Câmara Municipal de {header_nome}" target="_blank" ><i class="fa fa-users fl-fg"></i> Câmara Municipal</a></li>
 
                     </ul>
@@ -222,8 +222,8 @@ $hoje =  date('d-m-Y');
                 <li class="{secretaria_current}">
                     <a href="index.php"><i  class="fa fa-university  fa-lg"></i></i> Secretarias</a>
                     <ul>
-                        <li><a href="category.html"><i  class="fa fa-university fl-fg"></i> Secretarios</a></li>
-                        <li><a href="category-2.html"><i  class="fa fa-university fl-fg"></i> Unidades</a></li>
+                        <li><a href="?p=secretaria_gestor"><i  class="fa fa-university fl-fg"></i> Secretarios</a></li>
+                        <li><a href="?p=secretaria_gestor_educacao"><i  class="fa fa-university fl-fg"></i> Unidades</a></li>
                     </ul>
                 </li>
                 <li class="{{negocio_current}">

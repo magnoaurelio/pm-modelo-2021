@@ -7,7 +7,7 @@
                  <li class="col-sm col-sm-right">
                    <ul class="list-unstyled">
                      <li>
-                       <a href="#" class="caption">
+                       <a href="?p=prefeito" class="caption">
                             <br>
                            <img src="files/prefeituras/201002/prefeito002.jpg" width="180" height="180" class="img-responsive"  alt="">
 
@@ -30,7 +30,7 @@
                  <li class="col-sm col-sm-right">
                    <ul class="list-unstyled">
                      <li>
-                       <a href="#" class="caption">
+                       <a href="?p=prefeito_vice" class="caption">
                          <br>
                          <img src="files/prefeituras/201002/viceprefeito002.jpg" width="200" height="200" class="img-responsive"  alt="">
                          <p style="font-size: 12px;">Vice:<br> Dr. Raimundo</p>
@@ -58,7 +58,7 @@
              <ul class="list-posts list-unstyled">
                  <li>
                      <div class="item clearfix">
-                         <a href="#" class="pull-left">
+                         <a href="?p=secretaria_gestor" class="pull-left">
                              <img src="files/prefeituras/201002/secretario/KELLY.jpg" alt="">
                          </a>
                          <div class="item-right">
@@ -69,7 +69,7 @@
                  </li>
                  <li>
                      <div class="item clearfix">
-                         <a href="#" class="pull-left">
+                         <a href="?p=secretaria_gestor" class="pull-left">
                              <img src="files/prefeituras/201002/secretario/admd_marcos.jpg" alt="">
                          </a>
                          <div class="item-right">
@@ -80,7 +80,7 @@
                  </li>
                  <li>
                      <div class="item clearfix">
-                         <a href="#" class="pull-left">
+                         <a href="?p=secretaria_gestor" class="pull-left">
                              <img src="files/prefeituras/201002/secretario/CLAY.jpg" alt="">
                          </a>
                          <div class="item-right">
@@ -91,7 +91,7 @@
                  </li>
                  <li>
                      <div class="item clearfix">
-                         <a href="#" class="pull-left">
+                         <a href="?p=secretaria_gestor" class="pull-left">
                              <img src="files/prefeituras/201002/secretario/ADAIDIO.jpg" alt="">
                          </a>
                          <div class="item-right">
@@ -102,7 +102,7 @@
                  </li>
                  <li>
                      <div class="item clearfix">
-                         <a href="#" class="pull-left">
+                         <a href="?p=secretaria_gestor" class="pull-left">
                              <img src="files/prefeituras/201002/secretario/alexandre.jpg" alt="">
                          </a>
                          <div class="item-right">
@@ -113,7 +113,7 @@
                  </li>
                  <li>
                      <div class="item clearfix">
-                         <a href="#" class="pull-left">
+                         <a href="?p=secretaria_gestor" class="pull-left">
                              <img src="files/prefeituras/201002/secretario/agda.jpg"  alt="">
                          </a>
                          <div class="item-right">
@@ -124,7 +124,7 @@
                  </li>
                  <li>
                      <div class="item clearfix">
-                         <a href="#" class="pull-left">
+                         <a href="?p=secretaria_gestor" class="pull-left">
                              <img src="files/prefeituras/201002/secretario/JEAN.jpg"  alt="">
                          </a>
                          <div class="item-right">
@@ -135,7 +135,7 @@
                  </li>
                  <li>
                      <div class="item clearfix">
-                         <a href="#" class="pull-left">
+                         <a href="?p=secretaria_gestor" class="pull-left">
                              <img src="files/prefeituras/201002/secretario/IVONEIDE.jpg"  alt="">
                          </a>
                          <div class="item-right">
