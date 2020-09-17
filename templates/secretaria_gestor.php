@@ -34,8 +34,9 @@ $hoje =  date('d-m-Y');
               <footer>
                 <div class="kp-author">
                   <div class="author-body clearfix">
-                       <img src="files/prefeituras/201002/secretario/KELLY.jpg"  width="255" alt="">
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="files/prefeituras/201002/unidade/seduc1.jpg"  width="470" height="250" alt="">
+                      <a href="?p=secretaria_geral" title="Mais secretarias..."><img src="files/prefeituras/201002/secretario/KELLY.jpg"  width="255" alt=""></a>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <a href="?p=secretaria_geral" title="Mais secretarias..."> <img src="files/prefeituras/201002/unidade/seduc1.jpg"  width="470" height="250" alt=""></a>
                       <span>
                       <a href="#" class="item-left">
                         <!--img src="files/partido/pp/logo_num_pp.jpg" class="img-responsive"  alt=""-->
