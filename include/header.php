@@ -284,39 +284,42 @@ $hoje =  date('d-m-Y');
                     </ul>
                 </li>
                 <li class="{{negocio_current}">
-                    <a href="index.php"> <i class="fa fa-industry "></i> </i> AgroNegócio</a>
+                    <a href="?p=agronegocio_geral"> <i class="fa fa-industry "></i> </i> AgroNegócio</a>
                     <ul>
-                        <li><a href="#"  title="Feiras em: {header_nome}"><i class="fa fa-bullseye fl-fg"></i> Feiras Agrícolas</a></li>
-                        <li><a href="#"  title="Exposição em: {header_nome}"><i class="fa fa-calculator fl-fg"></i> Exposição</a></li>
-                        <li><a href="#"  title="Agricultura: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Apicultura</a>
+                        <li><a href="?p=agronegocio_atividade"  title="Feiras em: {header_nome}"><i class="fa fa-bullseye fl-fg"></i> Feiras Agrícolas</a></li>
+                        <li><a href="?p=agronegocio_atividade"  title="Exposição em: {header_nome}"><i class="fa fa-calculator fl-fg"></i> Exposição</a></li>
+                        <li><a href="?p=agronegocio_atividade"  title="Agricultura: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Apicultura</a>
                             <ul>
-                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Mel</a></li>
+                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Mel</a></li>
                             </ul>
                         </li>
-                        <li><a href="#"  title="Agricultura: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Bovinocultura</a>
+                        <li><a href="?p=agronegocio_atividade"  title="Agricultura: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Bovinocultura</a>
                         <ul>
-                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Gado Corte</a></li>
-                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Gado Leite</a></li>
+                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Gado Corte</a></li>
+                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Gado Leite</a></li>
                             </ul>
                         </li>
-                        <li><a href="#"  title="Agricultura: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Pisicultura</a>
+                        <li><a href="?p=agronegocio_atividade"  title="Agricultura: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Pisicultura</a>
                             <ul>
-                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Tilápia</a></li>
-                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Tambaqui</a></li>
-                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Outros</a></li>
+                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Tilápia</a></li>
+                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Tambaqui</a></li>
+                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Outros</a></li>
                             </ul>
                         </li>
-                        <li><a href="#"  title="Agricultura: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Caprinocultura</a>
+                        <li><a href="?p=agronegocio_atividade"  title="Agricultura: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Caprinocultura</a>
                          <ul>
-                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Cabra</a></li>
-                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Ovelha</a></li>
+                                <li><a href="#?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Cabra</a></li>
+                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Ovelha</a></li>
                             </ul>
                         </li>
-                        <li><a href="#"  title="Agricultura: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Culturas Agrícolas</a>
+                        <li><a href="?p=agronegocio_atividade"  title="Agricultura Familiar: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Horto-Fruto-Granjeiro</a>
                             <ul>
-                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Arroz</a></li>
-                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Feijão</a></li>
-                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Milho</a></li>
+                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Arroz</a></li>
+                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Frango</a></li>
+                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Galinha</a></li>
+                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Ovos</a></li>
+                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Feijão</a></li>
+                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Milho</a></li>
                             </ul>
                         </li>
                     </ul>
