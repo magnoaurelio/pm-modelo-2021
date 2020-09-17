@@ -14,7 +14,7 @@
                          <p style="font-size: 12px;">Prefeito:<br> Walter Alencar</p>
                          <span class="icon-plus"></span>
                        </a>
-                       <a href="#" class="caption">
+                       <a href="?p=secretaria_geral" class="caption">
                          <br>
                          <img src="files/partido/pp/logo_num_pp.jpg" class="img-responsive"  alt="">
                          <p style="font-size: 12px;">Partido:<br> PP 11</p>
@@ -36,7 +36,7 @@
                          <p style="font-size: 12px;">Vice:<br> Dr. Raimundo</p>
                          <span class="icon-plus"></span>
                        </a>
-                         <a href="#" class="caption">
+                         <a href="?p=secretaria_geral" class="caption">
                          <br>
                          <img src="files/partido/pmdb/logo_num_mdb_15.jpg" class="img-responsive" alt="">
                          <p style="font-size: 12px;">Partido:<br> MDB 15</p>
@@ -62,7 +62,7 @@
                              <img src="files/prefeituras/201002/secretario/KELLY.jpg" alt="">
                          </a>
                          <div class="item-right">
-                             <h4><a href="#"><strong>Finanças</strong><br> Kelly</a></h4>
+                             <h4><a href="?p=secretaria_geral"><strong>Finanças</strong><br> Kelly</a></h4>
                              <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
                          </div>
                      </div>
@@ -73,7 +73,7 @@
                              <img src="files/prefeituras/201002/secretario/admd_marcos.jpg" alt="">
                          </a>
                          <div class="item-right">
-                             <h4><a href="#"><strong>Administração</strong><br> Marcos</a></h4>
+                             <h4><a href="?p=secretaria_geral"><strong>Administração</strong><br> Marcos</a></h4>
                              <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
                          </div>
                      </div>
@@ -84,7 +84,7 @@
                              <img src="files/prefeituras/201002/secretario/CLAY.jpg" alt="">
                          </a>
                          <div class="item-right">
-                             <h4><a href="#"><strong>Educação</strong><br> Clay</a></h4>
+                             <h4><a href="?p=secretaria_geral"><strong>Educação</strong><br> Clay</a></h4>
                              <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
                          </div>
                      </div>
@@ -95,7 +95,7 @@
                              <img src="files/prefeituras/201002/secretario/ADAIDIO.jpg" alt="">
                          </a>
                          <div class="item-right">
-                             <h4><a href="#"><strong>Assistência Social</strong><br> Adaido</a></h4>
+                             <h4><a href="?p=secretaria_geral"><strong>Assistência Social</strong><br> Adaido</a></h4>
                              <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
                          </div>
                      </div>
@@ -106,7 +106,7 @@
                              <img src="files/prefeituras/201002/secretario/alexandre.jpg" alt="">
                          </a>
                          <div class="item-right">
-                             <h4><a href="#"><strong>Obras</strong><br> ALEXANDRE</a></h4>
+                             <h4><a href="?p=secretaria_geral"><strong>Obras</strong><br> ALEXANDRE</a></h4>
                              <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
                          </div>
                      </div>
@@ -117,7 +117,7 @@
                              <img src="files/prefeituras/201002/secretario/agda.jpg"  alt="">
                          </a>
                          <div class="item-right">
-                             <h4><a href="#"><strong>Procuradoria</strong><br> Agda</a></h4>
+                             <h4><a href="?p=secretaria_geral"><strong>Procuradoria</strong><br> Agda</a></h4>
                              <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
                          </div>
                      </div>
@@ -128,7 +128,7 @@
                              <img src="files/prefeituras/201002/secretario/JEAN.jpg"  alt="">
                          </a>
                          <div class="item-right">
-                             <h4><a href="#"><strong>Saúde</strong><br> Fatinha</a></h4>
+                             <h4><a href="?p=secretaria_geral"><strong>Saúde</strong><br> Fatinha</a></h4>
                              <p class="kp-metadata"><i class="icon-phone"></i><span>86 3333-3258</span></p>
                          </div>
                      </div>
@@ -139,7 +139,7 @@
                              <img src="files/prefeituras/201002/secretario/IVONEIDE.jpg"  alt="">
                          </a>
                          <div class="item-right">
-                             <h4><a href="#"><strong>Meio Ambiente</strong><br> Ivoneide</a></h4>
+                             <h4><a href="?p=secretaria_geral"><strong>Meio Ambiente</strong><br> Ivoneide</a></h4>
                              <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
                          </div>
                      </div>
