@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/csse2ff.css?family=Roboto+Condensed:400italic,700italic,400,700" rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css24e4.css?family=Roboto+Slab:400,300,100,700" rel='stylesheet' type='text/css'>
+    <link href="https://fontawesome.com/icons?d=gallery" rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/jquery-ui.css" media="all" />
     <link rel="stylesheet" href="css/icomoon.css" media="all" />
     <link rel="stylesheet" href="css/common.css" media="all" />
@@ -12,8 +13,10 @@
     <link rel="stylesheet" href="css/owl.theme.css">
     <link rel="stylesheet" href="style.css" media="all">
     <link rel="stylesheet" href="lib/lightbox/css/lightbox.css"></a>
-    <link href="lib/font-awesome/css/font-awesome.min.css?afver=400" rel="stylesheet" type="text/css" media="screen" />
+    <!--link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css?afver=400" rel="stylesheet" type="text/css" media="screen" /-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>

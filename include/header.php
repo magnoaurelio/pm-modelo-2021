@@ -31,7 +31,12 @@ $hoje =  date('d-m-Y');
                         <a href="../index-2.html"><i class="fa fa-book fa-fw  fa-lg"></i> DIOFE</a>                            
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-medkit fa-fw fa-lg"></i> TRANSCOVID19</a>
+                        <a href="index.php"> 
+                                <button style="font-size:13px;">
+                                     &nbsp;<i class="fa fa-medkit"  style="font-size:14px; color:red"></i>
+                                    TRANSCOVID &nbsp; 
+                                </button>
+                            </a>
                     </li>
                     <li>
                      <a href="#"> <i class="fa fa-search-plus fa-fw fa-lg"></i> e_SIC</a>
@@ -299,7 +304,7 @@ $hoje =  date('d-m-Y');
                                 <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Gado Leite</a></li>
                             </ul>
                         </li>
-                        <li><a href="?p=agronegocio_atividade"  title="Agricultura: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Pisicultura</a>
+                        <li><a href="?p=agronegocio_atividade"  title="Agricultura: {header_nome}"><i class="fas fa-fish fl-fg"></i> Pisicultura</a>
                             <ul>
                                 <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Tilápia</a></li>
                                 <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Tambaqui</a></li>
@@ -356,7 +361,13 @@ $hoje =  date('d-m-Y');
                     </ul>
                 </li>
                 <li class="{covid_current}">
-                    <a href="index.php"> <i class="fa fa-medkit  "></i> COVID</a>
+                    <!--a href="index.php"> <i class="fa fa-medkit"  style="font-size:16px; color:red"></i> COVID</a-->
+                    <a href="index.php"> 
+                        <button style="font-size:14px;">
+                            &nbsp;<i class="fa fa-medkit"  style="font-size:16px; color:red"></i>
+                            <strong>COVID</strong> &nbsp;
+                        </button>
+                    </a>
                 </li>   
                 <li class="{contato_current}">
                     <a href="?p=contato"><i class="icon-phone "></i> Contato</a>
