@@ -113,16 +113,13 @@ $hoje =  date('d-m-Y');
             //include_once 'include/menu_sidebar_noticia_popular.php';
              ?>
           </div>
-         <h3 class="widget-title">Mapa - Localização </h3>
-           <div class="widget widget-ads">
-               <a href="https://www.melhoresrotas.com/s/distancia-entre-cidades"  target="_blank" title="Distâncias de AGRICOLÂNDIA  a ... (clik veja mais...)">
-                   <img src="images/mapa_localiza.jpg" width="310" alt="">
-               </a>
-           </div>
-            <h3 class="widget-title">Propaganda </h3>
-           <div class="widget widget-ads">
-               <a href="#"><img src="files/prefeituras/201002/banner/BANNER_ESQUERDA.gif" width="310" alt=""></a>
-           </div>
+         <?php
+             include_once 'include/menu_sidebar_mapa_localizacao.php';
+             include_once 'include/menu_sidebar_propaganda.php';
+             ?>
+        
+           
+            
            <?php
              include_once 'include/menu_sidebar_servico.php';
             //include_once 'include/menu_sidebar_noticia_popular.php';

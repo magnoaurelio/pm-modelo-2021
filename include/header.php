@@ -198,7 +198,7 @@ $hoje =  date('d-m-Y');
             <a href="./index.php" class="icon-home kp-icon-home"></a>
             <ul class="sf-menu main-menu">
                 <li class="{home_current}">
-                    <a href="index.php"><i  class="fa fa-hospital-o fa-lg"></i></i> Cidade</a>
+                    <a href="index.php"><i  class="fa fa-hospital-o"></i></i> Cidade</a>
                     <ul>
                     <li><a href="?p=historia" title="História de: "><i class="fa fa-history  fl-fg"></i> História de AGRICOLÂNDIA</a></li>
                     <li><a href="?p=hino" title="Hino Oficial de: "><i class="fa fa-music fl-fg"></i> Hino Oficial de AGRICOLÂNDIA</a></li>
@@ -209,7 +209,7 @@ $hoje =  date('d-m-Y');
                     </ul>
                 </li>
                 <li  class="{gestao_current}">
-                    <a href="index.php"><i  class="fa fa-line-chart   fa-lg"></i> Gestão</a>
+                    <a href="index.php"><i  class="fa fa-line-chart  "></i> Gestão</a>
                     <ul>
                         <li><a href="?p=prefeito" title="Prefeito(a) de: {header_nome}"><i class="icon-user"></i> Prefeito</a></li>
                         <li><a href="?p=prefeito_vice" title="Vice-Prefeito(a) de: {header_nome}"><i class="fa fa-user-circle-o  fl-fg"></i> Vice</a></li>
@@ -220,22 +220,109 @@ $hoje =  date('d-m-Y');
                 </li>
               
                 <li class="{secretaria_current}">
-                    <a href="index.php"><i  class="fa fa-university  fa-lg"></i></i> Secretarias</a>
+                    <a href="?p=secretaria_geral"><i  class="fa fa-university "></i> Secretaria</a>
                     <ul>
-                        <li><a href="?p=secretaria_gestor"><i  class="fa fa-university fl-fg"></i> Secretarios</a></li>
-                        <li><a href="?p=secretaria_gestor_educacao"><i  class="fa fa-university fl-fg"></i> Unidades</a></li>
+                        <li><a href="?p=secretaria_gestor_educacao"><i  class="fa fa-university fl-fg"></i>Educação</a>
+                       
+                            <ul>
+                                <li><a href="#">Unidade A</a></li>
+                                <li><a href="#">Unidade B</a></li>
+                                <li><a href="#">Unidade C</a></li>
+                            </ul>
+                        </li>
+                         <li><a href="?p=secretaria_gestor"><i  class="fa fa-university fl-fg"></i>Saúde</a>
+                        
+                            <ul>
+                                <li><a href="#">Unidade A</a></li>
+                                <li><a href="#">Unidade B</a></li>
+                                <li><a href="#">Unidade C</a></li>
+                            </ul>
+                        </li>
+                         <li><a href="?p=secretaria_gestor"><i  class="fa fa-university fl-fg"></i>Administração</a>
+                            <ul>
+                                <li><a href="#">Unidade A</a></li>
+                                <li><a href="#">Unidade B</a></li>
+                                <li><a href="#">Unidade C</a></li>
+                            </ul>
+                        </li>
+                         <li><a href="?p=secretaria_gestor"><i  class="fa fa-university fl-fg"></i>Assistência Social</a>
+                            <ul>
+                                <li><a href="#">Unidade A</a></li>
+                                <li><a href="#">Unidade B</a></li>
+                                <li><a href="#">Unidade C</a></li>
+                            </ul>
+                        </li>
+                         <li><a href="?p=secretaria_gestor"><i  class="fa fa-university fl-fg"></i>Obras</a>
+                            <ul>
+                                <li><a href="#">Unidade A</a></li>
+                                <li><a href="#">Unidade B</a></li>
+                                <li><a href="#">Unidade C</a></li>
+                            </ul>
+                        </li>
+                         <li><a href="?p=secretaria_gestor"><i  class="fa fa-university fl-fg"></i>Meio Ambiente</a>
+                            <ul>
+                                <li><a href="#">Unidade A</a></li>
+                                <li><a href="#">Unidade B</a></li>
+                                <li><a href="#">Unidade C</a></li>
+                            </ul>
+                        </li>
+                         <li><a href="?p=secretaria_gestor"><i  class="fa fa-university fl-fg"></i>Finanças</a>
+                            <ul>
+                                <li><a href="#">Unidade A</a></li>
+                                <li><a href="#">Unidade B</a></li>
+                                <li><a href="#">Unidade C</a></li>
+                            </ul>
+                        </li>
+                         <li><a href="?p=secretaria_gestor"><i  class="fa fa-university fl-fg"></i>Procuradoria</a>
+                            <ul>
+                                <li><a href="#">Unidade A</a></li>
+                                <li><a href="#">Unidade B</a></li>
+                                <li><a href="#">Unidade C</a></li>
+                            </ul>
+                        </li>
+                       
                     </ul>
                 </li>
                 <li class="{{negocio_current}">
-                    <a href="index.php"> <i class="fa fa-industry fl-fg"></i> </i> Negócios</a>
+                    <a href="index.php"> <i class="fa fa-industry "></i> </i> AgroNegócio</a>
                     <ul>
-                        <li><a href="#"  title="Feiras em: {header_nome}"><i  class="fa fa-bullseye fl-fg"></i> Feiras Agrícolas</a></li>
+                        <li><a href="#"  title="Feiras em: {header_nome}"><i class="fa fa-bullseye fl-fg"></i> Feiras Agrícolas</a></li>
                         <li><a href="#"  title="Exposição em: {header_nome}"><i class="fa fa-calculator fl-fg"></i> Exposição</a></li>
-                        <li><a href="#"  title="Festejos: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Festejos</a></li>
+                        <li><a href="#"  title="Agricultura: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Apicultura</a>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Mel</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"  title="Agricultura: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Bovinocultura</a>
+                        <ul>
+                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Gado Corte</a></li>
+                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Gado Leite</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"  title="Agricultura: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Pisicultura</a>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Tilápia</a></li>
+                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Tambaqui</a></li>
+                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Outros</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"  title="Agricultura: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Caprinocultura</a>
+                         <ul>
+                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Cabra</a></li>
+                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Ovelha</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"  title="Agricultura: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Culturas Agrícolas</a>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Arroz</a></li>
+                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Feijão</a></li>
+                                <li><a href="#"><i class="fa fa-bullseye fl-fg"></i> Milho</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                  <li class="{turismo_current}">
-                    <a href="index.php"><i  class="fa fa-bus  fa-lg"></i> </i> Turísmo</a>
+                    <a href="index.php"><i  class="fa fa-bus "></i> </i> Turísmo</a>
                     <ul>
                         <li><a href="?p=alimentacao" title="Restaurantes e Casas de Alimentação em: {header_nome}"><i class="fa fa-cutlery fl-fg"></i> Alimentação</a></li>
                         <li><a href="?p=banco" title="Bancos, Loterias e CASH em: {header_nome}"><i class="fa fa-money fl-fg"></i> Bancos</a></li>
@@ -244,10 +331,12 @@ $hoje =  date('d-m-Y');
                         <li><a href="?p=hotel" title="Hotéis, Pensões e Pousadas em: {header_nome}"><i  class="fa fa-bed fl-fg"></i> Hotelaria</a></li>
                         <li><a href="?p=transporte" title="Transportes Diversos para: {header_nome}"><i  class="fa fa-taxi fl-fg"></i> Transportes</a></li>
                         <li><a href="?p=turismo" title="Pontos Turísiticos  Diversos para: {header_nome}"><i  class="fa fa-camera fl-fg"></i> Turísmo</a></li>
+                        <li><a href="#"  title="Festejos: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Festejos</a></li>
+
                     </ul>
                 </li>
                 <li class="{comunicacao_current}">
-                    <a href="index.php"><i class="icon-feed2  fa-lg"></i> Comunicação</a>
+                    <a href="index.php"><i class="icon-feed2  "></i> Notícia</a>
                     <ul>
                         <li><a href="?p=galeria" title="Fotos de: {header_nome}"><i class="fa fa-vid fa-picture-o fl-fg"></i> Galeria de Fotos</a></li>
                         <li><a href="?p=noticia_geral" title="Noticias Gerais de: {header_nome}"><i  class="fa fa-newspaper-o fl-fg"></i> Notícias Geral</a></li>
@@ -258,16 +347,16 @@ $hoje =  date('d-m-Y');
                 </li>
                 
                  <li class="{comunicacao_current}">
-                    <a href="index.php"> <i class="fa fa-wrench  fa-lg"></i> Serviços</a>
+                    <a href="index.php"> <i class="fa fa-wrench  "></i> Serviço</a>
                     <ul>
                         <li><a href="?p=erro_404" title="Prefeito(a) de: {header_nome}"><i class="fa fa-user fa-fw  fa-lg"></i> Erro 404</a></li>
                     </ul>
                 </li>
                 <li class="{covid_current}">
-                    <a href="index.php"> <i class="fa fa-medkit  fa-lg"></i> COVID</a>
+                    <a href="index.php"> <i class="fa fa-medkit  "></i> COVID</a>
                 </li>   
                 <li class="{contato_current}">
-                    <a href="?p=contato"><i class="icon-phone  fa-lg"></i> Contato</a>
+                    <a href="?p=contato"><i class="icon-phone "></i> Contato</a>
                 </li> 
                    
             </ul>

@@ -201,14 +201,9 @@ $hoje =  date('d-m-Y');
             //include_once 'include/menu_sidebar_noticia_popular.php';
              ?>
              </div>
-              <!--h3 class="widget-title" style="margin-top: 3px; ">Propaganda </h3>
-           <div class="widget widget-ads">
-               <a href="#"><img src="files/prefeituras/201002/banner/BANNER_ESQUERDA.gif" width="310" alt=""></a>
-           </div-->
-           
-      
-        <!-- fim sidebar -->
-        <!-- widget-random -->
+              <?php
+            include_once 'include/menu_sidebar_propaganda.php';
+             ?>
          <!-- widget-ads -->
             
         

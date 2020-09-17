@@ -822,7 +822,7 @@ $hoje =  date('d-m-Y');
         <!-- fim main-col -->
         
         <!-- inicio sidebar -->
-              <?php include_once 'include/menu_home_sidebar.php'; ?>
+        <?php include_once 'include/menu_home_sidebar.php'; ?>
 
         <!-- fim sidebar -->
         <!-- inicio widget-area-5 BOLETIM DE NOTICIAS -->

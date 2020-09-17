@@ -397,17 +397,22 @@ $hoje =  date('d-m-Y');
              include_once 'include/menu_sidebar_noticia_popular.php';
              ?>
              </div>
-              <h3 class="widget-title" style="margin-top: 3px; ">Propaganda </h3>
-           <div class="widget widget-ads">
-               <a href="#"><img src="files/prefeituras/201002/banner/BANNER_ESQUERDA.gif" width="310" alt=""></a>
-           </div>
+             <?php
+             include_once 'include/menu_sidebar_propaganda.php';
+             ?>
              <?php
              include_once 'include/menu_sidebar_randon.php';
              include_once 'include/menu_sidebar_servico.php';
-             include_once 'include/menu_home_video.php';
              ?>
            
-      
+                <?php
+            include_once 'include/menu_home_video.php';
+            include_once 'include/menu_sidebar_foto_noticia.php';
+         ?>
+               <?php
+             include_once 'include/menu_sidebar_mapa_localizacao.php';
+            //include_once 'include/menu_sidebar_noticia_popular.php';
+             ?>
         <!-- fim sidebar -->
         <!-- widget-random -->
          <!-- widget-ads -->

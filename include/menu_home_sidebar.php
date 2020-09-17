@@ -149,13 +149,10 @@
          </div>
        </div>
          <!-- widget-random -->
-         <?php
-            include_once 'include/menu_sidebar_servico.php';
-           ?>
-         <!-- widget_categories -->
-         <div class="widget widget-ads">
-             <a href="#"><img src="files/prefeituras/201002/banner/BANNER_ESQUERDA.gif" alt=""></a>
-         </div>
+          <?php
+             include_once 'include/menu_sidebar_propaganda.php';
+             ?>
+        
          <!-- widget-ads -->
           <?php
             include_once 'include/menu_sidebar_noticia_popular.php';
@@ -163,50 +160,10 @@
          <!-- widget-tabs -->
 
          <?php
-            include_once 'include/menu_home_video.php';
+             include_once 'include/menu_home_video.php';
+            include_once 'include/menu_sidebar_foto_noticia.php';
          ?>
-         <div class="widget widget-video">
-              <ul class="list-posts list-unstyled">
-
-            <li>
-              <div class="item clearfix">
-                <h3 class="widget-title">Notícias e fotos relacionadas</h3>
-                <a href="#" class="pull-left">
-                  <img src="placeholders/posts/img-11.jpg" alt="">
-                </a>
-                <div class="item-right">
-                  <h4><a href="#">P M de AGRICOLÂNDIA iniciou obra de pavimentação asfática nas ruas da cidade. </a></h4>
-                  <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="item clearfix">
-                 <a href="#" class="pull-left">
-                  <img src="placeholders/posts/img-12.jpg" alt="">
-                </a>
-                <div class="item-right">
-                  <h4><a href="#">P M de AGRICOLÂNDIA iniciou obra de pavimentação asfática nas ruas da cidade.</a></h4>
-                  <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="item clearfix">
-                  <a href="#" class="pull-left">
-                  <img src="placeholders/posts/img-13.jpg" alt="">
-                </a>
-                <div class="item-right">
-                  <h4><a href="#">P M de AGRICOLÂNDIA iniciou obra de pavimentação asfática nas ruas da cidade. </a></h4>
-                  <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-                </div>
-              </div>
-            </li>
-           
-
-          </ul>
-         </div>
+       
           <!-- list-posts -->
          <!-- widget-video -->
 
