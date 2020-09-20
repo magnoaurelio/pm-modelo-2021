@@ -1,15 +1,10 @@
 <?php
-include_once 'include/head.php';
-include_once 'app/control/Router.class.php';
-include_once 'app/control/Layout.class.php';
-$hoje =  date('d-m-Y');
-//$hojePartes =  MDate::datePart($hoje);
-//$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
-//$ano  = $hojePartes->ano;
 
+$hoje =  date('Y-m-d');
+$hojePartes =  new DataCalendario($hoje);
+$data = $hojePartes->getDiaSemana($hoje).", ".$hojePartes->getDia()." de ".$hojePartes->getMes()." de ".$hojePartes->getAno();
 ?>
-      
-<header id="page-header"> 
+<header id="page-header">
     <div class="header-top">
         <div class="container">
             <nav class="pull-left">
@@ -17,9 +12,8 @@ $hoje =  date('d-m-Y');
                     <li class="current-menu-item">
                         <a href="#">
                             <i class="fa fa-calendar fa-fw fa-lg"></i>
-                            <?=$hoje ?>
-                            {header_data}
-                        </a>                            
+                            <?=$data ?>
+                        </a>
                     </li>
                     <li class="current-menu-item">
                         <a href="./index-2.html">

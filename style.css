@@ -517,6 +517,8 @@ ul.page-numbers {
       display: block;
       color: #fff; }
       .slider-feature-news .owl-carousel-images .kp-caption .caption-wrapper {
+        background: rgba(0,0,0,0.75);
+        color: white;
         position: absolute;
         bottom: 0;
         padding: 10px 15px 15px; }
