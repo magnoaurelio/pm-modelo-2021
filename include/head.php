@@ -1,7 +1,6 @@
 <head>
     <meta charset="utf-8">
     <title>Portal Institucional 2021</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/csse2ff.css?family=Roboto+Condensed:400italic,700italic,400,700" rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css24e4.css?family=Roboto+Slab:400,300,100,700" rel='stylesheet' type='text/css'>
     <link href="https://fontawesome.com/icons?d=gallery" rel='stylesheet' type='text/css'>
@@ -14,6 +13,8 @@
     <link rel="stylesheet" href="style.css" media="all">
     <link rel="stylesheet" href="lib/lightbox/css/lightbox.css"></a>
     <!--link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css?afver=400" rel="stylesheet" type="text/css" media="screen" /-->
+    <!---coloquei em 17 set 2020 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     

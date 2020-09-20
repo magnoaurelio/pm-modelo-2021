@@ -29,7 +29,7 @@ $hoje =  date('d-m-Y');
               
               <header class="clearfix">
                  <a href="?p=agronegocio_atividade" >
-                <h3 class="title-post">FEIRAS AGRÍCOLAS</h3>
+                <h3 class="title-post">FEIRAS e EXPOSIÇÃO AGRÍCOLAS</h3>
                 </a>
                 <!-- header-bottom -->                
             
@@ -83,7 +83,7 @@ $hoje =  date('d-m-Y');
               </header>
               <header class="clearfix">
                  <a href="?p=agronegocio_atividade" >
-                <h3 class="title-post">EXPOSIÇÃO AGRÍCOLAS</h3>
+                <h3 class="title-post"> MONOCULTURAS</h3>
                 </a>
                 <!-- header-bottom -->                
             

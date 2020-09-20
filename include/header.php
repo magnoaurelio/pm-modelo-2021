@@ -22,7 +22,12 @@ $hoje =  date('d-m-Y');
                         </a>                            
                     </li>
                     <li class="current-menu-item">
-                        <a href="./index-2.html"><i class="fa fa-key fa-fw  fa-lg"></i></i> Acesso</a>                            
+                        <a href="./index-2.html">
+                            <button style="font-size:14px;">
+                               &nbsp<i class="fa fa-key fa-fw  fa-lg" style="font-size:16px; color:green"></i>
+                               <strong>ACESSO</strong> &nbsp;
+                            </button>
+                         </a>                            
                     </li>
                     <li>
                         <a href="?p=contracheque"><i class="fa fa-money  fa-fw fa-lg"></i> Contra-Cheque</a>
@@ -32,7 +37,7 @@ $hoje =  date('d-m-Y');
                     </li>
                     <li>
                         <a href="index.php"> 
-                                <button style="font-size:13px;">
+                                <button style="font-size:12px;">
                                      &nbsp;<i class="fa fa-medkit"  style="font-size:14px; color:red"></i>
                                     TRANSCOVID &nbsp; 
                                 </button>
@@ -230,31 +235,31 @@ $hoje =  date('d-m-Y');
                         <li><a href="?p=secretaria_gestor_educacao"><i  class="fa fa-university fl-fg"></i>Educação</a>
                        
                             <ul>
-                                <li><a href="#">Unidade A</a></li>
-                                <li><a href="#">Unidade B</a></li>
-                                <li><a href="#">Unidade C</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade A</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade B</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade C</a></li>
                             </ul>
                         </li>
                          <li><a href="?p=secretaria_gestor"><i  class="fa fa-university fl-fg"></i>Saúde</a>
                         
                             <ul>
-                                <li><a href="#">Unidade A</a></li>
-                                <li><a href="#">Unidade B</a></li>
-                                <li><a href="#">Unidade C</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade A</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade B</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade C</a></li>
                             </ul>
                         </li>
                          <li><a href="?p=secretaria_gestor"><i  class="fa fa-university fl-fg"></i>Administração</a>
                             <ul>
-                                <li><a href="#">Unidade A</a></li>
-                                <li><a href="#">Unidade B</a></li>
-                                <li><a href="#">Unidade C</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade A</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade B</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade C</a></li>
                             </ul>
                         </li>
                          <li><a href="?p=secretaria_gestor"><i  class="fa fa-university fl-fg"></i>Assistência Social</a>
                             <ul>
-                                <li><a href="#">Unidade A</a></li>
-                                <li><a href="#">Unidade B</a></li>
-                                <li><a href="#">Unidade C</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade A</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade B</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade C</a></li>
                             </ul>
                         </li>
                          <li><a href="?p=secretaria_gestor"><i  class="fa fa-university fl-fg"></i>Obras</a>
@@ -266,23 +271,23 @@ $hoje =  date('d-m-Y');
                         </li>
                          <li><a href="?p=secretaria_gestor"><i  class="fa fa-university fl-fg"></i>Meio Ambiente</a>
                             <ul>
-                                <li><a href="#">Unidade A</a></li>
-                                <li><a href="#">Unidade B</a></li>
-                                <li><a href="#">Unidade C</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade A</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade B</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade C</a></li>
                             </ul>
                         </li>
                          <li><a href="?p=secretaria_gestor"><i  class="fa fa-university fl-fg"></i>Finanças</a>
                             <ul>
-                                <li><a href="#">Unidade A</a></li>
-                                <li><a href="#">Unidade B</a></li>
-                                <li><a href="#">Unidade C</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade A</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade B</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade C</a></li>
                             </ul>
                         </li>
                          <li><a href="?p=secretaria_gestor"><i  class="fa fa-university fl-fg"></i>Procuradoria</a>
                             <ul>
-                                <li><a href="#">Unidade A</a></li>
-                                <li><a href="#">Unidade B</a></li>
-                                <li><a href="#">Unidade C</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade A</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade B</a></li>
+                                <li><a href="?p=secretaria_gestor">Unidade C</a></li>
                             </ul>
                         </li>
                        
@@ -291,8 +296,14 @@ $hoje =  date('d-m-Y');
                 <li class="{{negocio_current}">
                     <a href="?p=agronegocio_geral"> <i class="fa fa-industry "></i> </i> AgroNegócio</a>
                     <ul>
-                        <li><a href="?p=agronegocio_atividade"  title="Feiras em: {header_nome}"><i class="fa fa-bullseye fl-fg"></i> Feiras Agrícolas</a></li>
-                        <li><a href="?p=agronegocio_atividade"  title="Exposição em: {header_nome}"><i class="fa fa-calculator fl-fg"></i> Exposição</a></li>
+                        <li><a href="?p=agronegocio_atividade"  title="Feiras e Exposição em: {header_nome}"><i class="fa fa-bullseye fl-fg"></i> Feiras e Exposição</a></li>
+                        <li><a href="?p=agronegocio_atividade"  title=" Monocultura em: {header_nome}"><i class="fa fa-calculator fl-fg"></i> Monocultura</a>
+                         <ul>
+                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Soja</a></li>
+                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Algodão</a></li>
+                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Milho</a></li>
+                            </ul>
+                        </li>
                         <li><a href="?p=agronegocio_atividade"  title="Agricultura: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Apicultura</a>
                             <ul>
                                 <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Mel</a></li>
@@ -304,7 +315,7 @@ $hoje =  date('d-m-Y');
                                 <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Gado Leite</a></li>
                             </ul>
                         </li>
-                        <li><a href="?p=agronegocio_atividade"  title="Agricultura: {header_nome}"><i class="fas fa-fish fl-fg"></i> Pisicultura</a>
+                        <li><a href="?p=agronegocio_atividade"  title="Agricultura: {header_nome}"><i class="fa fa-fish fl-fg"></i> Pisicultura</a>
                             <ul>
                                 <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Tilápia</a></li>
                                 <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Tambaqui</a></li>
@@ -313,7 +324,7 @@ $hoje =  date('d-m-Y');
                         </li>
                         <li><a href="?p=agronegocio_atividade"  title="Agricultura: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i> Caprinocultura</a>
                          <ul>
-                                <li><a href="#?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Cabra</a></li>
+                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Cabra</a></li>
                                 <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Ovelha</a></li>
                             </ul>
                         </li>
@@ -330,7 +341,7 @@ $hoje =  date('d-m-Y');
                     </ul>
                 </li>
                  <li class="{turismo_current}">
-                    <a href="index.php"><i  class="fa fa-bus "></i> </i> Turísmo</a>
+                    <a href="index.php"><i  class="fa fa-bus "></i>  Turísmo</a>
                     <ul>
                         <li><a href="?p=alimentacao" title="Restaurantes e Casas de Alimentação em: {header_nome}"><i class="fa fa-cutlery fl-fg"></i> Alimentação</a></li>
                         <li><a href="?p=banco" title="Bancos, Loterias e CASH em: {header_nome}"><i class="fa fa-money fl-fg"></i> Bancos</a></li>
@@ -370,7 +381,12 @@ $hoje =  date('d-m-Y');
                     </a>
                 </li>   
                 <li class="{contato_current}">
-                    <a href="?p=contato"><i class="icon-phone "></i> Contato</a>
+                    <a href="?p=contato">
+                      <button style="font-size:14px;">
+                        &nbsp<i class="icon-phone" style="font-size:16px; color:blue"></i> 
+                        <strong>CONTATO</strong> &nbsp;
+                      </button>
+                    </a>
                 </li> 
                    
             </ul>
