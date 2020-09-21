@@ -30,7 +30,7 @@
                         ?>
 
                         <div class="item-lg" style="width: 100%">
-                            <a href="?p=noticia_detalhe" class="kp-caption">
+                            <a href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" class="kp-caption">
                                 <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>"
                                      width="100%" alt="">
                                 <div class="caption-wrapper" style="width: 100%">
@@ -71,14 +71,14 @@
                                     <i class="icon-eye"></i><span>50 Visto</span>
                                     <i class="icon-user"></i><span>Portal</span>
                                 </p>
-                                <a href="?p=noticia_detalhe" class="caption">
+                                <a href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" class="caption">
                                     <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>"
                                          alt="">
                                     <p><?= substr(strip_tags($noticia['nottexto']), 0, 100) ?>...</p>
                                     <span class="icon-plus"></span>
                                 </a>
                                 <h6>
-                                    <a href="?p=noticia_detalh?notcodigo=<?= $noticia['notcodigo'] ?>"><?= $noticia["nottitulo"] ?></a>
+                                    <a href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>"><?= $noticia["nottitulo"] ?></a>
                                 </h6>
                             </div>
 

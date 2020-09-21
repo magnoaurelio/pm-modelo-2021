@@ -11,7 +11,7 @@ class Noticia extends Read
     public function __construct($criterio = null)
     {
         if (is_int($criterio)) {
-            parent::ExeRead($this->Table, "WHERE notcodigo = :id", "id={$criterio}");
+            parent::ExeRead($this->Table, " WHERE notcodigo = :id", "id={$criterio}");
         } else {
             $criterio = $criterio ? $criterio : self::MUNICIPIO;
             parent::ExeRead($this->Table, $criterio);
