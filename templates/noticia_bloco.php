@@ -6,6 +6,7 @@ $hoje =  date('d-m-Y');
 //$ano  = $hojePartes->ano;
 ?>
 
+
 <body class="page-full-width">
    
     <!-- page-header -->
@@ -24,122 +25,32 @@ $hoje =  date('d-m-Y');
                 <a href="?p=noticia_detalhe" class="prev"></a>
                 <a href="?p=noticia_detalhe" class="next"></a>
               </p>
+               <?php
+                    $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " ");
+                    foreach ($noticiasDestaque->getResult() as $noticia) {
+               ?>
               <div class="item pull-left">
-                <p class="kp-metadata style-2">
-                  <i class="icon-heart"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-comment"></i><span>50</span>
-                </p>
-                <a href="?p=noticia_detalhe"><img src="placeholders/posts/img-38.jpg" alt=""></a>
-                <h3><a href="?p=noticia_detalhe">A Prefeitura intensifica o Combate ao COVID-19</a></h3>
-                <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-                <p>A  Prefeitura de Agricolândia através da Secretaria de saúde, intensificam o Combate ao COVID-19</p>
+                 <p class="kp-metadata style-2">
+                    <i class="fa fa-calendar fa-fw fa-lg"></i><span><?= date($noticia['notdata']) ?></span>
+                    <i class="fa fa-home fa-fw fa-lg"></i><span><?=$noticia['notcategoria']?></span><br>
+                    <i class="fa fa-feed fa-fw fa-lg"></i><span><?=$noticia['notfonte']?></span>
+                  </p>
+                <a href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" class="caption">
+                        <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>"
+                             alt="">
+                        <p><?= substr(strip_tags($noticia['nottexto']), 0, 100) ?>...</p>
+                        <span class="icon-plus"></span>
+                    </a>
+                    <h6>
+                        <a href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>"><?= $noticia["nottitulo"] ?></a>
+                    </h6>
+                </div>
+
+            <?php } ?>
                 <a href="?p=noticia_detalhe" class="continue-reading">Continue Lendo ...</a>
               </div>
               <!-- item -->
-              <div class="item pull-left">
-               <p class="kp-metadata style-2">
-                  <i class="icon-heart"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-comment"></i><span>50</span>
-                </p>
-                <a href="?p=noticia_detalhe"><img src="placeholders/posts/img-39.jpg" alt=""></a>
-                <h3><a href="?p=noticia_detalhe">Aniversário AGRICOLÂNDIA, 26 de emancipação</a></h3>
-                  <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-                  <p>Aniversário de AGRICOLÂNDIA, o municipio completa ... anos de emancipação a cidade foca em festa até o final de semana</p>
-                <a href="?p=noticia_detalhe" class="continue-reading">Continue Lendo ...</a>
-              </div>
-              <!-- item -->
-              <div class="item pull-left">
-                <p class="kp-metadata style-2">
-                  <i class="icon-heart"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-comment"></i><span>50</span>
-                </p>
-                <a href="?p=noticia_detalhe"><img src="placeholders/posts/img-40.jpg" alt=""></a>
-                <h3><a href="?p=noticia_detalhe">O Prefeito Inaugura obras com autoridades</a></h3>
-                  <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-                  <p>O prefeito Walter Alencar recebe o governador W Dias, Senador Ciro Nogueira, a Deputada Iracema Portela e mais autoridades</p>
-                <a href="?p=noticia_detalhe" class="continue-reading">Continue Lendo ...</a>
-              </div>
-              <!-- item -->
-              <div class="item pull-left">
-                <p class="kp-metadata style-2">
-                  <i class="icon-heart"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-comment"></i><span>50</span>
-                </p>
-                <a href="?p=noticia_detalhe"><img src="placeholders/posts/img-41.jpg" alt=""></a>
-                <h3><a href="?p=noticia_detalhe">Secretaria de SAÚDE realizou sanitização.</a></h3>
-                  <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-                  <p>Secretaria de SAÚDE DE AGRICOLÂNDIA realizou sanitização nas vias pública.</p>
-                <a href="?p=noticia_detalhe" class="continue-reading">Continue Lendo ...</a>
-              </div>
-              <!-- item -->
-              <div class="item pull-left">
-               <p class="kp-metadata style-2">
-                  <i class="icon-heart"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-comment"></i><span>50</span>
-                </p>
-                <a href="?p=noticia_detalhe"><img src="placeholders/posts/img-42.jpg" alt=""></a>
-                 <h3><a href="?p=noticia_detalhe">Profissionais da Saúde participam de Capacitação</a></h3>
-                  <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-                  <p>Profissionais da Saíde da Atenção Básica de Agricolândia, participam de Capacitação</p>
-                <a href="?p=noticia_detalhe" class="continue-reading">Continue Lendo ...</a>
-              </div>
-              <!-- item -->
-              <div class="item pull-left">
-                <p class="kp-metadata style-2">
-                  <i class="icon-heart"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-comment"></i><span>50</span>
-                </p>
-                <a href="?p=noticia_detalhe"><img src="placeholders/posts/img-43.jpg" alt=""></a>
-                <h3><a href="?p=noticia_detalhe">Colação de Grau dos alunos de Agricolândia.</a></h3>
-                  <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-                  <p>Colação de Grau dos alunos de Agricolândia, participam de festa e desfiles com bandeiras .</p>
-                <a href="?p=noticia_detalhe" class="continue-reading">Continue Lendo ...</a>
-              </div>
-              <!-- item -->
-              <div class="item pull-left">
-               <p class="kp-metadata style-2">
-                  <i class="icon-heart"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-comment"></i><span>50</span>
-                </p>
-                <a href="?p=noticia_detalhe"><img src="placeholders/posts/img-44.jpg" alt=""></a>
-                 <h3><a href="?p=noticia_detalhe">Profissionais da Saúde participam de Capacitação</a></h3>
-                  <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-                  <p>Profissionais da Saíde da Atenção Básica de Agricolândia, participam de Capacitação</p>
-                <a href="?p=noticia_detalhe" class="continue-reading">Continue Lendo ...</a>
-              </div>
-              <!-- item -->
-              <div class="item pull-left">
-                <p class="kp-metadata style-2">
-                  <i class="icon-heart"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-comment"></i><span>50</span>
-                </p>
-                <a href="?p=noticia_detalhe"><img src="placeholders/posts/img-45.jpg" alt=""></a>
-                 <h3><a href="?p=noticia_detalhe">Inauguração da Escolinha do Fluminense </a></h3>
-                  <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-                  <p>O senador João Vicente inagura em agricolandia juntamente com a Dep Iracema Portela e Prefeito Walter alencar a escolinha de futebol</p>
-                <a href="?p=noticia_detalhe" class="continue-reading">Continue Lendo ...</a>
-              </div>
-              <!-- item -->
-              <div class="item pull-left">
-               <p class="kp-metadata style-2">
-                  <i class="icon-heart"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-comment"></i><span>50</span>
-                </p>
-                <a href="?p=noticia_detalhe"><img src="placeholders/posts/img-38.jpg" alt=""></a>
-                <h3><a href="?p=noticia_detalhe">A Prefeitura intensifica o Combate ao COVID-19</a></h3>
-                <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-                <p>A  Prefeitura de Agricolândia através da Secretaria de saúde, intensificam o Combate ao COVID-19</p>
-                <a href="?p=noticia_detalhe" class="continue-reading">Continue Lendo ...</a>
-              </div>
+            
               <!-- item -->
               
             </div>

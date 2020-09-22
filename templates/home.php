@@ -56,7 +56,7 @@
         <!-- inicio widget-area-3 -->
         <div class="widget-area-3 pull-right">
             <div class="widget widget-featured-news">
-                <h3 class="widget-title">Notícias destaque</h3>
+                <h4 class="widget-title">Notícias destaque</h4>
                 <div class="owl-carousel owl-carousel-feature">
 
                     <div class="item-wrapper clearfix">
@@ -66,11 +66,11 @@
                         foreach ($noticiasDestaque->getResult() as $noticia) {
                             ?>
                             <div class="item pull-left">
-                                <p class="kp-metadata style-2">
-                                    <i class="icon-heart"></i><span>50 Acesso</span>
-                                    <i class="icon-eye"></i><span>50 Visto</span>
-                                    <i class="icon-user"></i><span>Portal</span>
-                                </p>
+                                  <p class="kp-metadata style-2">
+                                    <i class="fa fa-calendar fa-fw fa-lg"></i><span><?= date($noticia['notdata']) ?></span>
+                                    <i class="fa fa-home fa-fw fa-lg"></i><span><?=$noticia['notcategoria']?></span><br>
+                                    <i class="fa fa-feed fa-fw fa-lg"></i><span><?=$noticia['notfonte']?></span>
+                                  </p>
                                 <a href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" class="caption">
                                     <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>"
                                          alt="">
@@ -95,37 +95,8 @@
 
         <!-- inicio widget-area-2 -->
         <div class="widget-area-2 pull-left">
-            <div class="widget widget-last-post">
-                <h3 class="widget-title">Secretarias</h3>
-
-
-                <ul class="list-news list-unstyled">
-                    <?php
-                    $secretarias = new Secretaria(Secretaria::MUNICIPIO);
-                    foreach ($secretarias->getResult() as $secretaria) {
-                        ?>
-                        <li>
-                            <div class="item">
-                                <a href="?p=noticia_detalhe">
-                                    <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/secretaria/'. $secretaria['secfotor'] ?>" alt="">
-                                    <span>
-                                      <i class="icon-images"></i>
-                                    </span>
-                                </a>
-                                <h3><a href="?p=noticia_detalhe"><?=$secretaria['secnome']?></a></h3>
-                                <p class="kp-metadata">
-                                    <span>Secretário: <?= $secretaria['secusual'] ?></span>
-                                </p>
-                            </div>
-                        </li>
-                    <?php } ?>
-                    <li>
-                        <?php
-                        include_once 'include/menu_home_clima_1.php';
-                        ?>
-                    </li>
-                </ul>
-            </div>
+             <?php include_once 'include/menu_sidebar_propaganda.php'; ?>
+             <?php include_once 'include/menu_home_clima_1.php'; ?>
             <!-- widget-last-post -->
             <div class="widget widget-ads">
                 <!--a href="?p=noticia_detalhe"><img src="files/prefeituras/201002/banner/BANNER_MEIO_INFER_AGR.gif" alt=""></a-->
@@ -162,8 +133,13 @@
     <!-- fim main-col -->
 
     <!-- inicio sidebar -->
+   
     <?php include_once 'include/menu_home_sidebar.php'; ?>
-
+    
+   
+        
+         <!-- widget-ads -->
+         
     <!-- fim sidebar -->
     <!-- inicio widget-area-5 BOLETIM DE NOTICIAS -->
     <?php include_once 'include/menu_home_newsletter.php'; ?>

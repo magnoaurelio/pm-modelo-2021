@@ -17,15 +17,15 @@ $noticia =  new Noticia(intval($_GET['notcodigo']));
             <article class="post-content">
               
               <header class="clearfix">
-                <h3 class="title-post">Noticia selecionada </h3>
+                  <h3 class="title-post"><?= strtoupper($noticia->nottitulo)?> </h3>
                 <div class="header-bottom">
                   <p class="kp-metadata style-2">
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
+                  <i class="fa fa-calendar fa-fw fa-lg"></i><span><?= $noticia->notdata ?></span>
+                  <i class="fa fa-home fa-fw fa-lg"></i><span><?=$noticia->notcategoria?></span>
+                  <i class="fa fa-feed fa-fw fa-lg"></i><span><?=$noticia->notfonte?></span>
                 </p>
                 <p class="kp-share">
-                  <span>Share:</span> 
+                  <span>Compartilhar:</span> 
                   <a href="#" class="icon-facebook3"></a>
                   <a href="#" class="icon-twitter"></a>
                   <a href="#" class="icon-google-plus3"></a>

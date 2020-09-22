@@ -1,10 +1,12 @@
+<div class="col-sm-right col-2">
+
 <div id="sidebar" class="pull-left">
          <div class="widget widget-random-post">
              <div class="widget widget-photos" style="text-align: left;">
-               <h3 class="widget-title">Administração </h3>
+               <h3 class="widget-title" style="text-align: left;">Administração </h3>
                 <div class="col-sm-right col-6">
                <ul class="list-unstyled clearfix" style="text-align: left;">
-                 <li class="col-sm col-sm-right">
+                 <li class="col-sm col-sm-left">
                    <ul class="list-unstyled">
                      <li>
                        <a href="?p=prefeito" class="caption">
@@ -47,124 +49,27 @@
                  </li>
                 </ul>
 
-               <a href="gallery.html" class="to-gallery">galeria</a>
+               <!--a href="gallery.html" class="to-gallery">galeria</a-->
              </div>
 
               <div class="clearfix"></div>
-             <div class="col-sm-right col-12">
-
-                 <h3 class="widget-title" style="text-align: left;">Secretarias e Gestores</h3>
-
-             <ul class="list-posts list-unstyled">
-                 <li>
-                     <div class="item clearfix">
-                         <a href="?p=secretaria_gestor" class="pull-left">
-                             <img src="files/prefeituras/201002/secretario/KELLY.jpg" alt="">
-                         </a>
-                         <div class="item-right">
-                             <h4><a href="?p=secretaria_geral"><strong>Finanças</strong><br> Kelly</a></h4>
-                             <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
-                         </div>
-                     </div>
-                 </li>
-                 <li>
-                     <div class="item clearfix">
-                         <a href="?p=secretaria_gestor" class="pull-left">
-                             <img src="files/prefeituras/201002/secretario/admd_marcos.jpg" alt="">
-                         </a>
-                         <div class="item-right">
-                             <h4><a href="?p=secretaria_geral"><strong>Administração</strong><br> Marcos</a></h4>
-                             <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
-                         </div>
-                     </div>
-                 </li>
-                 <li>
-                     <div class="item clearfix">
-                         <a href="?p=secretaria_gestor" class="pull-left">
-                             <img src="files/prefeituras/201002/secretario/CLAY.jpg" alt="">
-                         </a>
-                         <div class="item-right">
-                             <h4><a href="?p=secretaria_geral"><strong>Educação</strong><br> Clay</a></h4>
-                             <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
-                         </div>
-                     </div>
-                 </li>
-                 <li>
-                     <div class="item clearfix">
-                         <a href="?p=secretaria_gestor" class="pull-left">
-                             <img src="files/prefeituras/201002/secretario/ADAIDIO.jpg" alt="">
-                         </a>
-                         <div class="item-right">
-                             <h4><a href="?p=secretaria_geral"><strong>Assistência Social</strong><br> Adaido</a></h4>
-                             <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
-                         </div>
-                     </div>
-                 </li>
-                 <li>
-                     <div class="item clearfix">
-                         <a href="?p=secretaria_gestor" class="pull-left">
-                             <img src="files/prefeituras/201002/secretario/alexandre.jpg" alt="">
-                         </a>
-                         <div class="item-right">
-                             <h4><a href="?p=secretaria_geral"><strong>Obras</strong><br> ALEXANDRE</a></h4>
-                             <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
-                         </div>
-                     </div>
-                 </li>
-                 <li>
-                     <div class="item clearfix">
-                         <a href="?p=secretaria_gestor" class="pull-left">
-                             <img src="files/prefeituras/201002/secretario/agda.jpg"  alt="">
-                         </a>
-                         <div class="item-right">
-                             <h4><a href="?p=secretaria_geral"><strong>Procuradoria</strong><br> Agda</a></h4>
-                             <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
-                         </div>
-                     </div>
-                 </li>
-                 <li>
-                     <div class="item clearfix">
-                         <a href="?p=secretaria_gestor" class="pull-left">
-                             <img src="files/prefeituras/201002/secretario/JEAN.jpg"  alt="">
-                         </a>
-                         <div class="item-right">
-                             <h4><a href="?p=secretaria_geral"><strong>Saúde</strong><br> Fatinha</a></h4>
-                             <p class="kp-metadata"><i class="icon-phone"></i><span>86 3333-3258</span></p>
-                         </div>
-                     </div>
-                 </li>
-                 <li>
-                     <div class="item clearfix">
-                         <a href="?p=secretaria_gestor" class="pull-left">
-                             <img src="files/prefeituras/201002/secretario/IVONEIDE.jpg"  alt="">
-                         </a>
-                         <div class="item-right">
-                             <h4><a href="?p=secretaria_geral"><strong>Meio Ambiente</strong><br> Ivoneide</a></h4>
-                             <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
-                         </div>
-                     </div>
-                 </li>
-             </ul>
-            </div>
+            <?php
+           include_once 'include/menu_home_sidebar_secretaria.php';
+           ?>
          </div>
-       </div>
+         </div>
+           
          <!-- widget-random -->
-          <?php
-             include_once 'include/menu_sidebar_propaganda.php';
-             ?>
+         
         
          <!-- widget-ads -->
-          <?php
-            include_once 'include/menu_sidebar_noticia_popular.php';
-           ?>
+         
          <!-- widget-tabs -->
 
-         <?php
-             include_once 'include/menu_home_video.php';
-            include_once 'include/menu_sidebar_foto_noticia.php';
-         ?>
+        
        
           <!-- list-posts -->
          <!-- widget-video -->
 
      </div>
+</div>
