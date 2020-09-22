@@ -1,5 +1,5 @@
 <?php
-$noticia =  new Noticia(intval($_GET['notcodigo']));
+    $noticia =  new Noticia(intval($_GET['notcodigo']));
 ?>
 <body class="page-full-width">
  
@@ -17,12 +17,12 @@ $noticia =  new Noticia(intval($_GET['notcodigo']));
             <article class="post-content">
               
               <header class="clearfix">
-                  <h3 class="title-post"><?= strtoupper($noticia->nottitulo)?> </h3>
+                  <h3 class="title-post"><?= strtoupper($noticia['nottitulo'])?> </h3>
                 <div class="header-bottom">
                   <p class="kp-metadata style-2">
-                  <i class="fa fa-calendar fa-fw fa-lg"></i><span><?= $noticia->notdata ?></span>
-                  <i class="fa fa-home fa-fw fa-lg"></i><span><?=$noticia->notcategoria?></span>
-                  <i class="fa fa-feed fa-fw fa-lg"></i><span><?=$noticia->notfonte?></span>
+                  <i class="fa fa-calendar fa-fw fa-lg"></i><span><?= $noticia['notdata'] ?></span>
+                  <i class="fa fa-home fa-fw fa-lg"></i><span><?=$noticia['notcategoria']?></span>
+                  <i class="fa fa-feed fa-fw fa-lg"></i><span><?=$noticia['notfonte']?></span>
                 </p>
                 <p class="kp-share">
                   <span>Compartilhar:</span> 
@@ -37,11 +37,11 @@ $noticia =  new Noticia(intval($_GET['notcodigo']));
               </header>
               
               <div class="kp-thumb">
-                <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia->notfoto ?>" alt="">
+                <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>" alt="">
               </div>
               <!-- kp-thumb -->
               <div class="entry-content">
-                  <?=$noticia->nottexto?>
+                  <?=$noticia['nottexto']?>
               </div>
               <!-- entry-content -->
               

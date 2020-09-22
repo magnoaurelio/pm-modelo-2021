@@ -1,6 +1,6 @@
 <?php
 
-$hoje =  date('d-m-Y');
+$data1 =  date('d-m-Y');
 //$hojePartes =  MDate::datePart($hoje);
 //$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
 //$ano  = $hojePartes->ano;
@@ -28,26 +28,26 @@ $hoje =  date('d-m-Y');
                <?php
                     $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " ");
                     foreach ($noticiasDestaque->getResult() as $noticia) {
+                 //   $notdata1 = MDate::date2d($noticia->notdata);
                ?>
               <div class="item pull-left">
                  <p class="kp-metadata style-2">
-                    <i class="fa fa-calendar fa-fw fa-lg"></i><span><?= date($noticia['notdata']) ?></span>
+                    <i class="fa fa-calendar fa-fw fa-lg"></i><span><?=$noticia['notdata'] ?></span>
                     <i class="fa fa-home fa-fw fa-lg"></i><span><?=$noticia['notcategoria']?></span><br>
                     <i class="fa fa-feed fa-fw fa-lg"></i><span><?=$noticia['notfonte']?></span>
                   </p>
-                <a href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" class="caption">
-                        <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>"
-                             alt="">
+                  <a href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" title="Veja Mais..." class="caption">
+                    <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>" height="240" alt="">
                         <p><?= substr(strip_tags($noticia['nottexto']), 0, 100) ?>...</p>
                         <span class="icon-plus"></span>
                     </a>
                     <h6>
                         <a href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>"><?= $noticia["nottitulo"] ?></a>
                     </h6>
+                    <a href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" class="continue-reading">Continue Lendo ...</a>
                 </div>
-
             <?php } ?>
-                <a href="?p=noticia_detalhe" class="continue-reading">Continue Lendo ...</a>
+               
               </div>
               <!-- item -->
             
