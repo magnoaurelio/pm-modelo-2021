@@ -1,3 +1,11 @@
+<?php
+
+$hoje = date('Y-m-d');
+$hojePartes = new DataCalendario($hoje);
+$data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
+
+$prefeitura = new Prefeitura(UNIDADE_GESTORA);
+?>
 <div class="widget widget-random-post" style="margin-left: -20px;">
     <div class="widget widget-photos" >
       <h3 class="widget-title">Administração </h3>
@@ -56,96 +64,42 @@
         <h3 class="widget-title" style="text-align: left;">Secretarias e Gestores</h3>
     </a>
 
-    <ul class="list-posts list-unstyled">
-        <li>
-            <div class="item clearfix">
-                <a href="?p=secretaria_gestor" class="pull-left">
-                    <img src="files/prefeituras/201002/secretario/KELLY.jpg" alt="">
-                </a>
-                <div class="item-right">
-                    <h4><a href="#"><strong>Finanças</strong><br> Kelly</a></h4>
-                    <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="item clearfix">
-                <a href="?p=secretaria_gestor" class="pull-left">
-                    <img src="files/prefeituras/201002/secretario/admd_marcos.jpg" alt="">
-                </a>
-                <div class="item-right">
-                    <h4><a href="#"><strong>Administração</strong><br> Marcos</a></h4>
-                    <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="item clearfix">
-                <a href="?p=secretaria_gestor_educacao" class="pull-left">
-                    <img src="files/prefeituras/201002/secretario/CLAY.jpg" alt="">
-                </a>
-                <div class="item-right">
-                    <h4><a href="#"><strong>Educação</strong><br> Clay</a></h4>
-                    <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="item clearfix">
-                <a href="?p=secretaria_gestor" class="pull-left">
-                    <img src="files/prefeituras/201002/secretario/ADAIDIO.jpg" alt="">
-                </a>
-                <div class="item-right">
-                    <h4><a href="#"><strong>Assistência Social</strong><br> Adaido</a></h4>
-                    <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="item clearfix">
-                <a href="?p=secretaria_gestor" class="pull-left">
-                    <img src="files/prefeituras/201002/secretario/alexandre.jpg" alt="">
-                </a>
-                <div class="item-right">
-                    <h4><a href="#"><strong>Obras</strong><br> ALEXANDRE</a></h4>
-                    <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="item clearfix">
-                <a href="?p=secretaria_gestor" class="pull-left">
-                    <img src="files/prefeituras/201002/secretario/agda.jpg"  alt="">
-                </a>
-                <div class="item-right">
-                    <h4><a href="#"><strong>Procuradoria</strong><br> Agda</a></h4>
-                    <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="item clearfix">
-                <a href="?p=secretaria_gestor" class="pull-left">
-                    <img src="files/prefeituras/201002/secretario/JEAN.jpg"  alt="">
-                </a>
-                <div class="item-right">
-                    <h4><a href="#"><strong>Saúde</strong><br> Fatinha</a></h4>
-                    <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="item clearfix">
-                <a href="?p=secretaria_gestor" class="pull-left">
-                    <img src="files/prefeituras/201002/secretario/IVONEIDE.jpg"  alt="">
-                </a>
-                <div class="item-right">
-                    <h4><a href="#"><strong>Meio Ambiente</strong><br> Ivoneide</a></h4>
-                    <p class="kp-metadata"><i class="icon-phone"></i> <span>86 3333-3258</span></p>
-                </div>
-            </div>
-        </li>
-    </ul>
+    <div class="widget widget-last-post" style="width: 350px; margin-left: 0px;">
+                 
+                <ul class="list-news list-unstyled">
+                    <?php
+                    $secretarias = new Secretaria(Secretaria::MUNICIPIO);
+                    foreach ($secretarias->getResult() as $secretaria) {
+                        ?>
+                     
+                        <li>
+                            <div class="item clearfix">
+                                <h5>
+                                    <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>">
+                                        <span ><strong><?=$secretaria['secnome']?></strong></span>
+                                    </a>
+                                </h5> 
+                                <h6 class="kp-metadata">&nbsp;<i class="icon-user"></i> <span style="font-size: 14px;"> <strong> <?= $secretaria['secusual'] ?></strong></span></h6>
+
+                                <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>" class="pull-left">
+                                    <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/secretaria/'. $secretaria['secfotor'] ?>" width="90" height="90" alt="">
+                                    <!--span>
+                                      <i class="icon-images"></i>
+                                    </span-->
+                                </a>
+                                <div class="item-right">
+                                    <p class="kp-metadata">&nbsp;<i class="icon-phone"></i> <span> <?= $secretaria['secfone'] ?> </span></p>
+                                    <p class="kp-metadata">&nbsp;<i class="icon-phone"></i> <span> <?= $secretaria['seccelular'] ?></span></p>
+                                    <p class="kp-metadata">&nbsp;<i class="icon-email"></i> <span> <?= $secretaria['secemail'] ?></span></p>
+                                    <p class="kp-metadata">&nbsp;<i class="icon-home"></i> <span> <?= strtolower($secretaria['secendereco']) ?></span></p>
+                                    <p class="kp-metadata">&nbsp;<i class="icon-home"></i> <span> <?= $secretaria['secbairro'] ?></span></p>
+                                </div>
+                            </div>
+                        </li>
+                    <?php } ?>
+                   
+                </ul>
+        </div>
    </div>
 </div>
 </div>

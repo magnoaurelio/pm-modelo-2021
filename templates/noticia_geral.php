@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
 
-$hoje =  date('d-m-Y');
-//$hojePartes =  MDate::datePart($hoje);
-//$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
+$hoje = date('Y-m-d');
+$hojePartes = new DataCalendario($hoje);
+$data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
 //$ano  = $hojePartes->ano;
 ?>
 

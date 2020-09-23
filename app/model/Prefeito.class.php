@@ -1,10 +1,10 @@
 <?php
 
-class Prefeitura extends Read
+class Prefeito extends Read
 {
 
     private $properties;
-    private $Table = 'prefeitura';
+    private $Table = 'prefeito';
     private $read;
     const MUNICIPIO = " WHERE codigoUnidGestora = '" . UNIDADE_GESTORA . "' ";
 

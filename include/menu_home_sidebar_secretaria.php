@@ -38,7 +38,7 @@
                     <?php } ?>
                    
                 </ul>
-            </div>
+        </div>
             <!-- widget-last-post -->
            
            

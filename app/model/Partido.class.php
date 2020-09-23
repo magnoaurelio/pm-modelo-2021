@@ -1,21 +1,21 @@
 <?php
 
-class Prefeitura extends Read
+class Partido extends Read
 {
 
     private $properties;
-    private $Table = 'prefeitura';
+    private $Table = 'partido';
     private $read;
-    const MUNICIPIO = " WHERE codigoUnidGestora = '" . UNIDADE_GESTORA . "' ";
+    const PREFEITO = " WHERE codigoUnidGestora = '" . UNIDADE_GESTORA . "' ";
 
     public function __construct($criterio = null)
     {
-        if (strlen($criterio) == 6) {
-            parent::ExeRead($this->Table, self::MUNICIPIO);
+        if (strlen($criterio) == 2) {
+            parent::ExeRead($this->Table, self::PREFEITO);
         } elseif (is_int($criterio)) {
-            parent::ExeRead($this->Table, " WHERE precodigo = :id", "id={$criterio}");
+            parent::ExeRead($this->Table, " WHERE parcodigo = :id", "id={$criterio}");
         } else {
-            $criterio = $criterio ? $criterio : self::MUNICIPIO;
+            $criterio = $criterio ? $criterio : self::PREFEITO;
             parent::ExeRead($this->Table, $criterio);
         }
 

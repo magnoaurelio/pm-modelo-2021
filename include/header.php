@@ -243,65 +243,22 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                 <li class="{secretaria_current}">
                     <a href="?p=secretaria_geral"><i class="fa fa-university "></i> Secretaria</a>
                     <ul>
-                        <li><a href="?p=secretaria_gestor_educacao"><i class="fa fa-university fl-fg"></i>Educação</a>
+                         <?php
+                    $secretarias = new Secretaria(Secretaria::MUNICIPIO);
+                    foreach ($secretarias->getResult() as $secretaria) {
+                        ?>
+                        <li>
+                            <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>">
+                                <span ><i class="fa fa-university "></i>&nbsp;&nbsp;<?=$secretaria['secnome']?></span>
+                             </a>
 
                             <ul>
-                                <li><a href="?p=secretaria_gestor">Unidade A</a></li>
-                                <li><a href="?p=secretaria_gestor">Unidade B</a></li>
-                                <li><a href="?p=secretaria_gestor">Unidade C</a></li>
+                                <li><a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>">Unidade A</a></li>
+                                
                             </ul>
                         </li>
-                        <li><a href="?p=secretaria_gestor"><i class="fa fa-university fl-fg"></i>Saúde</a>
-
-                            <ul>
-                                <li><a href="?p=secretaria_gestor">Unidade A</a></li>
-                                <li><a href="?p=secretaria_gestor">Unidade B</a></li>
-                                <li><a href="?p=secretaria_gestor">Unidade C</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="?p=secretaria_gestor"><i class="fa fa-university fl-fg"></i>Administração</a>
-                            <ul>
-                                <li><a href="?p=secretaria_gestor">Unidade A</a></li>
-                                <li><a href="?p=secretaria_gestor">Unidade B</a></li>
-                                <li><a href="?p=secretaria_gestor">Unidade C</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="?p=secretaria_gestor"><i class="fa fa-university fl-fg"></i>Assistência Social</a>
-                            <ul>
-                                <li><a href="?p=secretaria_gestor">Unidade A</a></li>
-                                <li><a href="?p=secretaria_gestor">Unidade B</a></li>
-                                <li><a href="?p=secretaria_gestor">Unidade C</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="?p=secretaria_gestor"><i class="fa fa-university fl-fg"></i>Obras</a>
-                            <ul>
-                                <li><a href="#">Unidade A</a></li>
-                                <li><a href="#">Unidade B</a></li>
-                                <li><a href="#">Unidade C</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="?p=secretaria_gestor"><i class="fa fa-university fl-fg"></i>Meio Ambiente</a>
-                            <ul>
-                                <li><a href="?p=secretaria_gestor">Unidade A</a></li>
-                                <li><a href="?p=secretaria_gestor">Unidade B</a></li>
-                                <li><a href="?p=secretaria_gestor">Unidade C</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="?p=secretaria_gestor"><i class="fa fa-university fl-fg"></i>Finanças</a>
-                            <ul>
-                                <li><a href="?p=secretaria_gestor">Unidade A</a></li>
-                                <li><a href="?p=secretaria_gestor">Unidade B</a></li>
-                                <li><a href="?p=secretaria_gestor">Unidade C</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="?p=secretaria_gestor"><i class="fa fa-university fl-fg"></i>Procuradoria</a>
-                            <ul>
-                                <li><a href="?p=secretaria_gestor">Unidade A</a></li>
-                                <li><a href="?p=secretaria_gestor">Unidade B</a></li>
-                                <li><a href="?p=secretaria_gestor">Unidade C</a></li>
-                            </ul>
-                        </li>
-
+                      
+                          <?php } ?>
                     </ul>
                 </li>
                 <li class="{{negocio_current}">
