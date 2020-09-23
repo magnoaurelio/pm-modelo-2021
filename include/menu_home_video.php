@@ -1,4 +1,7 @@
 
+
+<div id="sidebar" class="pull-left">
+
    <div class="widget widget-video">
         <h3 class="widget-title"><a href="?p=video">vÍdeoS DIVERSOS</a></h3>
         <div class="item-video">
@@ -9,4 +12,6 @@
         </div>
         <!-- item-video -->
   </div>
+</div>
+
   <!-- widget-video -->
