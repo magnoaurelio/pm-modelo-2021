@@ -1,18 +1,19 @@
 <?php
 
-class Noticia extends Read
+class Prefeitura extends Read
 {
 
     private $properties;
-    private $Table = 'noticia';
+    private $Table = 'prefeitura';
     private $read;
-    const MUNICIPIO = " WHERE unidadeGestora = '" . UNIDADE_GESTORA . "' ";
+    const MUNICIPIO = " WHERE codigoUnidGestora = '" . UNIDADE_GESTORA . "' ";
 
     public function __construct($criterio = null)
     {
-        if (is_int($criterio)) {
-
-            parent::ExeRead($this->Table, " WHERE notcodigo = :id", "id={$criterio}");
+        if (strlen($criterio) == 6) {
+            parent::ExeRead($this->Table, self::MUNICIPIO);
+        } elseif (is_int($criterio)) {
+            parent::ExeRead($this->Table, " WHERE precodigo = :id", "id={$criterio}");
         } else {
             $criterio = $criterio ? $criterio : self::MUNICIPIO;
             parent::ExeRead($this->Table, $criterio);
@@ -48,7 +49,6 @@ class Noticia extends Read
             return $this->properties[$name];
         }
     }
-
 
 
 }
