@@ -25,7 +25,7 @@
                 <div class="owl-carousel owl-carousel-images">
                     <!-- item -->
                     <?php
-                    $noticiasHome = new Noticia(Noticia::MUNICIPIO . " and home = 1");
+                    $noticiasHome = new Noticia(Noticia::MUNICIPIO . " and home = 1 ");
                     foreach ($noticiasHome->getResult() as $noticia) {
                         ?>
 

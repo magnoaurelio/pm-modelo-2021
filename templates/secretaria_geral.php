@@ -1,9 +1,11 @@
 <!DOCTYPE html>
   
 <?php
-include_once 'include/head.php';
-include_once 'app/control/Router.class.php';
-include_once 'app/control/Layout.class.php';
+
+//$secretaria =  new Secretaria(intval($_GET['prenumero']));
+//include_once 'include/head.php';
+//include_once 'app/control/Router.class.php';
+//include_once 'app/control/Layout.class.php';
 $hoje =  date('d-m-Y');
 //$hojePartes =  MDate::datePart($hoje);
 //$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
@@ -26,28 +28,40 @@ $hoje =  date('d-m-Y');
               <li class="active" >SECRETARIAS GERAL</li>
             </ul>
             <article class="post-content">
-              
+              <?php
+                    $secretarias = new Secretaria(Secretaria::MUNICIPIO);
+                    foreach ($secretarias->getResult() as $secretaria) {
+              ?>
               <header class="clearfix">
-                 <a href="?p=secretaria_gestor" >
-                <h3 class="title-post">FINANÇAS</h3>
-                </a>
+                  <h3>
+                      <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>">
+                        <span ><strong><?=$secretaria['secnome']?></strong></span>
+                    </a>
+                   </h3> 
                 <!-- header-bottom -->                
             
               <footer>
                 <div class="kp-author">
                   <div class="author-body clearfix">
-                       <a href="?p=secretaria_gestor" title="Página deste Gestor..."><img src="files/prefeituras/201002/secretario/KELLY.jpg"  width="255" alt=""></a>
+                      <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>" class="pull-left">
+                        <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/secretaria/'. $secretaria['secfotor'] ?>" width="250" height="250" alt="">
+                      </a>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href="?p=secretaria_gestor" title="Página deste Gestor..."><img src="files/prefeituras/201002/unidade/prefeitura1.jpg"  width="470" height="250" alt=""></a>
+                       <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>" title="Página deste Gestor...">
+                           <img src="files/prefeituras/201002/unidade/prefeitura1.jpg"  width="470" height="250" alt="">
+                       </a>
                       <span>
                       <a href="#" class="item-left">
-                        <!--img src="files/partido/pp/logo_num_pp.jpg" class="img-responsive"  alt=""-->
-                        <!--p style="font-size: 12px;">Partido:<br> PP 11</p-->
+                      
                       </a>
                        </span>   
                       
                       <div class="item-right">
-                      <h4><a href="#">Kelly Alencar</a></h4>
+                      <h5> 
+                        <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>">
+                            <span ><strong><?=$secretaria['secusual']?></strong></span>
+                        </a>
+                      </h5>
                       <h3><a href="#">Secretário(a) Municipal</a></h3>
                       <p class="kp-social">
                         <a href="#" class="icon-vimeo2"></a>
@@ -56,11 +70,12 @@ $hoje =  date('d-m-Y');
                         <a href="#" class="icon-google-plus"></a>
                        <hr style="color-line: #ccc;">
                        <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i> 86 3255-2587 </span></a>
-                     </p>
+                         <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= $secretaria['secfone'] ?> </span></a>
+                         <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?= $secretaria['seccelular'] ?> </span></a>
+                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= $secretaria['secemail'] ?></span></a>
+                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= strtolower($secretaria['secendereco']) ?> </span></a>
+                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= $secretaria['secbairro'] ?> </span></a>
+                       </p>
                        <hr style="color-line: #ccc;">
                         <p> Prefeito de 1ª gestão.. Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão....</p>
                     </div>
@@ -72,311 +87,7 @@ $hoje =  date('d-m-Y');
                 </div>
                   </footer>
               </header>
-              <header class="clearfix">
-                  <a href="?p=secretaria_gestor" >
-                <h3 class="title-post">ADMINISTRAÇÃO</h3>
-                </a>
-                <!-- header-bottom -->                
-            
-              <footer>
-                <div class="kp-author">
-                  <div class="author-body clearfix">
-                       <a href="?p=secretaria_gestor" title="Página deste Gestor..."><img src="files/prefeituras/201002/secretario/admd_marcos.jpg"  width="255" alt=""></a>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href="?p=secretaria_gestor" title="Página deste Gestor..."><img src="files/prefeituras/201002/unidade/prefeitura1.jpg"  width="470" height="250" alt=""></a>
-                      <span>
-                      <a href="#" class="item-left">
-                        <!--img src="files/partido/pp/logo_num_pp.jpg" class="img-responsive"  alt=""-->
-                        <!--p style="font-size: 12px;">Partido:<br> PP 11</p-->
-                      </a>
-                       </span>   
-                      
-                      <div class="item-right">
-                      <h4><a href="#">Marcos</a></h4>
-                      <h3><a href="#">Secretário(a) Municipal</a></h3>
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                       <hr style="color-line: #ccc;">
-                       <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i> 86 3255-2587 </span></a>
-                     </p>
-                       <hr style="color-line: #ccc;">
-                        <p> Prefeito de 1ª gestão.. Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão....</p>
-                    </div>
-                 
-                    <!-- item-right -->
-                  </div>
-              
-                  <!-- author-body -->
-                </div>
-                  </footer>
-              </header>
-              <header class="clearfix">
-                   <a href="?p=secretaria_gestor_educacao" > 
-                <h3 class="title-post">EDUCAÇÃO</h3>
-                </a>
-                <!-- header-bottom -->                
-            
-              <footer>
-                <div class="kp-author">
-                  <div class="author-body clearfix">
-                        <a href="?p=secretaria_gestor" title="Página deste Gestor..."><img src="files/prefeituras/201002/secretario/CLAY.jpg"  width="255" alt=""></a>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href="?p=secretaria_gestor" title="Página deste Gestor..."><img src="files/prefeituras/201002/unidade/seduc1.jpg"  width="470" height="250" alt=""></a>
-                      <span>
-                      <a href="#" class="item-left">
-                        <!--img src="files/partido/pp/logo_num_pp.jpg" class="img-responsive"  alt=""-->
-                        <!--p style="font-size: 12px;">Partido:<br> PP 11</p-->
-                      </a>
-                       </span>   
-                      
-                      <div class="item-right">
-                      <h4><a href="#">CLAY</a></h4>
-                      <h3><a href="#">Secretário(a) Municipal</a></h3>
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                       <hr style="color-line: #ccc;">
-                       <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i> 86 3255-2587 </span></a>
-                     </p>
-                       <hr style="color-line: #ccc;">
-                        <p> Prefeito de 1ª gestão.. Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão....</p>
-                    </div>
-                 
-                    <!-- item-right -->
-                  </div>
-              
-                  <!-- author-body -->
-                </div>
-                  </footer>
-              </header>
-              <header class="clearfix">
-                <h3 class="title-post">ASSISTÊNCIA SOCIAL</h3>
-                <!-- header-bottom -->                
-            
-              <footer>
-                <div class="kp-author">
-                  <div class="author-body clearfix">
-                       <a href="?p=secretaria_gestor" title="Página deste Gestor..."> <img src="files/prefeituras/201002/secretario/ADAIDIO.jpg"  width="255" alt=""></a>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href="?p=secretaria_gestor" title="Página deste Gestor..."><img src="files/prefeituras/201002/unidade/cras.jpg"  width="470" height="250" alt=""></a>
-                      <span>
-                      <a href="#" class="item-left">
-                        <!--img src="files/partido/pp/logo_num_pp.jpg" class="img-responsive"  alt=""-->
-                        <!--p style="font-size: 12px;">Partido:<br> PP 11</p-->
-                      </a>
-                       </span>   
-                      
-                      <div class="item-right">
-                      <h4><a href="#">Adaidio</a></h4>
-                      <h3><a href="#">Secretário(a) Municipal</a></h3>
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                       <hr style="color-line: #ccc;">
-                       <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i> 86 3255-2587 </span></a>
-                     </p>
-                       <hr style="color-line: #ccc;">
-                        <p> Prefeito de 1ª gestão.. Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão....</p>
-                    </div>
-                 
-                    <!-- item-right -->
-                  </div>
-              
-                  <!-- author-body -->
-                </div>
-                  </footer>
-              </header>
-               <header class="clearfix">
-                <h3 class="title-post">OBRAS</h3>
-                <!-- header-bottom -->                
-            
-              <footer>
-                <div class="kp-author">
-                  <div class="author-body clearfix">
-                       <a href="?p=secretaria_gestor" title="Página deste Gestor..."><img src="files/prefeituras/201002/secretario/alexandre.jpg"  width="255" alt=""></a>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href="?p=secretaria_gestor" title="Página deste Gestor..."><img src="files/prefeituras/201002/unidade/prefeitura1.jpg"  width="470" height="250" alt=""></a>
-                      <span>
-                      <a href="#" class="item-left">
-                        <!--img src="files/partido/pp/logo_num_pp.jpg" class="img-responsive"  alt=""-->
-                        <!--p style="font-size: 12px;">Partido:<br> PP 11</p-->
-                      </a>
-                       </span>   
-                      
-                      <div class="item-right">
-                      <h4><a href="#">Alexandre</a></h4>
-                      <h3><a href="#">Secretário(a) Municipal</a></h3>
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                       <hr style="color-line: #ccc;">
-                       <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i> 86 3255-2587 </span></a>
-                     </p>
-                       <hr style="color-line: #ccc;">
-                        <p> Prefeito de 1ª gestão.. Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão....</p>
-                    </div>
-                 
-                    <!-- item-right -->
-                  </div>
-              
-                  <!-- author-body -->
-                </div>
-                  </footer>
-              </header>
-               <header class="clearfix">
-                <h3 class="title-post">PROCURADORIA</h3>
-                <!-- header-bottom -->                
-            
-              <footer>
-                <div class="kp-author">
-                  <div class="author-body clearfix">
-                        <a href="?p=secretaria_gestor" title="Página deste Gestor..."><img src="files/prefeituras/201002/secretario/agda.jpg"  width="255" alt=""></a>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href="?p=secretaria_gestor" title="Página deste Gestor..."><img src="files/prefeituras/201002/unidade/prefeitura1.jpg"  width="470" height="250" alt=""></a>
-                      <span>
-                      <a href="#" class="item-left">
-                        <!--img src="files/partido/pp/logo_num_pp.jpg" class="img-responsive"  alt=""-->
-                        <!--p style="font-size: 12px;">Partido:<br> PP 11</p-->
-                      </a>
-                       </span>   
-                      
-                      <div class="item-right">
-                      <h4><a href="#">Agda</a></h4>
-                      <h3><a href="#">Procurador(a) Municipal</a></h3>
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                       <hr style="color-line: #ccc;">
-                       <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i> 86 3255-2587 </span></a>
-                     </p>
-                       <hr style="color-line: #ccc;">
-                        <p> Prefeito de 1ª gestão.. Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão....</p>
-                    </div>
-                 
-                    <!-- item-right -->
-                  </div>
-              
-                  <!-- author-body -->
-                </div>
-                  </footer>
-              </header>
-               <header class="clearfix">
-                <h3 class="title-post">SAÚDE</h3>
-                <!-- header-bottom -->                
-            
-              <footer>
-                <div class="kp-author">
-                  <div class="author-body clearfix">
-                        <a href="?p=secretaria_gestor" title="Página deste Gestor..."><img src="files/prefeituras/201002/secretario/jean1.jpg"  width="255" alt=""></a>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href="?p=secretaria_gestor" title="Página deste Gestor..."><img src="files/prefeituras/201002/unidade/SAUDE.jpg"  width="470" height="250" alt=""></a>
-                      <span>
-                      <a href="#" class="item-left">
-                        <!--img src="files/partido/pp/logo_num_pp.jpg" class="img-responsive"  alt=""-->
-                        <!--p style="font-size: 12px;">Partido:<br> PP 11</p-->
-                      </a>
-                       </span>   
-                      
-                      <div class="item-right">
-                      <h4><a href="#">Fatinha</a></h4>
-                      <h3><a href="#">Secretário(a) Municipal</a></h3>
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                       <hr style="color-line: #ccc;">
-                       <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i> 86 3255-2587 </span></a>
-                     </p>
-                       <hr style="color-line: #ccc;">
-                        <p> Prefeito de 1ª gestão.. Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão....</p>
-                    </div>
-                 
-                    <!-- item-right -->
-                  </div>
-              
-                  <!-- author-body -->
-                </div>
-                  </footer>
-              </header>
-                   <header class="clearfix">
-                <h3 class="title-post">MEIO AMBIENTE</h3>
-                <!-- header-bottom -->                
-            
-              <footer>
-                <div class="kp-author">
-                  <div class="author-body clearfix">
-                       <a href="?p=secretaria_gestor" title="Página deste Gestor..."><img src="files/prefeituras/201002/secretario/IVONEIDE.jpg"  width="255" alt=""></a>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href="?p=secretaria_gestor" title="Página deste Gestor..."><img src="files/prefeituras/201002/unidade/prefeitura1.jpg"  width="470" height="250" alt=""></a>
-                      <span>
-                      <a href="#" class="item-left">
-                        <!--img src="files/partido/pp/logo_num_pp.jpg" class="img-responsive"  alt=""-->
-                        <!--p style="font-size: 12px;">Partido:<br> PP 11</p-->
-                      </a>
-                       </span>   
-                      
-                      <div class="item-right">
-                      <h4><a href="#">Ivoneide</a></h4>
-                      <h3><a href="#">Secretário(a) Municipal</a></h3>
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                       <hr style="color-line: #ccc;">
-                       <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i> 86 3255-2587 </span></a>
-                     </p>
-                       <hr style="color-line: #ccc;">
-                        <p> Prefeito de 1ª gestão.. Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão....</p>
-                    </div>
-                 
-                    <!-- item-right -->
-                  </div>
-              
-                  <!-- author-body -->
-                </div>
-                  </footer>
-              </header>
+              <?php } ?>  
             </article>
        
             <!-- related-article -->
@@ -393,6 +104,9 @@ $hoje =  date('d-m-Y');
         <!-- main-col -->
         <div id="sidebar" class="pull-left">
             <!-- inicio sidebar -->
+             <?php
+             include_once 'include/menu_sidebar_propaganda.php';
+             ?>
              <div class="widget widget-ads" style="margin-left: -25px; margin-top: -16px;" >
              <?php
              include_once 'include/menu_home_clima_2.php';
@@ -401,24 +115,30 @@ $hoje =  date('d-m-Y');
              </div>
               <div class="widget widget-ads" >
              <?php
-             include_once 'include/menu_home_administra.php';
-             include_once 'include/menu_sidebar_noticia_popular.php';
+             include_once 'include/menu_home_sidebar.php';
+            // include_once 'include/menu_sidebar_noticia_popular.php';
+             ?>
+             </div>
+            <div class="widget widget-ads" >
+             <?php
+             include_once 'include/menu_home_video.php';
+            // include_once 'include/menu_sidebar_noticia_popular.php';
              ?>
              </div>
              <?php
-             include_once 'include/menu_sidebar_propaganda.php';
+          //   include_once 'include/menu_sidebar_propaganda.php';
              ?>
              <?php
-             include_once 'include/menu_sidebar_randon.php';
-             include_once 'include/menu_sidebar_servico.php';
+          //   include_once 'include/menu_sidebar_randon.php';
+          //   include_once 'include/menu_sidebar_servico.php';
              ?>
            
                 <?php
-            include_once 'include/menu_home_video.php';
-            include_once 'include/menu_sidebar_foto_noticia.php';
+             
+         //   include_once 'include/menu_sidebar_foto_noticia.php';
          ?>
                <?php
-             include_once 'include/menu_sidebar_mapa_localizacao.php';
+          //   include_once 'include/menu_sidebar_mapa_localizacao.php';
             //include_once 'include/menu_sidebar_noticia_popular.php';
              ?>
         <!-- fim sidebar -->

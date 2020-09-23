@@ -1,9 +1,9 @@
 <!DOCTYPE html>
   
 <?php
-include_once 'include/head.php';
-include_once 'app/control/Router.class.php';
-include_once 'app/control/Layout.class.php';
+$secretaria =  new Secretaria(intval($_GET['prenumero']));
+
+
 $hoje =  date('d-m-Y');
 //$hojePartes =  MDate::datePart($hoje);
 //$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
@@ -25,27 +25,37 @@ $hoje =  date('d-m-Y');
               <li><a href="index.php">Início</a></li>
               <li class="active" >SECRETARIAS</li>
             </ul>
-            <article class="post-content">
-              
+           <article class="post-content">
               <header class="clearfix">
-                <h3 class="title-post">FINANÇAS</h3>
+                  <h3>
+                      <a href="?p=secretaria_geral&prenumero=<?= $secretaria->prenumero ?>">
+                        <span ><strong><?=$secretaria->secnome?></strong></span>
+                    </a>
+                   </h3> 
                 <!-- header-bottom -->                
             
               <footer>
                 <div class="kp-author">
                   <div class="author-body clearfix">
-                      <a href="?p=secretaria_geral" title="Mais secretarias..."><img src="files/prefeituras/201002/secretario/KELLY.jpg"  width="255" alt=""></a>
+                      <a href="?p=secretaria_gestor" class="pull-left">
+                        <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/secretaria/'. $secretaria->secfotor ?>" width="250" height="250" alt="">
+                      </a>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href="?p=secretaria_geral" title="Mais secretarias..."> <img src="files/prefeituras/201002/unidade/seduc1.jpg"  width="470" height="250" alt=""></a>
+                       <a href="?p=secretaria_gestor" title="Página deste Gestor...">
+                           <img src="files/prefeituras/201002/unidade/prefeitura1.jpg"  width="470" height="250" alt="">
+                       </a>
                       <span>
                       <a href="#" class="item-left">
-                        <!--img src="files/partido/pp/logo_num_pp.jpg" class="img-responsive"  alt=""-->
-                        <!--p style="font-size: 12px;">Partido:<br> PP 11</p-->
+                      
                       </a>
                        </span>   
                       
                       <div class="item-right">
-                      <h4><a href="#">Kelly Alencar</a></h4>
+                      <h5> 
+                        <a href="?p=secretaria_geral&prenumero=<?= $secretaria->prenumero ?>">
+                            <span ><strong><?=$secretaria->secusual?></strong></span>
+                        </a>
+                      </h5>
                       <h3><a href="#">Secretário(a) Municipal</a></h3>
                       <p class="kp-social">
                         <a href="#" class="icon-vimeo2"></a>
@@ -54,11 +64,12 @@ $hoje =  date('d-m-Y');
                         <a href="#" class="icon-google-plus"></a>
                        <hr style="color-line: #ccc;">
                        <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i> 86 3255-2587 </span></a>
-                     </p>
+                         <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= $secretaria->secfone ?> </span></a>
+                         <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?= $secretaria->seccelular ?> </span></a>
+                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= $secretaria->secemail ?></span></a>
+                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= strtolower($secretaria->secendereco) ?> </span></a>
+                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= $secretaria->secbairro ?> </span></a>
+                       </p>
                        <hr style="color-line: #ccc;">
                         <p> Prefeito de 1ª gestão.. Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão....</p>
                     </div>
@@ -70,12 +81,17 @@ $hoje =  date('d-m-Y');
                 </div>
                   </footer>
               </header>
-               <footer>
+           
+            </article>
+       
+            <!-- related-article -->
+            <article class="post-content">
+            <footer>
               <!-- kp-thumb -->
                   <div class="kp-author">
-                  <h3>ASSESSORES </h3>
+                  <h4>Diretores e Assessores</h4>
                   <div class="author-body clearfix">
-                    <img src="images/user.png" class="pull-left" alt="">
+                      <img src="images/user.png" class="pull-left" width="100" height="100" alt="">
                     <div class="item-right">
                       <h4><a href="#">Maria Luiza</a></h4>
                       <h3><a href="#">Diretora da Unidade Escolar UE EVARISTO...</a></h3>
@@ -98,88 +114,12 @@ $hoje =  date('d-m-Y');
                     </div>
                     <!-- item-right -->
                   </div>
-                <div class="author-body clearfix">
-                    <img src="images/user.png" class="pull-left" alt="">
-                    <div class="item-right">
-                      <h4><a href="#">Maria Luiza</a></h4>
-                      <h3><a href="#">Diretora da Unidade Escolar UE EVARISTO...</a></h3>
-                       <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                      </p>
-                      <hr style="color-line: #ccc;">
-                      <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                        <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i> 86 3255-2587 </span></a>
-                     </p>
-                      <hr style="color-line: #ccc;">
-                      <p> Assessor de Comunicação é respnsável pela..</p>
-                     
-                    </div>
-                    <!-- item-right -->
-                  </div>
-                 <div class="author-body clearfix">
-                    <img src="images/user.png" class="pull-left" alt="">
-                    <div class="item-right">
-                      <h4><a href="#">Maria Luiza</a></h4>
-                      <h3><a href="#">Diretora da Unidade Escolar UE EVARISTO...</a></h3>
-                       <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                      </p>
-                      <hr style="color-line: #ccc;">
-                      <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                        <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i> 86 3255-2587 </span></a>
-                     </p>
-                      <hr style="color-line: #ccc;">
-                      <p> Assessor de Comunicação é respnsável pela..</p>
-                     
-                    </div>
-                    <!-- item-right -->
-                  </div>
-              <div class="author-body clearfix">
-                    <img src="images/user.png" class="pull-left" alt="">
-                    <div class="item-right">
-                      <h4><a href="#">Maria Luiza</a></h4>
-                      <h3><a href="#">Diretora da Unidade Escolar UE EVARISTO...</a></h3>
-                       <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                      </p>
-                      <hr style="color-line: #ccc;">
-                      <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                        <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i> 86 3255-2587 </span></a>
-                     </p>
-                      <hr style="color-line: #ccc;">
-                      <p> Assessor de Comunicação é respnsável pela..</p>
-                     
-                    </div>
-                    <!-- item-right -->
-                  </div>
                   <!-- author-body -->
                 </div>
               <!-- entry-content -->
                </footer>
-            </article>
-       
-            <!-- related-article -->
-           
             <!-- comments -->
-            
+            </article>
             <div class="clearfix"></div>
                <!-- inicio widget-area-4 -->
              <?php //include_once 'include/menu_home_foto_inspiradora.php'; ?>
@@ -198,12 +138,12 @@ $hoje =  date('d-m-Y');
              </div>
               <div class="widget widget-ads" >
              <?php
-             include_once 'include/menu_home_administra.php';
+             include_once 'include/menu_home_sidebar.php';
             //include_once 'include/menu_sidebar_noticia_popular.php';
              ?>
              </div>
               <?php
-            include_once 'include/menu_sidebar_propaganda.php';
+          //  include_once 'include/menu_sidebar_propaganda.php';
              ?>
          <!-- widget-ads -->
             

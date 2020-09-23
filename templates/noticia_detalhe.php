@@ -1,5 +1,7 @@
 <?php
     $noticia =  new Noticia(intval($_GET['notcodigo']));
+   // $notcodigo =  intval($_GET['notcodigo']);
+  //  $noticiasHome = new Noticia(Noticia::MUNICIPIO . " and notcodigo = $notcodigo");
 ?>
 <body class="page-full-width">
  
