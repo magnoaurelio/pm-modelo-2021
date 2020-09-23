@@ -219,7 +219,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                                         class="fa fa-line-chart fl-fg"></i> Perfil IBGE</a></li>
                         <li><a href="https://www.melhoresrotas.com/s/distancia-entre-cidades" target="_blank"
                                title="Distâncias de  a ..."><i class="fa fa-map-o  fl-fg"></i> Mapa-Localização</a></li>
-                        <li><a href="?p=esporte" title="Campos de Futebol e Ginásios de ESPORTE de: "><i
+                        <li><a href="?p=esportes" title="Campos de Futebol e Ginásios de ESPORTE de: "><i
                                         class="fa fa-futbol-o fl-fg"></i> Esportes</a></li>
                         <li><a href="?p=povoado" title="Localidade e Povoados  de: "><i class="fa fa-home fl-fg"></i>
                                 Localidades e Povoados</a></li>
