@@ -3,7 +3,7 @@ include './include/head.php';
 $hoje = date('Y-m-d');
 $hojePartes = new DataCalendario($hoje);
 $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
-
+$prefeitura = new Prefeitura(UNIDADE_GESTORA);
 $esportes = new Esportes(UNIDADE_GESTORA);
 ?>
 <body class="loading">
@@ -22,7 +22,7 @@ $esportes = new Esportes(UNIDADE_GESTORA);
             <article class="post-content">
               
               <header class="clearfix">
-                <h3 class="title-post">Campos de futebol, Quadras Poliesportiva </h3>
+                  <h3 class="title-post">Praças Esportivas de <strong><?= strtoupper($prefeitura->prenome) ?></strong> </h3>
                 <div class="header-bottom">
                   <p class="kp-metadata style-2">
                    <i class="fa fa-calendar fa-fw fa-lg"></i><span><?=$data?></span>
@@ -58,7 +58,7 @@ $esportes = new Esportes(UNIDADE_GESTORA);
                             <div class="kp-gallery-caption">
                                 <h5>Sobre:</h5>
                                  <p> <?= $esportes['espsobre'] ?></p>
-                                 <span style="color: #fff;"><hr/></span>
+                                  <span><hr class="kp-metadata" style="color-line: #ccc;"></span>
                                 <p class="kp-social">
                                 
                                   <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= $esportes['espdata'] ?> </span></a>

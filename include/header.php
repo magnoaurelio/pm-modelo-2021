@@ -6,7 +6,7 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
 
 $prefeitura = new Prefeitura(UNIDADE_GESTORA);
 ?>
-<header id="page-header">
+<header id="page-header" style="background-color:#F2F2F2;">
     <div class="header-top">
         <div class="container">
             <nav class="pull-left">
@@ -153,7 +153,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
     <div class="header-middle container clearfix">
 
         <div class="logo pull-left">
-            <a href="./index.php" title="Brasão Oficial de: ">
+            <a href="./index.php" title="Brasão Oficial de: <?=$prefeitura->prenome?> ">
                 <img src="<?= FILES . 'prefeituras/' . UNIDADE_GESTORA . '/' . $prefeitura->prebrasao?>" width="70" height="70" alt="brasao"
                      class="img-responsive">
             </a>
@@ -174,21 +174,22 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
 
         </div>
         <div class="logo pull-left" style="margin-left: -120px">
-            <a href="./index.php" title="Bandeira Oficial de: ">
+            <a href="./index.php" title="Bandeira Oficial de: <?=$prefeitura->prenome?> ">
                 <img src="<?= FILES . 'prefeituras/' . UNIDADE_GESTORA . '/' . $prefeitura->prebandeira?>" width="110" height="70" alt="bandeira"
                      class="img-responsive">
             </a>
         </div>
 
         <div class="logo pull-left" style="margin-left: 00px">
-            <a href="./index.php" title="Logomarca Oficial de: ">
-                <img src="<?= FILES . 'prefeituras/' . UNIDADE_GESTORA . '/' . $prefeitura->prelogo?>" width="280" height="180" alt="bandeira"
+            <a href="./index.php" title="Logomarca Oficial de: <?=$prefeitura->prenome?> ">
+                <img src="<?= FILES . 'prefeituras/' . UNIDADE_GESTORA . '/' . $prefeitura->prelogo?>" width="280" height="180" alt="logo"
                      class="img-responsive">
             </a>
         </div>
         <div class="logo pull-right" style="margin-left: 00px">
-            <a href="./index.php" title="Imagem Oficial de: ">
-                <img src="./images/IMAGEM_TOPO.jpg" width="auto" height="auto" alt="bandeira" class="img-responsive">
+            <a href="./index.php" title="Imagem  de: <?=$prefeitura->prenome?> ">
+                <img src="<?= FILES . 'prefeituras/' . UNIDADE_GESTORA . '/' . $prefeitura->preimagem?>"  alt="imagem"
+                     class="img-responsive">
             </a>
         </div>
         <!--p class="kp-social pull-right">
@@ -209,6 +210,8 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                 <li class="{home_current}">
                     <a href="index.php"><i class="fa fa-hospital-o"></i></i> Cidade</a>
                     <ul>
+                        <li><a href="?p=historia" title="Simbolos de: "><i class="fa fa-flag  fl-fg"></i> Simbolos de
+                                <?=$prefeitura->prenome?></a></li>
                         <li><a href="?p=historia" title="História de: "><i class="fa fa-history  fl-fg"></i> História de
                                 <?=$prefeitura->prenome?></a></li>
                         <li><a href="?p=hino" title="Hino Oficial de: "><i class="fa fa-music fl-fg"></i> Hino Oficial
@@ -220,7 +223,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                         <li><a href="https://www.melhoresrotas.com/s/distancia-entre-cidades" target="_blank"
                                title="Distâncias de  a ..."><i class="fa fa-map-o  fl-fg"></i> Mapa-Localização</a></li>
                         <li><a href="?p=esportes" title="Campos de Futebol e Ginásios de ESPORTE de: "><i
-                                        class="fa fa-futbol-o fl-fg"></i> Esportes</a></li>
+                                        class="fa fa-futbol-o fl-fg"></i> Praças de Esportes</a></li>
                         <li><a href="?p=povoado" title="Localidade e Povoados  de: "><i class="fa fa-home fl-fg"></i>
                                 Localidades e Povoados</a></li>
                     </ul>
@@ -398,5 +401,3 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
         </nav>
     </div>
 </header>
-
- 

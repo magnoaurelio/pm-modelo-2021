@@ -60,16 +60,18 @@ $igreja = new Igreja(UNIDADE_GESTORA);
                             <div class="kp-gallery-caption">
                                 <h5>Sobre:</h5>
                                 <p> <?= trim($igreja['igrhistorico']) ?></p>
-                               
+                                   <span><hr class="kp-metadata" style="color-line: #ccc;"></span>
                                 <p class="kp-social">
-                                     <hr style="color-line: #ccc;">
+                                     
                                   <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= $igreja['igrdata'] ?> </span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?= $igreja['igrcep'] ?> </span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= $igreja['igrpadroeiro'] ?></span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= strtolower($igreja['igrendereco']) ?> </span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= $igreja['igrbairro'] ?> </span></a>
                                 </p>
-                                
+                                  <span><hr class="kp-metadata" style="color-line: #ccc;"></span>
+                                  <img src="images/slider/small-flex-next-2.png" alt="proximo"/>
+                                  <img src="images/slider/small-flex-prev-2.png" alt="anterior"/>
                             </div>
                         </li>
                        <?php } ?>

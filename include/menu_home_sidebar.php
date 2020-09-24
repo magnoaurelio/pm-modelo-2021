@@ -19,13 +19,16 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
                 
                 if ($prefeito['prepartidop'] == 11):
                      $partido = 'pp';
+                     $pagina = '?p=prefeito';
+                
                 elseif ($prefeito['prepartidop'] == 15):
                      $partido = 'pmdb';
+                     $pagina = '?p=prefeito_vice';
                 endif;
                 ?>
                <ul class="list-unstyled clearfix" >
                  <li class="col-sm col-sm-left">
-                      <a href="?p=prefeito_gestor&precodigo=<?= $prefeito['precodigo'] ?>" class="pull-left">
+                      <a href="<?= $pagina ?>" class="pull-left">
                           <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/'. $prefeito['prefotop'] ?>" width="120" height="120" alt="prefeito">
                        </a>
                        <a href="?p=secretaria_geral" class="pull-left">
