@@ -1,4 +1,5 @@
 <?php
+include './include/head.php';
 
 $hoje = date('Y-m-d');
 $hojePartes = new DataCalendario($hoje);
@@ -45,48 +46,49 @@ $igreja = new Igreja(UNIDADE_GESTORA);
                
              
                 <div class="flexslider kp-gallery-slider">
+                   
+                    <ul class="slides">
                     <?php
                     $igrejaTur = new Igreja(Igreja::MUNICIPIO);
                     foreach ($igrejaTur->getResult() as $igreja) {
-                    ?>
-                    <ul class="slides">
-                        
+                    ?>  
                         <li>
                             <h4> <?= $igreja['igrnome'] ?> </h4>
                             <div class="mask">
                                 <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/igreja/'. $igreja['igrfoto1'] ?>" width="797" height="429" alt="imagem" />
                             </div>
                             <div class="kp-gallery-caption">
-                              
-                                <hr style="color-line: #ccc;">
+                                <h5>Sobre:</h5>
+                                <p> <?= trim($igreja['igrhistorico']) ?></p>
+                               
                                 <p class="kp-social">
+                                     <hr style="color-line: #ccc;">
                                   <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= $igreja['igrdata'] ?> </span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?= $igreja['igrcep'] ?> </span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= $igreja['igrpadroeiro'] ?></span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= strtolower($igreja['igrendereco']) ?> </span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= $igreja['igrbairro'] ?> </span></a>
                                 </p>
-                                <hr style="color-line: #ccc;">
-                                <h5>Sobre:</h5>
-                                <p> <?= trim($igreja['igrhistorico']) ?></p>
-                                <hr style="color-line: #ccc;">
+                                
                             </div>
                         </li>
-                       
+                       <?php } ?>
                     </ul>
-                     <?php } ?>
+                     
                 </div>
                 <div class="flexslider kp-gallery-carousel">
-                   <?php
+                 
+                    <ul class="slides">
+                          <?php
                     $igrejaTur = new Igreja(Igreja::MUNICIPIO);
                     foreach ($igrejaTur->getResult() as $igreja) {
                     ?>
-                    <ul class="slides">
                         <li><img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/igreja/'. $igreja['igrfoto1'] ?>" width="200" height="120" alt="" />
                             <span class="kp-mask"></span>
                         </li>
+                       <?php } ?>
                     </ul>
-                     <?php } ?>
+                   
                 </div><!--kp-gallery-slider-->
 
                 <nav>

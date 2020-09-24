@@ -29,7 +29,7 @@
     <![endif]-->
 
     <!-- Le fav and touch icons -->
-    <link rel="Shortcut icon" href="img/favicon.html">
+    <link rel="Shortcut icon" href="files/prefeituras/201002/brasao002.ico">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">

@@ -1,5 +1,5 @@
 <?php
-
+include './include/head.php';
 $hoje = date('Y-m-d');
 $hojePartes = new DataCalendario($hoje);
 $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
@@ -41,61 +41,61 @@ $esportes = new Esportes(UNIDADE_GESTORA);
                 <!-- header-bottom -->                
               </header>
                 
-                 <div class="kp-gallery">
+              <div class="kp-gallery">
                
-             
                 <div class="flexslider kp-gallery-slider">
+                   
+                    <ul class="slides">
                     <?php
                     $esporteTur = new Esportes(Esportes::MUNICIPIO);
                     foreach ($esporteTur->getResult() as $esportes) {
                     ?>
-                    <ul class="slides">
-                        
                         <li>
                             <h4> <?= $esportes['espnome'] ?> -  <?= $esportes['espusual'] ?></h4>
                             <div class="mask">
-                                <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes['espfoto1'] ?>" width="797" height="429" alt="imagem" />
+                                <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes['espfoto1'] ?>"  alt="imagem" />
                             </div>
                             <div class="kp-gallery-caption">
-                              
-                                <hr style="color-line: #ccc;">
+                                <h5>Sobre:</h5>
+                                 <p> <?= $esportes['espsobre'] ?></p>
+                                 <span style="color: #fff;"><hr/></span>
                                 <p class="kp-social">
+                                
                                   <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= $esportes['espdata'] ?> </span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?= $esportes['espusual'] ?> </span></a>
-                                  <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= $esportes['esporte_tipo_id'] ?></span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;Categoria:&nbsp;&nbsp;<?= $esportes['esporte_tipo_id'] ?></span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= strtolower($esportes['espendereco']) ?> </span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= $esportes['espbairro'] ?> </span></a>
                                 </p>
-                                <hr style="color-line: #ccc;">
-                                <h5>Sobre:</h5>
-                                 <p> <?= $esportes['espsobre'] ?></p>
+                                  <span><hr class="kp-metadata" style="color-line: #ccc;"></span>
+                                  <img src="images/slider/small-flex-next-2.png" alt="proximo"/>
+                                  <img src="images/slider/small-flex-prev-2.png" alt="anterior"/>
                             </div>
                         </li>
-                       
+                       <?php } ?> 
                     </ul>
-                     <?php } ?>
+                    
                 </div>
                 <div class="flexslider kp-gallery-carousel">
-                     <?php
-                    $esporteTur = new Esportes(Esportes::MUNICIPIO);
-                    foreach ($esporteTur->getResult() as $esportes) {
-                    ?>
+                   
                     <ul class="slides">
+                        <?php
+                          $esporteTur = new Esportes(Esportes::MUNICIPIO);
+                          foreach ($esporteTur->getResult() as $esportes) {
+                        ?>
                         <li><img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes['espfoto1'] ?>" width="200" height="120" alt="" />
                             <span class="kp-mask"></span>
                         </li>
+                         <?php } ?>
                     </ul>
-                     <?php } ?>
+                    
                 </div><!--kp-gallery-slider-->
-
                 <nav>
-                  <span class="total">Total: <span>1119</span> fotos</span>
+                  <span class="total">Total: <span>00</span> fotos</span>
                   <span class="status-caption" data-hide="Ocultar legendas" data-show="Mostrar legendas">Ocultar legendas</span>
                   <span class="status-slide" data-play="Reprodução automática" data-pause="Pausa"> Pausa </span>
                 </nav>
-             
-              
-                 </div>
+              </div>
               <!-- kp-gallery -->
             </article>           
         </div>
