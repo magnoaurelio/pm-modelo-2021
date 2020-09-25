@@ -1,86 +1,40 @@
  <!-- widget-newsletter -->
 <?php
-
-$hoje =  date('d-m-Y');
-//$hojePartes =  MDate::datePart($hoje);
-//$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
-//$ano  = $hojePartes->ano;
+$hoje = date('Y-m-d');
+$hojePartes = new DataCalendario($hoje);
+$data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
+$ano  = $hojePartes->getAno();
 ?>
 <div class="widget widget-more-news multimedia">
     <h3 class="widget-title"><a href="?p=noticia_geral">Mais Notícias</a></h3>
     <ul class="list-unstyled clearfix">
+         <?php
+            $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " and notcategoria = 1");
+            foreach ($noticiasDestaque->getResult() as $noticia) {
+          ?>
       <li>
         <div class="item">
-          <a href="placeholders/posts/img-161.jpg" class="caption" data-lightbox="example-set" >
-            <img src="placeholders/posts/img-161.jpg" style="max-height:350px; margin:5px; border-radius:6px;" alt="">
-            <span><i class="icon-images"></i></span>
-          </a>
-          <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-          <h3><a href="?p=noticia_detalhe">Colação de Grau dos alunos de Agricolândia, participam de festa.</a></h3>
-          <p>Colação de Grau dos</p>
+          <a title="Veja mais..." href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" class="caption" data-lightbox="example-set">
+            <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>" style="height:120px; max-height:350px; margin:5px; border-radius:6px;"  alt="">
+            <span class="icon-plus"></span>
+         </a>
+          <p class="kp-metadata style-2">
+            <i class="fa fa-calendar fa-fw fa-lg"></i><span><?= DataCalendario::date2br($noticia['notdata']) ?></span>
+            <i class="fa fa-home fa-fw fa-lg"></i><span><?=$noticia['notcategoria']?></span><br>
+            <i class="fa fa-feed fa-fw fa-lg"></i><span><?=$noticia['notfonte']?></span>
+          </p>
+      
+          <h3>
+              <a href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>">
+                 <?= substr(strip_tags($noticia['nottitulo']), 0, 100) ?>...
+              </a>
+          </h3>
+          <p> <a href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>">Leia mais... </a></p>
         </div>
       </li>
-       <li>
-        <div class="item">
-          <a href="?p=noticia_detalhe" class="caption">
-            <img src="placeholders/posts/img-30.jpg" alt="">
-            <span><i class="icon-uniF563"></i></span>
-            <p>3:30</p>
-          </a>
-          <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-          <h3><a href="?p=noticia_detalhe">PM de AGRICOLÂNDIA iniciou a construção da Pça Conj Res. DONA NENÉM.</a></h3>
-          <p>Pça Conj Res. DONA NENÉM</p>
-        </div>
-      </li>
-       <li>
-        <div class="item">
-          <a href="?p=noticia_detalhe" class="caption">
-            <img src="placeholders/posts/img-31.jpg" alt="">
-            <span><i class="icon-volumefull"></i></span>
-            <p>3:30</p>
-          </a>
-          <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-          <h3><a href="?p=noticia_detalhe">Secretaria de Saúde Confirma todos os 10 casos notificados estão Recuperados do COVID-19.</a></h3>
-          <p>Secretaria de Saúde...</p>
-        </div>
-      </li>
-       <li>
-        <div class="item">
-          <a href="?p=noticia_detalhe" class="caption">
-            <img src="placeholders/posts/img-32.jpg" alt="">
-            <span><i class="icon-volumefull"></i></span>
-            <p>3:30</p>
-          </a>
-          <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-           <h3><a href="?p=noticia_detalhe">Secretaria de Saúde Confirma todos os 10 casos notificados estão Recuperados do COVID-19.</a></h3>
-          <p>Secretaria de Saúde...</p>
-        </div>
-      </li>
-       <li>
-        <div class="item">
-          <a href="?p=noticia_detalhe" class="caption">
-            <img src="placeholders/posts/img-33.jpg" alt="">
-            <span><i class="icon-uniF563"></i></span>
-            <p>3:30</p>
-          </a>
-          <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-          <h3><a href="?p=noticia_detalhe">P M de AGRICOLÂNDIA iniciou obra de pavimentação asfática nas ruas da cidade</a></h3>
-          <p> Pavimentação asfática nas ruas</p>
-        </div>
-      </li>
-       <li>
-        <div class="item">
-          <a href="?p=noticia_detalhe" class="caption">
-            <img src="placeholders/posts/img-34.jpg" alt="">
-            <span><i class="icon-uniF563"></i></span>
-            <p>3:30</p>
-          </a>
-          <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-          <h3><a href="?p=noticia_detalhe">Profissionais da Saúde da Atenção Básica de Agricolândia, participam de Capacitação.</a></h3>
-          <p>Profissionais da Saúde...</p>
-        </div>
-      </li>
+      <?php } ?>
 
     </ul>
 </div>
+      
           <!-- widget-morenews -->
