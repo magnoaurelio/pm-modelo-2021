@@ -5,6 +5,7 @@ $hoje =  date('d-m-Y');
 //$hojePartes =  MDate::datePart($hoje);
 //$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
 //$ano  = $hojePartes->ano;
+$secretaria =  new Secretaria(intval($_GET['prenumero']));
 ?>
 <div class="widget widget-more-news multimedia">
     <h3 class="widget-title"><a href="?p=noticia_geral">Unidades da Secretaria de EDUCAÇÃO </a></h3>
@@ -72,7 +73,7 @@ $hoje =  date('d-m-Y');
           </a>
           <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
           <p>CRECHE INFANTIL</p>
-          <h3><a href="?p=noticia_detalhe">A secretaria de Educação está em 1º lugar de todas as secretarias da região</a></h3>
+          <h3><a href="?p=secretaria_unidade&prenumero=<?= $secretaria->prenumero ?>">A secretaria de Educação está em 1º lugar de todas as secretarias da região</a></h3>
           
         </div>
       </li>

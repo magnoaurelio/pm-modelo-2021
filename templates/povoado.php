@@ -64,7 +64,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                                    <span><hr class="kp-metadata" style="color-line: #ccc;"></span>
                                 <p class="kp-social">
                                      
-                                  <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= $povoado['povdata'] ?> </span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= DataCalendario::date2br($povoado['povdata']) ?> </span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?= $povoado['povzona'] ?> </span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= $povoado['povdistancia'] ?></span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= strtolower($povoado['povorientacao']) ?> </span></a>

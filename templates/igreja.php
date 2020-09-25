@@ -4,7 +4,6 @@ include './include/head.php';
 $hoje = date('Y-m-d');
 $hojePartes = new DataCalendario($hoje);
 $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
-
 $igreja = new Igreja(UNIDADE_GESTORA);
 ?>
 <body class="loading">
@@ -62,8 +61,7 @@ $igreja = new Igreja(UNIDADE_GESTORA);
                                 <p> <?= trim($igreja['igrhistorico']) ?></p>
                                    <span><hr class="kp-metadata" style="color-line: #ccc;"></span>
                                 <p class="kp-social">
-                                     
-                                  <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= $igreja['igrdata'] ?> </span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?=  DataCalendario::date2br($igreja['igrdata']) ?> </span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?= $igreja['igrcep'] ?> </span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= $igreja['igrpadroeiro'] ?></span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= strtolower($igreja['igrendereco']) ?> </span></a>

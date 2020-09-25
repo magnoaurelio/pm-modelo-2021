@@ -1,9 +1,9 @@
 <?php
 
-$data1 =  date('d-m-Y');
-//$hojePartes =  MDate::datePart($hoje);
-//$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
-//$ano  = $hojePartes->ano;
+$hoje = date('Y-m-d');
+$hojePartes = new DataCalendario($hoje);
+$data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
+$ano  =  $hojePartes->getAno();
 ?>
 
 
@@ -32,7 +32,7 @@ $data1 =  date('d-m-Y');
                ?>
               <div class="item pull-left">
                  <p class="kp-metadata style-2">
-                    <i class="fa fa-calendar fa-fw fa-lg"></i><span><?=$noticia['notdata'] ?></span>
+                    <i class="fa fa-calendar fa-fw fa-lg"></i><span><?=DataCalendario::date2br($noticia['notdata']) ?></span>
                     <i class="fa fa-home fa-fw fa-lg"></i><span><?=$noticia['notcategoria']?></span><br>
                     <i class="fa fa-feed fa-fw fa-lg"></i><span><?=$noticia['notfonte']?></span>
                   </p>

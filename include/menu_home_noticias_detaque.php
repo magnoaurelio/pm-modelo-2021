@@ -1,9 +1,10 @@
 <?php
 
 $hoje =  date('d-m-Y');
-//$hojePartes =  MDate::datePart($hoje);
-//$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
-//$ano  = $hojePartes->ano;
+$hojePartes = new DataCalendario($hoje);
+$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
+
+$ano  = $hojePartes->ano;
 ?>
 <div class="widget widget-featured-news">
                 <h3 class="widget-title"><a href="?p=video">notícias destaque</a></h3>

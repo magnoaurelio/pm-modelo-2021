@@ -1,4 +1,12 @@
 <!-- page-footer -->
+<?php
+
+//<?=DataCalendario::date2br($hoje) 
+$hoje = date('Y-m-d');
+$hojePartes = new DataCalendario($hoje);
+$data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
+$ano  = $hojePartes->getAno();
+?>
 <header id="page-header">
 <div class="header-top">
         <div class="container">
@@ -140,7 +148,8 @@
         </div>
         <!-- container -->            
     </div>
-</div>
+
+</header>
 <div id="page-footer" class="container">
     <div class="col-sm-left col-8">
     <h5 class="item-left"> Link Importantes<h5>
@@ -181,14 +190,14 @@
     </p>
     </div>
     <ul class="kp-links list-inline">
-      <li><a href="#">Site Institucional de <strong>AGRICOLÂNDIA - PIAUÍ</strong></a></li>
+      <li><a href="#">Site Institucional de <strong>AGRICOLÂNDIA / PIAUÍ -  <?= $ano ?></strong></a></li>
       <li><a href="#">Política de privacidade</a></li>
       <li><a href="#">Seus direitos de privacidade</a></li>
       <li><a href="#">Termos de uso</a></li>
     </ul>
     <p class="copy-right">
         <a href="http://magnusoft.com.br/" target="_blank">
-            Copyright &copy; <strong> 2017- <i class="icon-calendar"></i> <?=$hoje ?></strong> Todos direitos Reservados. <span>MAGNUSOFT desenvolvimento</span>
+            Copyright &copy; <strong> 2017 - <i class="icon-calendar"></i> <?= $data ?></strong> Todos direitos Reservados. <span>MAGNUSOFT desenvolvimento</span>
             <img src="./images/magnusoft_marca.png" width="120" height="35" alt="MAGNUSOFT">
         </a>    
     </p>

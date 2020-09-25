@@ -1,10 +1,12 @@
 <?php
-include './include/head.php';
 
-$hoje = date('Y-m-d');
-$hojePartes = new DataCalendario($hoje);
-$data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
-$igreja = new Igreja(UNIDADE_GESTORA);
+$hoje =  date('d-m-Y');
+//$hojePartes =  MDate::datePart($hoje);
+//$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
+//$ano  = $hojePartes->ano;
+$secretaria =  new Secretaria(intval($_GET['prenumero']));
+$unidade =  new Unidade(UNIDADE_GESTORA);
+
 ?>
 <body class="page-full-width">
 
@@ -18,7 +20,7 @@ $igreja = new Igreja(UNIDADE_GESTORA);
     <div id="main-col" class="pull-left">
         <ul class="breadcrumb">
             <li><a href="index.php">Início</a></li>
-            <li class="active">Notícia Detalhe</li>
+            <li class="active">Unidades das Secretarias</li>
         </ul>
         <article class="post-content">
 
@@ -26,7 +28,7 @@ $igreja = new Igreja(UNIDADE_GESTORA);
                 <h3 class="title-post"><?= strtoupper($noticia->nottitulo) ?> </h3>
                 <div class="header-bottom">
                     <p class="kp-metadata style-2">
-                        <i class="fa fa-calendar fa-fw fa-lg"></i><span><?= DataCalendario::date2br($noticia->notdata) ?></span>
+                        <i class="fa fa-calendar fa-fw fa-lg"></i><span><?= $noticia->notdata ?></span>
                         <i class="fa fa-home fa-fw fa-lg"></i><span><?= $noticia->notcategoria ?></span>
                         <i class="fa fa-feed fa-fw fa-lg"></i><span><?= $noticia->notfonte ?></span>
                     </p>
@@ -64,6 +66,33 @@ $igreja = new Igreja(UNIDADE_GESTORA);
                     <div class="item">
                         <a href="#" class="caption">
                             <img src="placeholders/posts/img-18.jpg" alt="">
+                            <span class="icon-plus"></span>
+                            <p>1914 translation by H. Rack</p>
+                        </a>
+                    </div>
+                    <!-- item -->
+
+                    <div class="item">
+                        <a href="#" class="caption">
+                            <img src="placeholders/posts/img-35.jpg" alt="">
+                            <span class="icon-plus"></span>
+                            <p>1914 translation by H. Rack</p>
+                        </a>
+                    </div>
+                    <!-- item -->
+
+                    <div class="item">
+                        <a href="#" class="caption">
+                            <img src="placeholders/posts/img-36.jpg" alt="">
+                            <span class="icon-plus"></span>
+                            <p>1914 translation by H. Rack</p>
+                        </a>
+                    </div>
+                    <!-- item -->
+
+                    <div class="item">
+                        <a href="#" class="caption">
+                            <img src="placeholders/posts/img-37.jpg" alt="">
                             <span class="icon-plus"></span>
                             <p>1914 translation by H. Rack</p>
                         </a>
@@ -177,7 +206,7 @@ $igreja = new Igreja(UNIDADE_GESTORA);
                                 <div class="comment-content item-right">
                                     <header class="clearfix">
                                         <h4>Jolie Angelina</h4>
-                                        <p class="kp-metadata">DataCalendario::date2br()</p>
+                                        <p class="kp-metadata">10 September, 2013 at 5:26 pm</p>
                                         <p class="reply">
                                             <a href="#" class="edit-link">Edit /</a>
                                             <a href="#" class="reply-link">Reply</a>

@@ -61,7 +61,7 @@ $esportes = new Esportes(UNIDADE_GESTORA);
                                   <span><hr class="kp-metadata" style="color-line: #ccc;"></span>
                                 <p class="kp-social">
                                 
-                                  <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= $esportes['espdata'] ?> </span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= DataCalendario::date2br($esportes['espdata']) ?> </span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?= $esportes['espusual'] ?> </span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;Categoria:&nbsp;&nbsp;<?= $esportes['esporte_tipo_id'] ?></span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= strtolower($esportes['espendereco']) ?> </span></a>

@@ -41,7 +41,7 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
                 
                 <div class="item-right">
                   <p class="kp-metadata style-2">
-                    <i class="fa fa-calendar fa-fw fa-lg"></i><span><?=$noticia['notdata'] ?></span>
+                    <i class="fa fa-calendar fa-fw fa-lg"></i><span><?=DataCalendario::date2br($noticia['notdata']) ?></span>
                     <i class="fa fa-home fa-fw fa-lg"></i><span><?=$noticia['notcategoria']?></span>
                     <i class="fa fa-feed fa-fw fa-lg"></i><span><?=$noticia['notfonte']?></span>
                    </p>

@@ -1,5 +1,11 @@
 <!DOCTYPE html>
+<?php
 
+$hoje = date('Y-m-d');
+$hojePartes = new DataCalendario($hoje);
+$data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
+$ano  =  $hojePartes->getAno();
+?>
 <html lang="en">
 
 <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
@@ -67,18 +73,17 @@
                             ?>
                             <div class="item pull-left">
                                   <p class="kp-metadata style-2">
-                                    <i class="fa fa-calendar fa-fw fa-lg"></i><span><?= date($noticia['notdata']) ?></span>
+                                    <i class="fa fa-calendar fa-fw fa-lg"></i><span><?= DataCalendario::date2br($noticia['notdata']) ?></span>
                                     <i class="fa fa-home fa-fw fa-lg"></i><span><?=$noticia['notcategoria']?></span><br>
                                     <i class="fa fa-feed fa-fw fa-lg"></i><span><?=$noticia['notfonte']?></span>
                                   </p>
-                                <a href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" class="caption">
-                                    <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>"
-                                         alt="">
+                                <a title="Veja mais..." href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" class="caption">
+                                    <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>"  height="200"  alt="">
                                     <p><?= substr(strip_tags($noticia['nottexto']), 0, 100) ?>...</p>
                                     <span class="icon-plus"></span>
                                 </a>
                                 <h6>
-                                    <a href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>"><?= $noticia["nottitulo"] ?></a>
+                                    <a title="Veja mais..." href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>"><?=  substr(strip_tags($noticia['nottitulo']), 0, 75) ?>...</a>
                                 </h6>
                             </div>
 
@@ -142,7 +147,7 @@
          
     <!-- fim sidebar -->
     <!-- inicio widget-area-5 BOLETIM DE NOTICIAS -->
-    <?php include_once 'include/menu_home_newsletter.php'; ?>
+    <?php include 'include/menu_home_newsletter.php'; ?>
     <!-- fim widget-area-5 -->
 
 </div>

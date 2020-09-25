@@ -1,4 +1,10 @@
-<!-- inicio widget-area-5 -->
+
+<?php
+$hoje = date('Y-m-d');
+$hojePartes = new DataCalendario($hoje);
+$data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
+$ano  = $hojePartes->getAno();
+?><!-- inicio widget-area-5 -->
 <div class="widget-area-5">
   <div class="widget widget-newsletter">
     <div class="widget-content">
@@ -15,7 +21,7 @@
     <!-- widget content -->
   </div>
   <!-- widget-newsletter -->
-  <?php include_once 'include/menu_home_mais_noticia.php'; ?>
+  <?php include 'include/menu_home_mais_noticia.php'; ?>
   <!-- widget-morenews -->
 </div>
       <!-- fim widget-area-5 -->
