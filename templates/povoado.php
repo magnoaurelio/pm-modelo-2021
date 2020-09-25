@@ -61,7 +61,6 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                             <div class="kp-gallery-caption">
                                 <h5>Sobre:</h5>
                                 <p> <?= trim($povoado['povsobre']) ?></p>
-                                   <span><hr class="kp-metadata" style="color-line: #ccc;"></span>
                                 <p class="kp-social">
                                      
                                   <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= DataCalendario::date2br($povoado['povdata']) ?> </span></a>
@@ -71,7 +70,6 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                                   <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= $povoado['povcontato'] ?> </span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= $povoado['povfone'] ?> </span></a>
                                 </p>
-                                  <span><hr class="kp-metadata" style="color-line: #ccc;"></span>
                                   <img src="images/slider/small-flex-next-2.png" alt="proximo"/>
                                   <img src="images/slider/small-flex-prev-2.png" alt="anterior"/>
                             </div>
@@ -110,22 +108,19 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
         
         
         <div id="sidebar" class="pull-left">
+             <?php
+             include_once 'include/menu_sidebar_propaganda.php';
+             ?>
             <div class="widget widget-ads" style="margin-top: -16px; margin-left: -25px">
              <?php
-             include_once 'include/menu_home_clima_2.php';
+             include_once 'include/menu_home_clima_1.php';
              ?>
              </div>
           
            <?php
-             include_once 'include/menu_sidebar_propaganda.php';
-           
-             include_once 'include/menu_home_video.php';
              include_once 'include/menu_sidebar_mapa_localizacao.php';
            ?>
-            <?php
-           include_once 'include/menu_home_video.php';
-            //include_once 'include/menu_sidebar_noticia_popular.php';
-             ?>
+           
         </div>
         <!-- sidebar -->
         <!-- sidebar -->

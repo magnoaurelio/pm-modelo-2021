@@ -103,22 +103,22 @@ $esportes = new Esportes(UNIDADE_GESTORA);
         
         
         <div id="sidebar" class="pull-left">
+             <?php
+             include_once 'include/menu_sidebar_propaganda.php';
+           
+             ?>
             <div class="widget widget-ads" style="margin-top: -16px; margin-left: -25px">
              <?php
-             include_once 'include/menu_home_clima_2.php';
+             include_once 'include/menu_sidebar_propaganda.php';
+             include_once 'include/menu_home_clima_1.php';
              ?>
              </div>
           
            <?php
-             include_once 'include/menu_sidebar_propaganda.php';
+            
            
-             include_once 'include/menu_home_video.php';
              include_once 'include/menu_sidebar_mapa_localizacao.php';
            ?>
-            <?php
-           include_once 'include/menu_home_video.php';
-            //include_once 'include/menu_sidebar_noticia_popular.php';
-             ?>
         </div>
         <!-- sidebar -->
         <!-- sidebar -->

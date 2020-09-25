@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 
 <?php
-include_once 'include/head.php';
-include_once 'app/control/Router.class.php';
-include_once 'app/control/Layout.class.php';
-$hoje =  date('d-m-Y');
-//$hojePartes =  MDate::datePart($hoje);
-//$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
-//$ano  = $hojePartes->ano;
+include './include/head.php';
+
+$hoje = date('Y-m-d');
+$hojePartes = new DataCalendario($hoje);
+$data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
+
 
 ?>  
 <!-- Mirrored from upsidethemes.net/demo/news-times/html/single-video.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Aug 2020 12:02:50 GMT -->
@@ -18,6 +17,7 @@ $hoje =  date('d-m-Y');
     <div id="main-content" class="container clearfix">
        <?php
         include 'include/menu_home_topo.php';
+        $video = new Videos(intval($_GET['prenumero']));
         ?>
         <!-- main-top -->
         <div id="main-col" class="pull-left">
@@ -28,13 +28,13 @@ $hoje =  date('d-m-Y');
             <article class="post-content">
               
               <header class="clearfix">
-                <h3 class="title-post">O Hino Nacional do Brasil (+ letra) </h3>
+                <h3 class="title-post"><?= strtoupper($video->descricao) ?>  </h3>
                 <div class="header-bottom">
-                  <p class="kp-metadata style-2">
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                </p>
+                 <p class="kp-metadata style-2">
+                    <i class="fa fa-calendar fa-fw fa-lg"></i><span><?=$video->viddata ?></span>
+                    <i class="fa fa-home fa-fw fa-lg"></i><span><?=$video->videstado ?></span>
+                    <i class="fa fa-feed fa-fw fa-lg"></i><span><?=$video->vidmesano ?></span>
+                  </p>
                 <p class="kp-share">
                   <span>Compartilhar:</span> 
                   <a href="#" class="icon-facebook3"></a>
@@ -48,30 +48,18 @@ $hoje =  date('d-m-Y');
               </header>
               <div class="kp-thumb">
                 <div class="video-wrapper">
-                <?php
-                    include_once 'include/menu_home_video.php';
-                 ?>      
+                    <a href="#" title="Click para Assistir..." class="caption">
+                         <iframe width="400" height="225" src="<?= $video->vidurl ?>" frameborder="0" allowfullscreen></iframe>
+                    </a>
+                    <h6>
+                        <a href="#"><?= $video->descricao ?></a>
+                    </h6>    
                 </div>
               </div>
               
               <!-- kp-thumb -->
               <div class="entry-content">
-                <p>Com o advento da Proclamação da República o mesmo hino monarquista se manteve; uma lenda foi então divulgada até mesmo em livros escolares, onde ao ouvir composições inscritas em concurso o chefe do governo provisório, marechal Deodoro da Fonseca teria declarado "prefiro o velho"; já em outubro de 1888 fora composto um novo hino, para substituir a Marselhesa que até então os republicanos entoavam, após concurso proposto por Silva Jardim - mas o advento do novo regime não permitiu que a composição do farmacêutico Ernesto de Souza tivesse qualquer divulgação; desta forma a 22 de novembro de 1889 foi aberto um novo concurso oficial para escolha do novo hino brasileiro pelo Ministério do Interior, chefiado por Aristides Lobo, e idealizado por José Rodrigues Barbosa: fizeram parte da comissão além do próprio Rodrigues Barbosa, Leopoldo Miguez, Alfredo Bevilacqua, Rodolfo Bernardelli e Rodolfo Amoedo.[4]
-
-O concurso de 1889 previa a participação de músicos "eruditos e populares"; temendo a inserção de ritmos africanos em tal certame, o crítico musical Oscar Guanabarino iniciou uma campanha contrária em 4 de janeiro de 1890, usando dentre outros o pretexto patriótico de que sob o "antigo" hino os militares brasileiros, como o próprio Deodoro, haviam combatido na Guerra do Paraguai; o então major Serzedelo Correia levou este apelo ao próprio Ministro da Guerra, Benjamin Constant, no dia 15 daquele mês, sendo então atendido e o concurso, previsto para ocorrer no dia 20, passou a ser para a escolha do Hino da Proclamação da República, vencido por Leopoldo Miguez: isto foi consagrado no decreto número 171, de 20 de janeiro de 1890.[4]
-
-
-Joaquim Osório Duque-Estrada, autor da letra do hino nacional brasileiro.
-
-Francisco Manuel da Silva, autor da música do hino nacional brasileiro.
-O decreto 171 de 1890 o governo provisório oficializara a música, mas não a letra, e sua execução se dava apenas por instrumentos; mesmo esta execução, entretanto, ainda não possuía uniformidade, levando o compositor Alberto Nepomuceno a propor ao presidente Afonso Pena uma reforma do Hino, em 1906.[4]
-
-Um concurso realizado em 1909 escolheu a letra que deveria acompanhar a composição já aceita como a oficial do Hino; perfeccionista, Duque-Estrada efetuou daquele ano até sua oficialização em 1922, alterações em nove passagens sobre a versão inicial.[1] A letra ainda assim não fora objeto de consenso, sendo alvo de grandes debates na imprensa e no parlamento, de forma que sua oficialização se deu de forma apressada, a fim de a sua execução pudesse se dar na comemoração do primeiro centenário da Independência, em setembro de 1922.[4]
-
-A propriedade plena e definitiva da letra foi adquirida em 21 de agosto de 1922 pela União por 5:000$ (cinco contos de réis) pelo decreto n.º 4.559 expedido pelo então presidente Epitácio Pessoa.[6]
-
-Em 1917 o cantor Vicente Celestino foi quem primeiro gravou o Hino Nacional, tendo por acompanhamento a Banda do Batalhão Naval e, nas passagens de refrão, também por um coro; esta versão, em si bemol, deu um tom de difícil interpretação pelas pessoas; a Banda deu andamento mais lento e solene nas passagens do cantor, enquanto mantinha o estilo tradicional (mais rápido e vibrante) apenas durante os refrões - o que veio a motivar apreciação oficial por uma comissão de reavaliação do Hino em 1936 e, durante algum tempo, insatisfação por parte das bandas militares da época; a despeito disso essa versão foi oficializada em 1922.[2]</p>
-               
+                  <p><?= $video->vidsobre ?></p>
               </div>
               <!-- entry-content -->
               
@@ -365,13 +353,13 @@ Em 1917 o cantor Vicente Celestino foi quem primeiro gravou o Hino Nacional, ten
         <!-- main-col -->
         <div id="sidebar" class="pull-left">
             <!-- inicio sidebar -->
-             <h3 class="widget-title" style="margin-top: 3px; ">Propaganda </h3>
-           <div class="widget widget-ads">
-               <a href="#"><img src="files/prefeituras/201002/banner/BANNER_ESQUERDA.gif" width="310" alt=""></a>
-           </div>
+              <?php 
+               include 'include/menu_sidebar_propaganda.php';
+ 
+              ?>
             <div class="widget widget-ads" >
              <?php
-             include_once 'include/menu_home_clima_3.php';
+             include_once 'include/menu_home_clima_1.php';
             //include_once 'include/menu_sidebar_noticia_popular.php';
              ?>
              </div>
@@ -396,7 +384,7 @@ Em 1917 o cantor Vicente Celestino foi quem primeiro gravou o Hino Nacional, ten
           
            
           <?php
-            include_once 'include/menu_home_video.php';
+            include_once 'include/menu_sidebar_mapa_localizacao.php';
            ?>
             <!-- widget-video -->
 

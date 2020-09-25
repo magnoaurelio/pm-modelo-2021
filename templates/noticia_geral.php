@@ -65,12 +65,12 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
                   <li><a href="?p=noticia_detalhe" class="page-numbers">1</a></li>
                   <li><span class="page-numbers current">2</span></li>
                   <li><span class="page-numbers dots">…</span></li>
-                  <li><a href="?p=noticia_detalhe" class="page-numbers">5</a></li>
-                  <li><a href="?p=noticia_detalhe" class="page-numbers">6</a></li>
-                  <li><a href="?p=noticia_detalhe" class="next page-numbers">Next</a></li>
+                  <li><a href="#" class="page-numbers">5</a></li>
+                  <li><a href="#" class="page-numbers">6</a></li>
+                  <li><a href="#" class="next page-numbers">Next</a></li>
               </ul>
            <!-- inicio widget-area-4 -->
-             <?php include_once 'include/menu_home_foto_inspiradora.php'; ?>
+             <?php // include_once 'include/menu_home_foto_inspiradora.php'; ?>
            <!-- fim widget-area-4 -->
             <!-- widget-area-4 -->
             
@@ -79,37 +79,36 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
         <div id="sidebar" class="pull-left">
             <!-- inicio sidebar -->
               <?php 
-              include_once 'include/menu_home_administra.php'; ?>
+               include 'include/menu_sidebar_propaganda.php';
+              ?>
 
              <?php
             include 'include/menu_sidebar_randon.php';
           ?>
         <!-- widget-random -->
            <?php
-            include_once 'include/menu_sidebar_servico.php';
+            include 'include/menu_sidebar_servico.php';
            ?>
         
          <!-- widget_categories -->            <!-- widget_categories -->
             <!-- widget_categories -->
-         <div class="widget widget-ads">
-             <a href="?p=noticia_detalhe"><img src="files/prefeituras/201002/banner/BANNER_ESQUERDA.gif" alt=""></a>
-         </div>
+        
             <!-- widget-ads -->
            
              <?php
-            include_once 'include/menu_sidebar_noticia_popular.php';
+            include 'include/menu_sidebar_noticia_popular.php';
            ?>
          <!-- widget-tabs -->
            
           <?php
-            include_once 'include/menu_home_video.php';
+            include 'include/menu_home_video.php';
          ?>
             <!-- widget-video -->
 
         </div>
         <!-- sidebar -->
         
-         <?php include_once 'include/menu_home_newsletter.php'; ?>
+         <?php include 'include/menu_home_newsletter.php'; ?>
         <!-- fim widget-area-5 -->
         <!-- widget-area-5 -->
     </div>

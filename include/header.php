@@ -210,34 +210,34 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                 <li class="{home_current}">
                     <a href="index.php"><i class="fa fa-hospital-o"></i></i> Cidade</a>
                     <ul>
-                        <li><a href="?p=historia" title="Simbolos de: "><i class="fa fa-flag  fl-fg"></i> Simbolos de
-                                <?=$prefeitura->prenome?></a></li>
-                        <li><a href="?p=historia" title="História de: "><i class="fa fa-history  fl-fg"></i> História de
-                                <?=$prefeitura->prenome?></a></li>
-                        <li><a href="?p=hino" title="Hino Oficial de: "><i class="fa fa-music fl-fg"></i> Hino Oficial
-                                de <?=$prefeitura->prenome?></a></li>
+                        <li><a href="?p=historia" title="Simbolos de: <?=$prefeitura->prenome?> "><i class="fa fa-flag  fl-fg"></i> Simbolos
+                                </a></li>
+                        <li><a href="?p=historia" title="História de: <?=$prefeitura->prenome?> "><i class="fa fa-history  fl-fg"></i> História
+                               </a></li>
+                        <li><a href="?p=hino" title="Hino Oficial de: <?=$prefeitura->prenome?> "><i class="fa fa-music fl-fg"></i> Hino Oficial
+                                </a></li>
                         <li>
                             <a href="http://www.cidades.ibge.gov.br/xtras/perfil.php?lang=&codmun=<?=$prefeitura->preibge?>&search=piaui|<?=$prefeitura->precidade?>"
-                               target="_blank" title="IBGE-Dados Estatísticos de: {header_nome}"><i
+                               target="_blank" title="IBGE-Dados Estatísticos de: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-line-chart fl-fg"></i> Perfil IBGE</a></li>
                         <li><a href="https://www.melhoresrotas.com/s/distancia-entre-cidades" target="_blank"
-                               title="Distâncias de  a ..."><i class="fa fa-map-o  fl-fg"></i> Mapa-Localização</a></li>
-                        <li><a href="?p=esportes" title="Campos de Futebol e Ginásios de ESPORTE de: "><i
+                               title="Distâncias de <?=$prefeitura->prenome?>  a ..."><i class="fa fa-map-o  fl-fg"></i> Mapa-Localização</a></li>
+                        <li><a href="?p=esportes" title="Campos de Futebol e Ginásios de ESPORTE de: <?=$prefeitura->prenome?> "><i
                                         class="fa fa-futbol-o fl-fg"></i> Praças de Esportes</a></li>
-                        <li><a href="?p=povoado" title="Localidade e Povoados  de: "><i class="fa fa-home fl-fg"></i>
+                        <li><a href="?p=povoado" title="Localidade e Povoados  de: <?=$prefeitura->prenome?> "><i class="fa fa-home fl-fg"></i>
                                 Localidades e Povoados</a></li>
                     </ul>
                 </li>
                 <li class="{gestao_current}">
                     <a href="index.php"><i class="fa fa-line-chart  "></i> Gestão</a>
                     <ul>
-                        <li><a href="?p=prefeito" title="Prefeito(a) de: {header_nome}"><i class="icon-user"></i>
+                        <li><a href="?p=prefeito" title="Prefeito(a) de: <?=$prefeitura->prenome?>"><i class="icon-user"></i>
                                 Prefeito</a></li>
-                        <li><a href="?p=prefeito_vice" title="Vice-Prefeito(a) de: {header_nome}"><i
+                        <li><a href="?p=prefeito_vice" title="Vice-Prefeito(a) de: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-user-circle-o  fl-fg"></i> Vice</a></li>
-                        <li><a href="?p=secretaria_geral"><i class="icon-home"></i> Secretários e Gestores</a></li>
+                        <li><a href="?p=secretaria_geral"  title="Câmara Municipal de <?=$prefeitura->prenome?>"><i class="icon-home"></i> Secretários e Gestores</a></li>
                         <li><a href="https://www.municipiaui.com/index.php?p=cidade&codigoUnidGestora=<?='1'.substr(UNIDADE_GESTORA,1)?>"
-                               title="Câmara Municipal de {header_nome}" target="_blank"><i
+                               title="Câmara Municipal de <?=$prefeitura->prenome?>" target="_blank"><i
                                         class="fa fa-users fl-fg"></i> Câmara Municipal</a></li>
 
                     </ul>
@@ -251,7 +251,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                     foreach ($secretarias->getResult() as $secretaria) {
                         ?>
                         <li>
-                            <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>">
+                            <a title="<?=$secretaria['secnome']?> de <?=$prefeitura->prenome?>" href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>">
                                 <span ><i class="fa fa-university "></i>&nbsp;&nbsp;<?=$secretaria['secnome']?></span>
                              </a>
 
@@ -267,9 +267,9 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                 <li class="{{negocio_current}">
                     <a href="?p=agronegocio_geral"> <i class="fa fa-industry "></i> </i> AgroNegócio</a>
                     <ul>
-                        <li><a href="?p=agronegocio_atividade" title="Feiras e Exposição em: {header_nome}"><i
+                        <li><a href="?p=agronegocio_atividade" title="Feiras e Exposição em: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-bullseye fl-fg"></i> Feiras e Exposição</a></li>
-                        <li><a href="?p=agronegocio_atividade" title=" Monocultura em: {header_nome}"><i
+                        <li><a href="?p=agronegocio_atividade" title=" Monocultura em: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-calculator fl-fg"></i> Monocultura</a>
                             <ul>
                                 <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Soja</a>
@@ -280,13 +280,13 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="?p=agronegocio_atividade" title="Agricultura: {header_nome}"><i
+                        <li><a href="?p=agronegocio_atividade" title="Agricultura: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-hand-o-right  fl-fg"></i> Apicultura</a>
                             <ul>
                                 <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Mel</a></li>
                             </ul>
                         </li>
-                        <li><a href="?p=agronegocio_atividade" title="Agricultura: {header_nome}"><i
+                        <li><a href="?p=agronegocio_atividade" title="Agricultura: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-hand-o-right  fl-fg"></i> Bovinocultura</a>
                             <ul>
                                 <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Gado
@@ -295,7 +295,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                                         Leite</a></li>
                             </ul>
                         </li>
-                        <li><a href="?p=agronegocio_atividade" title="Agricultura: {header_nome}"><i
+                        <li><a href="?p=agronegocio_atividade" title="Agricultura: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-fish fl-fg"></i> Pisicultura</a>
                             <ul>
                                 <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Tilápia</a>
@@ -306,7 +306,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="?p=agronegocio_atividade" title="Agricultura: {header_nome}"><i
+                        <li><a href="?p=agronegocio_atividade" title="Agricultura: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-hand-o-right  fl-fg"></i> Caprinocultura</a>
                             <ul>
                                 <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Cabra</a>
@@ -315,7 +315,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="?p=agronegocio_atividade" title="Agricultura Familiar: {header_nome}"><i
+                        <li><a href="?p=agronegocio_atividade" title="Agricultura Familiar: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-hand-o-right  fl-fg"></i> Horto-Fruto-Granjeiro</a>
                             <ul>
                                 <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Arroz</a>
@@ -337,21 +337,21 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                 <li class="{turismo_current}">
                     <a href="index.php"><i class="fa fa-bus "></i> Turísmo</a>
                     <ul>
-                        <li><a href="?p=alimentacao" title="Restaurantes e Casas de Alimentação em: {header_nome}"><i
+                        <li><a href="?p=alimentacao" title="Restaurantes e Casas de Alimentação em: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-cutlery fl-fg"></i> Alimentação</a></li>
-                        <li><a href="?p=banco" title="Bancos, Loterias e CASH em: {header_nome}"><i
+                        <li><a href="?p=banco" title="Bancos, Loterias e CASH em: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-money fl-fg"></i> Bancos</a></li>
-                        <li><a href="?p=combustivel" title="Postos de Combustíveis em: {header_nome}"><i
+                        <li><a href="?p=combustivel" title="Postos de Combustíveis em: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-filter fl-fg"></i> Combustível</a></li>
-                        <li><a href="?p=igreja" title="Santuários e Igrejas de: {header_nome}"><i
+                        <li><a href="?p=igreja" title="Santuários e Igrejas de: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-bell-o fl-fg"></i> Igrejas</a></li>
-                        <li><a href="?p=hotel" title="Hotéis, Pensões e Pousadas em: {header_nome}"><i
+                        <li><a href="?p=hotel" title="Hotéis, Pensões e Pousadas em: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-bed fl-fg"></i> Hotelaria</a></li>
-                        <li><a href="?p=transporte" title="Transportes Diversos para: {header_nome}"><i
+                        <li><a href="?p=transporte" title="Transportes Diversos para: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-taxi fl-fg"></i> Transportes</a></li>
-                        <li><a href="?p=turismo" title="Pontos Turísiticos  Diversos para: {header_nome}"><i
+                        <li><a href="?p=turismo" title="Pontos Turísiticos  Diversos para: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-camera fl-fg"></i> Turísmo</a></li>
-                        <li><a href="#" title="Festejos: {header_nome}"><i class="fa fa-hand-o-right  fl-fg"></i>
+                        <li><a href="#" title="Festejos: <?=$prefeitura->prenome?>"><i class="fa fa-hand-o-right  fl-fg"></i>
                                 Festejos</a></li>
 
                     </ul>
@@ -359,14 +359,14 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                 <li class="{comunicacao_current}">
                     <a href="index.php"><i class="icon-feed2  "></i> Notícia</a>
                     <ul>
-                        <li><a href="?p=galeria" title="Fotos de: {header_nome}"><i
+                        <li><a href="?p=galeria" title="Fotos de: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-vid fa-picture-o fl-fg"></i> Galeria de Fotos</a></li>
-                        <li><a href="?p=noticia_geral" title="Noticias Gerais de: {header_nome}"><i
+                        <li><a href="?p=noticia_geral" title="Noticias Gerais de: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-newspaper-o fl-fg"></i> Notícias Geral</a></li>
-                        <li><a href="?p=noticia_bloco" title="Noticias em Bloco de: {header_nome}"><i
-                                        class="fa fa-newspaper-o fl-fg"></i> Notícias Bloco</a></li>
-                        <li><a href="?p=video" title="Vídeos Diversos de: {header_nome}"><i
-                                        class="fa fa-vid fa-video-camera fl-fg"></i> Vídeos </a></li>
+                        <li><a href="?p=noticia_bloco" title="Noticias em Bloco de: <?=$prefeitura->prenome?>"><i
+                                        class="fa fa-newspaper-o fl-fg"></i> Notícias Diversas</a></li>
+                        <li><a href="?p=video_bloco" title="Vídeos Diversos de: <?=$prefeitura->prenome?>"><i
+                                        class="fa fa-vid fa-video-camera fl-fg"></i> Vídeos Diversos </a></li>
                         <li><a href="?p=multimidia"><i class="icon-rss"></i> Multimídia</a></li>
                     </ul>
                 </li>
@@ -374,7 +374,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                 <li class="{comunicacao_current}">
                     <a href="index.php"> <i class="fa fa-wrench  "></i> Serviço</a>
                     <ul>
-                        <li><a href="?p=erro_404" title="Prefeito(a) de: {header_nome}"><i
+                        <li><a href="?p=erro_404" title="Prefeito(a) de: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-user fa-fw  fa-lg"></i> Erro 404</a></li>
                     </ul>
                 </li>

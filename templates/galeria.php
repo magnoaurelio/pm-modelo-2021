@@ -1,9 +1,12 @@
 <?php
+include './include/head.php';
 
-$hoje =  date('d-m-Y');
-//$hojePartes =  MDate::datePart($hoje);
-//$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
-//$ano  = $hojePartes->ano;
+$hoje = date('Y-m-d');
+$hojePartes = new DataCalendario($hoje);
+$data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
+
+$prefeitura = new Prefeitura(UNIDADE_GESTORA);
+$galeria = new Galeria(UNIDADE_GESTORA);
 ?>
 <body class="loading">
    
@@ -21,12 +24,11 @@ $hoje =  date('d-m-Y');
             <article class="post-content">
               
               <header class="clearfix">
-                <h3 class="title-post">Imagem atuais do Município de AGRICOLANDIA </h3>
+                  <h3 class="title-post">Imagens de <strong><?=$prefeitura->prenome ?></strong> </h3>
                 <div class="header-bottom">
                   <p class="kp-metadata style-2">
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
+                   <i class="fa fa-calendar fa-fw fa-lg"></i><span><?=$data?></span>
+                   <i class="fa fa-feed fa-fw fa-lg"></i><span></span>
                 </p>
                 <p class="kp-share">
                   <span>Compartilhar:</span> 
@@ -40,87 +42,48 @@ $hoje =  date('d-m-Y');
                 <!-- header-bottom -->                
               </header>
               
-              <div class="kp-gallery">
-               <div class="flexslider kp-gallery-slider">
+             <div class="kp-gallery">
+               
+             
+                <div class="flexslider kp-gallery-slider">
+                   
                     <ul class="slides">
+                    <?php
+                    $galeriaTur = new Galeria(Galeria::MUNICIPIO);
+                    foreach ($galeriaTur->getResult() as $galeria) {
+                    ?>  
                         <li>
+                            <h4> <?= $galeria['galnome'] ?> </h4>
                             <div class="mask">
-                                <img src="placeholders/gallery/igreja1.jpg" width="797" height="429" alt="" />
-
+                                <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/galeria/'. $galeria['galarquivo'] ?>" width="797" height="429" alt="imagem" />
                             </div>
                             <div class="kp-gallery-caption">
-                                Igreja católica Matriz de NOSSA SENHORA DE FÁTIMA
+                                <h5>Sobre:</h5>
+                                <p> <?= trim($galeria['galsobre']) ?></p>
+                                <p class="kp-social">
+                                  <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?=  DataCalendario::date2br($galeria['galdata']) ?> </span></a>
+                                </p>
+                                  <img src="images/slider/small-flex-next-2.png" alt="proximo"/>
+                                  <img src="images/slider/small-flex-prev-2.png" alt="anterior"/>
                             </div>
                         </li>
-                        <li>
-                            <div class="mask">
-                                 <img src="placeholders/gallery/igreja2.jpg" width="797" height="429" alt="" />
-                            </div>
-                            <div class="kp-gallery-caption">
-                               IGREJA POVOADO BURACO D'AGUA - IGREJA CATÓLICA DE SANTA TERESINHA  
-                            </div>
-                        </li>
-                        <li>
-                            <div class="mask">
-                                <img src="placeholders/gallery/igreja3.jpg" width="797" height="429" alt="" />
-                            </div>
-                            <div class="kp-gallery-caption">
-                                IGREJA ADVENTISTA DO SETÍMO DIA
-                            </div>
-                        </li>
-                        <li>
-                            <div class="mask">
-                                <img src="placeholders/gallery/igreja4.jpg" width="797" height="429" alt="" />
-                            </div>
-                            <div class="kp-gallery-caption">
-                            IGREJA ASSEMBLÉIA DE DEUS                            
-                            </div>
-                        </li>
-                        <li>
-                            <div class="mask">
-                                <img src="placeholders/gallery/igreja5.jpg" width="797" height="429" alt="" />
-                            </div>
-                            <div class="kp-gallery-caption">
-                                IGREJA BATISTA
-                            </div>
-                        </li>
-                        <li>
-                            <div class="mask">
-                                <img src="placeholders/gallery/igreja6.jpg" width="797" height="429" alt="" />
-                            </div>
-                            <div class="kp-gallery-caption">
-                                IGREJA CATÓLOCA NO BAIRRO PITOMBEIRA
-                            </div>
-                        </li>
-                        <li>
-                            <div class="mask">
-                                <img src="placeholders/gallery/igreja7.jpg" width="797" height="429" alt="" />
-                            </div>
-                            <div class="kp-gallery-caption">
-                                IGREJA POVOADO TAMBORIL - IGREJA CATÓLICA SÃO JOÃO BATISTA
-                            </div>
-                        </li>
-                        <li>
-                            <div class="mask">
-                                <img src="placeholders/gallery/igreja8.jpg" width="797" height="429" alt="" />
-                            </div>
-                            <div class="kp-gallery-caption">
-                                Igreja Matriz NOSSA SENHORA DE FÁTIMA vista panorâmica
-                            </div>
-                        </li>
+                       <?php } ?>
                     </ul>
+                     
                 </div>
                 <div class="flexslider kp-gallery-carousel">
+                 
                     <ul class="slides">
-                        <li><img src="placeholders/gallery/igreja1.jpg" width="200" height="120" alt="" /><span class="kp-mask"></span></li>
-                        <li><img src="placeholders/gallery/igreja2.jpg" width="200" height="120" alt="" /><span class="kp-mask"></span></li>
-                        <li><img src="placeholders/gallery/igreja3.jpg" width="200" height="120" alt="" /><span class="kp-mask"></span></li>
-                        <li><img src="placeholders/gallery/igreja4.jpg" width="200" height="120" alt="" /><span class="kp-mask"></span></li>
-                        <li><img src="placeholders/gallery/igreja5.jpg" width="200" height="120" alt="" /><span class="kp-mask"></span></li>
-                        <li><img src="placeholders/gallery/igreja6.jpg" width="200" height="120" alt="" /><span class="kp-mask"></span></li>
-                        <li><img src="placeholders/gallery/igreja7.jpg" width="200" height="120" alt="" /><span class="kp-mask"></span></li>
-                        <li><img src="placeholders/gallery/igreja8.jpg" width="200" height="120" alt="" /><span class="kp-mask"></span></li>
+                          <?php
+                    $galeriaTur = new Galeria(Galeria::MUNICIPIO);
+                    foreach ($galeriaTur->getResult() as $galeria) {
+                    ?>
+                        <li><img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/galeria/'. $galeria['galarquivo'] ?>" width="200" height="120" alt="" />
+                            <span class="kp-mask"></span>
+                        </li>
+                       <?php } ?>
                     </ul>
+                   
                 </div><!--kp-gallery-slider-->
 
                 <nav>
@@ -128,7 +91,9 @@ $hoje =  date('d-m-Y');
                   <span class="status-caption" data-hide="Ocultar legendas" data-show="Mostrar legendas">Ocultar legendas</span>
                   <span class="status-slide" data-play="Reprodução automática" data-pause="Pausa"> Pausa </span>
                 </nav>
-              </div>
+             
+              
+                 </div>
               <!-- kp-gallery -->
             </article>           
         </div>
