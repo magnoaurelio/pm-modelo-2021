@@ -128,26 +128,17 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
         <div class="widget-area-5">
          <div class="widget-area-5">
           <div class="multimedia clearfix">
-            <h3 class="multimedia-title kp-title">imagens relacionadas
-                <a class="prev" href="#"></a>
-                <a class="next" href="#"></a>
-            </h3>
+            
             <?php
             include_once 'include/menu_galeria_imagem_relac.php';
            ?>
-            <h3 class="multimedia-title kp-title">vídeos relacionadas
-               <a class="prev" href="#"></a>
-               <a class="next" href="#"></a>
-            </h3>
+            
             <?php
             include_once 'include/menu_galeria_video_relac.php';
            ?>
-            <h3 class="multimedia-title kp-title">áudios relacionadas
-                <a class="prev" href="#"></a>
-                <a class="next" href="#"></a>
-            </h3>
+           
              <?php
-            include_once 'include/menu_galeria_audio_relac.php';
+            //include_once 'include/menu_galeria_audio_relac.php';
            ?>
           </div>
           <!-- multimedia -->

@@ -1,63 +1,18 @@
-<ul class="list-item list-unstyled clearfix">
-    <li>
-      <div class="item">
-        <a href="#" class="caption">
-          <img src="placeholders/posts/img-19.jpg" alt="">
-          <span ><i class="icon-images"></i></span>             
-        </a>
-        <p class="kp-metadata"><i class="icon-calendar"></i> <?=$hoje ?></p>
-        <h4><a href="#">PM de AGRICOLÂNDIA iniciou a construção da Pça Conj Res. DONA NENÉM.</a></h4>
-      </div>
-    </li>
-
-    <li>
-      <div class="item">
-        <a href="#" class="caption">
-          <img src="placeholders/posts/img-31.jpg" alt="">
-          <span ><i class="icon-images"></i></span>             
-        </a>
-        <p class="kp-metadata"><i class="icon-calendar"></i> <?=$hoje ?></p>
-        <h4><a href="#">Evento de Colação de Grau dos alunos de Agricolândia, participam de festa.</a></h4>
-      </div>
-    </li>
-    <li>
-      <div class="item">
-        <a href="#" class="caption">
-          <img src="placeholders/posts/img-32.jpg" alt="">
-          <span ><i class="icon-images"></i></span>             
-        </a>
-        <p class="kp-metadata"><i class="icon-calendar"></i> <?=$hoje ?></p>
-        <h4><a href="#">Secretaria Saúde Confirma 10 casos notificados Recuperados COVID.</a></h4>
-      </div>
-    </li>
-    <li>
-      <div class="item">
-        <a href="#" class="caption">
-          <img src="placeholders/posts/img-33.jpg" alt="">
-          <span ><i class="icon-images"></i></span>             
-        </a>
-        <p class="kp-metadata"><i class="icon-calendar"></i> <?=$hoje ?></p>
-        <h4><a href="#">AGRICOLÂNDIA iniciou a pavimentação asfática ruas da cidade.</a></h4>
-      </div>
-    </li>
-    <li>
-      <div class="item">
-        <a href="#" class="caption">
-          <img src="placeholders/posts/img-30.jpg" alt="">
-          <span ><i class="icon-images"></i></span>             
-        </a>
-        <p class="kp-metadata"><i class="icon-calendar"></i> <?=$hoje ?></p>
-        <h4><a href="#">PM de AGRICOLÂNDIA iniciou a construção da Pça Conj Res. DONA NENÉM.</a></h4>
-      </div>
-    </li>
-    <li>
-      <div class="item">
-        <a href="#" class="caption">
-          <img src="placeholders/posts/img-34.jpg" alt="">
-          <span ><i class="icon-images"></i></span>             
-        </a>
-        <p class="kp-metadata"><i class="icon-calendar"></i> <?=$hoje ?></p>
-        <h4><a href="#">Profissionais da Saúde de Agricolândia, participam de Capacitação.</a></h4>
-      </div>
-    </li>
-  </ul>
+ <div class="related-article">
+     <h3 class="multimedia-title kp-title">Imágens Diversas</h3>
+    <div class="owl-carousel owl-carousel-related">
+       <?php
+          $galeriaTur = new Galeria(Galeria::MUNICIPIO);
+          foreach ($galeriaTur->getResult() as $galeria) {
+       ?>  
+          <div class="item">
+            <a href="#" class="caption">
+              <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/galeria/'. $galeria['galarquivo'] ?>"  width="150" height="150" alt="imagem" />
+              <p><?= trim($galeria['galnome']) ?></p>
+            </a>
+          </div>
+       <?php } ?>
+      
+    </div>
+    <!-- owl-carousel-related -->
+  </div>

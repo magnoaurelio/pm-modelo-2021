@@ -116,26 +116,20 @@ $galeria = new Galeria(UNIDADE_GESTORA);
         
         <div class="widget-area-5">
           <div class="multimedia clearfix">
-            <h3 class="multimedia-title kp-title">imagens Diversos
-                <a class="prev" href="#"></a>
-                <a class="next" href="#"></a>
-            </h3>
+            
             <?php
             include_once 'include/menu_galeria_imagem.php';
            ?>
-            <h3 class="multimedia-title kp-title">vídeos Diversos
-               <a class="prev" href="#"></a>
-               <a class="next" href="#"></a>
-            </h3>
+           
             <?php
             include_once 'include/menu_galeria_video.php';
            ?>
-            <h3 class="multimedia-title kp-title">áudios Diversos
+            <!--h3 class="multimedia-title kp-title">áudios Diversos
                 <a class="prev" href="#"></a>
                 <a class="next" href="#"></a>
-            </h3>
+            </h3-->
              <?php
-            include_once 'include/menu_galeria_audio.php';
+           // include_once 'include/menu_galeria_audio.php';
            ?>
           </div>
           <!-- multimedia -->

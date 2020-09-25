@@ -190,25 +190,20 @@ $hoje =  date('d-m-Y');
             <!-- inicio sidebar -->
              <div class="widget widget-ads" style="margin-left: -25px; margin-top: -16px;" >
              <?php
-             include_once 'include/menu_home_clima_2.php';
-            //include_once 'include/menu_sidebar_noticia_popular.php';
+           
+             include_once 'include/menu_sidebar_propaganda.php';
+             include_once 'include/menu_home_clima_0.php';
              ?>
              </div>
             <?php
               include_once 'include/menu_home_sidebar.php';
              ?>
-          <?php
-            include_once 'include/menu_sidebar_propaganda.php';
-           
-            include_once 'include/menu_home_video.php';
-         ?>
-          
+         
         <!-- fim sidebar -->
         <!-- widget-random -->
          <!-- widget-ads -->
             
-          
-       
+           
             <!-- widget-video -->
 
         </div>

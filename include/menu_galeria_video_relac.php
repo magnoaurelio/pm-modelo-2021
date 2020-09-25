@@ -1,68 +1,19 @@
- <ul class="list-item list-unstyled clearfix">
-    <li>
-      <div class="item">
-        <a href="#" class="caption">
-          <img src="placeholders/posts/img-31.jpg" alt="">
-          <span ><i class="icon-uniF563"></i></span>
-          <p>3:30</p>
-        </a>
-        <p class="kp-metadata"><i class="icon-calendar"></i> <?=$hoje ?></p>
-        <h4><a href="#">Evento de Colação de Grau dos alunos de Agricolândia, participam de festa.</a></h4>
-      </div>
-    </li>
-    <li>
-      <div class="item">
-        <a href="#" class="caption">
-          <img src="placeholders/posts/img-19.jpg" alt="">
-          <span ><i class="icon-uniF563"></i></span>
-          <p>3:30</p>
-        </a>
-        <p class="kp-metadata"><i class="icon-calendar"></i> <?=$hoje ?></p>
-        <h4><a href="#">PM de AGRICOLÂNDIA iniciou a construção da Pça Conj Res. DONA NENÉM.</a></h4>
-      </div>
-    </li>
-    <li>
-      <div class="item">
-        <a href="#" class="caption">
-          <img src="placeholders/posts/img-32.jpg" alt="">
-          <span ><i class="icon-uniF563"></i></span>
-          <p>3:30</p>
-        </a>
-        <p class="kp-metadata"><i class="icon-calendar"></i> <?=$hoje ?></p>
-        <h4><a href="#">Secretaria Saúde Confirma 10 casos notificados Recuperados COVID.</a></h4>
-      </div>
-    </li>
-    <li>
-      <div class="item">
-        <a href="#" class="caption">
-          <img src="placeholders/posts/img-30.jpg" alt="">
-          <span ><i class="icon-uniF563"></i></span>
-          <p>3:30</p>
-        </a>
-        <p class="kp-metadata"><i class="icon-calendar"></i> <?=$hoje ?></p>
-        <h4><a href="#">PM de AGRICOLÂNDIA iniciou a construção da Pça Conj Res. DONA NENÉM.</a></h4>
-      </div>
-    </li>
-    <li>
-      <div class="item">
-        <a href="#" class="caption">
-          <img src="placeholders/posts/img-33.jpg" alt="">
-          <span ><i class="icon-uniF563"></i></span>
-          <p>3:30</p>
-        </a>
-        <p class="kp-metadata"><i class="icon-calendar"></i> <?=$hoje ?></p>
-        <h4><a href="#">AGRICOLÂNDIA iniciou a pavimentação asfática ruas da cidade.</a></h4>
-      </div>
-    </li>
-    <li>
-      <div class="item">
-        <a href="#" class="caption">
-          <img src="placeholders/posts/img-34.jpg" alt="">
-          <span ><i class="icon-uniF563"></i></span>
-          <p>3:30</p>
-        </a>
-        <p class="kp-metadata"><i class="icon-calendar"></i> <?=$hoje ?></p>
-        <h4><a href="#">Profissionais da Saúde de Agricolândia, participam de Capacitação.</a></h4>
-      </div>
-    </li>
-  </ul>
+ <div class="related-article">
+      <h3 class="multimedia-title kp-title">vídeos relacionados</h3>
+    <div class="owl-carousel owl-carousel-related">
+        <?php
+            $videoBloco = new Videos(Videos::MUNICIPIO . " ");
+            foreach ($videoBloco->getResult() as $video) {
+         ?> 
+          <div class="item">
+               <a href="#" title="Click para Assistir..." class="caption">
+                 <iframe width="270" height="160" src="<?= $video['vidurl'] ?>" frameborder="0" allowfullscreen></iframe>
+               </a>
+               <p><?= trim($video['descricao']) ?></p>
+                <a href="?p=video_detalhe&prenumero=<?= $video['prenumero'] ?>" class="continue-reading">Mais ...</a>
+          </div>
+       <?php } ?>
+      
+    </div>
+    <!-- owl-carousel-related -->
+  </div>

@@ -37,11 +37,11 @@ $hoje =  date('d-m-Y');
               <footer>
                 <div class="kp-author">
                   <div class="author-body clearfix">
-                      <a href="?p=secretaria_gestor" class="pull-left">
+                      <a href="?p=secretaria_geral" class="pull-left">
                         <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/secretaria/'. $secretaria->secfotor ?>" width="250" height="250" alt="">
                       </a>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href="?p=secretaria_gestor" title="Página deste Gestor...">
+                       <a href="?p=secretaria_geral" title="Página deste Gestor...">
                            <img src="files/prefeituras/201002/unidade/prefeitura1.jpg"  width="470" height="250" alt="">
                        </a>
                       <span>

@@ -120,27 +120,7 @@ $hoje =  date('d-m-Y');
              ?>
              </div>
             <div class="widget widget-ads" >
-             <?php
-             include_once 'include/menu_home_video.php';
-            // include_once 'include/menu_sidebar_noticia_popular.php';
-             ?>
-             </div>
-             <?php
-          //   include_once 'include/menu_sidebar_propaganda.php';
-             ?>
-             <?php
-          //   include_once 'include/menu_sidebar_randon.php';
-          //   include_once 'include/menu_sidebar_servico.php';
-             ?>
-           
-                <?php
-             
-         //   include_once 'include/menu_sidebar_foto_noticia.php';
-         ?>
-               <?php
-          //   include_once 'include/menu_sidebar_mapa_localizacao.php';
-            //include_once 'include/menu_sidebar_noticia_popular.php';
-             ?>
+              
         <!-- fim sidebar -->
         <!-- widget-random -->
          <!-- widget-ads -->
