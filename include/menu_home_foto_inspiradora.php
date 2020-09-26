@@ -1,65 +1,111 @@
- <!-- inicio widget-area-4 -->
+<?php
+$hoje = date('Y-m-d');
+$hojePartes = new DataCalendario($hoje);
+$data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
+$ano  = $hojePartes->getAno();
+?>
+<!-- inicio widget-area-4 -->
 <div class="widget-area-4">
    <div class="widget widget-photos">
       <h3 class="widget-title">Fotos inspiradoras</h3>
       <ul class="list-unstyled clearfix">
+       
         <li class="col-sm col-sm-left">
           <ul class="list-unstyled">
+            <?php
+            $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " and home <> 2 order by RAND() limit 1,1");
+            foreach ($noticiasDestaque->getResult() as $noticia) {
+            ?>
             <li>
-              <a href="?p=noticia_detalhe" class="caption">
-                <img src="placeholders/posts/img-14.jpg" alt="">
-                <h4>FOTO 1</h4>
+                <a title="Veja mais..." href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" class="caption">
+                  <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>" style="height:130px; max-height:350px; margin:5px; border-radius:6px;"  alt="">
+                  <h4> <?= substr(strip_tags($noticia['nottitulo']), 0,20) ?>...</h4>
                 <span class="icon-plus"></span>
               </a>
             </li>
+             <?php } ?>
+            <?php
+            $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " and home <> 2 order by RAND() limit 2,1");
+            foreach ($noticiasDestaque->getResult() as $noticia) {
+            ?>
             <li>
-              <a href="?p=noticia_detalhe" class="caption">
-                <img src="placeholders/posts/img-46.jpg" alt="">
-                <h4>FOTO 2</h4>
+               <a title="Veja mais..." href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" class="caption">
+                  <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>" style="height:130px; max-height:350px; margin:5px; border-radius:6px;" alt="">
+                  <h4> <?= substr(strip_tags($noticia['nottitulo']), 0, 20) ?>...</h4>
                 <span class="icon-plus"></span>
               </a>
             </li>
+             <?php } ?>
           </ul>
         </li>
         <li class="col-center">
           <div class="owl-carousel owl-carousel-photos">
-
-                <a href="?p=noticia_detalhe" class="caption">
-                  <img src="placeholders/posts/img-15.jpg" alt="">
-                  <h3>IMAGEM 1</h3>
+                  <?php
+                  $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " and home <> 2 order by RAND() limit 1");
+                  foreach ($noticiasDestaque->getResult() as $noticia) {
+                  ?>
+                  <a title="Veja mais..." href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" class="caption">
+                  <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>" style="height:300px; max-height:350px; margin:5px; border-radius:6px;" alt="">
+                  <h4> <?= substr(strip_tags($noticia['nottitulo']), 0, 60) ?>...</h4>
+                   <span class="icon-plus"></span>
+                 </a>
+                 <?php } ?>
+              
+                 <?php
+                  $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " and home <> 2 order by RAND() limit 1");
+                  foreach ($noticiasDestaque->getResult() as $noticia) {
+                  ?>
+                 <a title="Veja mais..." href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" class="caption">
+                  <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>" style="height:300px; max-height:350px; margin:5px; border-radius:6px;" alt="">
+                  <h4> <?= substr(strip_tags($noticia['nottitulo']), 0, 60) ?>...</h4>
+                   <span class="icon-plus"></span>
                 </a>
 
-                <a href="?p=noticia_detalhe" class="caption">
-                  <img src="placeholders/posts/img-151.jpg" alt="">
-                  <h3>IMAGEM 2</h3>
-                </a>
+                 <?php } ?>
 
-                <a href="?p=noticia_detalhe" class="caption">
-                  <img src="placeholders/posts/img-152.jpg" alt="">
-                  <h3>IMAGEM 3</h3>
-                </a>
+                  <?php
+                  $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " and home <> 2 order by RAND() limit 1");
+                  foreach ($noticiasDestaque->getResult() as $noticia) {
+                  ?>
+                   <a title="Veja mais..." href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" class="caption">
+                  <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>" style="height:300px; max-height:350px; margin:5px; border-radius:6px;" alt="">
+                  <h4> <?= substr(strip_tags($noticia['nottitulo']), 0, 60) ?>...</h4>
+                   <span class="icon-plus"></span>
+                    </a>
+                 <?php } ?>
 
           </div>
         </li>
         <li class="col-sm col-sm-right">
-          <ul class="list-unstyled">
+           <ul class="list-unstyled">
+            <?php
+            $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " and home <> 2 order by RAND() limit 1,1");
+            foreach ($noticiasDestaque->getResult() as $noticia) {
+            ?>
             <li>
-              <a href="?p=noticia_detalhe" class="caption">
-                <img src="placeholders/posts/img-46.jpg" alt="">
-                <h4>Ação COVID 19</h4>
+                <a title="Veja mais..." href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" class="caption">
+                  <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>" style="height:130px; max-height:350px; margin:5px; border-radius:6px;"  alt="">
+                  <h4> <?= substr(strip_tags($noticia['nottitulo']), 0,20) ?>...</h4>
                 <span class="icon-plus"></span>
               </a>
             </li>
+             <?php } ?>
+            <?php
+            $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " and home <> 2 order by RAND() limit 2,1");
+            foreach ($noticiasDestaque->getResult() as $noticia) {
+            ?>
             <li>
-              <a href="?p=noticia_detalhe" class="caption">
-                <img src="placeholders/posts/img-14.jpg" alt="">
-                <h4>Visão da LAGOA DA BAIXA</h4>
+               <a title="Veja mais..." href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" class="caption">
+                  <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>" style="height:130px; max-height:350px; margin:5px; border-radius:6px;" alt="">
+                  <h4> <?= substr(strip_tags($noticia['nottitulo']), 0, 20) ?>...</h4>
                 <span class="icon-plus"></span>
               </a>
             </li>
+             <?php } ?>
           </ul>
         </li>
       </ul>
+     
       <a href="gallery.html" class="to-gallery">Veja mais...</a>
     </div>
     <!-- widget-photos -->
