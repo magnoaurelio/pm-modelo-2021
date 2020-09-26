@@ -1,9 +1,10 @@
 <?php
+include './include/head.php';
 
-$hoje =  date('d-m-Y');
-//$hojePartes =  MDate::datePart($hoje);
-//$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
-//$ano  = $hojePartes->ano;
+$hoje = date('Y-m-d');
+$hojePartes = new DataCalendario($hoje);
+$data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
+$alimentos = new Alimentos(UNIDADE_GESTORA);
 ?>
 <body class="loading">
    
@@ -24,10 +25,10 @@ $hoje =  date('d-m-Y');
                 <h3 class="title-post">Restaurantes, Bares e Locais de Alimentação </h3>
                 <div class="header-bottom">
                   <p class="kp-metadata style-2">
-                  <i class="icon-comment"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                </p>
+                   <i class="fa fa-calendar fa-fw fa-lg"></i><span><?=$data?></span>
+                   <i class="fa fa-home fa-fw fa-lg"></i><span><?=$data?></span>
+                   <i class="fa fa-feed fa-fw fa-lg"></i><span></span>
+                 </p>
                 <p class="kp-share">
                   <span>Compartilhar:</span> 
                   <a href="#" class="icon-facebook3"></a>
@@ -39,88 +40,55 @@ $hoje =  date('d-m-Y');
                 </div>
                 <!-- header-bottom -->                
               </header>
-              
-              <div class="kp-gallery">
+                
+                 <div class="kp-gallery">
+               
+             
                 <div class="flexslider kp-gallery-slider">
+                   
                     <ul class="slides">
+                    <?php
+                    $alimentosTur = new Alimentos(Alimentos::MUNICIPIO);
+                    foreach ($alimentosTur->getResult() as $alimento) {
+                    ?>  
                         <li>
+                            <h4> <?= $alimento['alinome'] ?> </h4>
                             <div class="mask">
-                                <img src="placeholders/gallery/g1.jpg" width="797" height="429" alt="" />
-
+                                <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/alimento/'. $alimento['alifoto1'] ?>" width="797" height="429" alt="imagem" />
                             </div>
                             <div class="kp-gallery-caption">
-                                RESTAURANTES, BARES e LOCAIS DE ALIMENTAÇÃO
+                                <h5>Sobre:</h5>
+                                <p> <?= trim($alimento['alisobre']) ?></p>
+                                   <span><hr class="kp-metadata" style="color-line: #ccc;"></span>
+                                <p class="kp-social">
+                                  <a href="#" class="kp-metadata"><span><i class="fa fa-calendar fa-fw fa-lg"></i>&nbsp;&nbsp;<?=  DataCalendario::date2br($alimento['alidata']) ?> </span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-phone fa-lg"></i>&nbsp;&nbsp;<?= $alimento['alifone'] ?> </span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="fa fa-clock-o fa-fw fa-lg"></i>&nbsp;&nbsp;<?= $alimento['alihorario'] ?></span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= $alimento['aliendereco'] ?>-<?= $alimento['alibairro'] ?> </span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-user  fa-lg"></i>&nbsp;&nbsp;<?= $alimento['alicontato'] ?> </span></a>
+                                </p>
+                                  <span><hr class="kp-metadata" style="color-line: #ccc;"></span>
+                                  <img src="images/slider/small-flex-next-2.png" alt="proximo"/>
+                                  <img src="images/slider/small-flex-prev-2.png" alt="anterior"/>
                             </div>
                         </li>
-                        <li>
-                            <div class="mask">
-                                 <img src="placeholders/gallery/g1.jpg" width="797" height="429" alt="" />
-                            </div>
-                            <div class="kp-gallery-caption">
-                              RESTAURANTES, BARES e LOCAIS DE ALIMENTAÇÃO 
-                            </div>
-                        </li>
-                        <li>
-                            <div class="mask">
-                                <img src="placeholders/gallery/g1.jpg" width="797" height="429" alt="" />
-                            </div>
-                            <div class="kp-gallery-caption">
-                              RESTAURANTES, BARES e LOCAIS DE ALIMENTAÇÃO
-                            </div>
-                        </li>
-                        <li>
-                            <div class="mask">
-                                <img src="placeholders/gallery/g1.jpg" width="797" height="429" alt="" />
-                            </div>
-                            <div class="kp-gallery-caption">
-                           RESTAURANTES, BARES e LOCAIS DE ALIMENTAÇÃO                           
-                            </div>
-                        </li>
-                        <li>
-                            <div class="mask">
-                                <img src="placeholders/gallery/g1.jpg" width="797" height="429" alt="" />
-                            </div>
-                            <div class="kp-gallery-caption">
-                                RESTAURANTES, BARES e LOCAIS DE ALIMENTAÇÃO
-                            </div>
-                        </li>
-                        <li>
-                            <div class="mask">
-                                <img src="placeholders/gallery/g1.jpg" width="797" height="429" alt="" />
-                            </div>
-                            <div class="kp-gallery-caption">
-                              LOCAIS DE ALIMENTAÇÃO
-                            </div>
-                        </li>
-                        <li>
-                            <div class="mask">
-                                <img src="placeholders/gallery/g1.jpg" width="797" height="429" alt="" />
-                            </div>
-                            <div class="kp-gallery-caption">
-                               RESTAURANTES, BARES e LOCAIS DE ALIMENTAÇÃO
-                            </div>
-                        </li>
-                        <li>
-                            <div class="mask">
-                                <img src="placeholders/gallery/g1.jpg" width="797" height="429" alt="" />
-                            </div>
-                            <div class="kp-gallery-caption">
-                                RESTAURANTES, BARES e LOCAIS DE ALIMENTAÇÃO
-                            </div>
-                        </li>
+                       <?php } ?>
                     </ul>
+                     
                 </div>
                 <div class="flexslider kp-gallery-carousel">
+                 
                     <ul class="slides">
-                        <li><img src="placeholders/gallery/g2.jpg" width="200" height="120" alt="" /><span class="kp-mask"></span></li>
-                        <li><img src="placeholders/gallery/g2.jpg" width="200" height="120" alt="" /><span class="kp-mask"></span></li>
-                        <li><img src="placeholders/gallery/g2.jpg" width="200" height="120" alt="" /><span class="kp-mask"></span></li>
-                        <li><img src="placeholders/gallery/g2.jpg" width="200" height="120" alt="" /><span class="kp-mask"></span></li>
-                        <li><img src="placeholders/gallery/g2.jpg" width="200" height="120" alt="" /><span class="kp-mask"></span></li>
-                        <li><img src="placeholders/gallery/g2.jpg" width="200" height="120" alt="" /><span class="kp-mask"></span></li>
-                        <li><img src="placeholders/gallery/g2.jpg" width="200" height="120" alt="" /><span class="kp-mask"></span></li>
-                        <li><img src="placeholders/gallery/g2.jpg" width="200" height="120" alt="" /><span class="kp-mask"></span></li>
+                    <?php
+                    $alimentosTur = new Alimentos(Alimentos::MUNICIPIO);
+                    foreach ($alimentosTur->getResult() as $alimento) {
+                    ?>
+                        <li><img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/alimento/'. $alimento['alifoto1'] ?>" width="200" height="120" alt="" />
+                            <span class="kp-mask"></span>
+                        </li>
+                       <?php } ?>
                     </ul>
+                   
                 </div><!--kp-gallery-slider-->
 
                 <nav>
@@ -128,7 +96,9 @@ $hoje =  date('d-m-Y');
                   <span class="status-caption" data-hide="Ocultar legendas" data-show="Mostrar legendas">Ocultar legendas</span>
                   <span class="status-slide" data-play="Reprodução automática" data-pause="Pausa"> Pausa </span>
                 </nav>
-              </div>
+             
+              
+                 </div>
               <!-- kp-gallery -->
             </article>           
         </div>
@@ -136,17 +106,23 @@ $hoje =  date('d-m-Y');
         
         
         <div id="sidebar" class="pull-left">
-            <div class="widget widget-ads" style="margin-top: -16px; margin-left: -25px">
+            <div class="widget widget-ads" >
              <?php
-             include_once 'include/menu_home_clima_2.php';
-            //include_once 'include/menu_sidebar_noticia_popular.php';
+               include_once 'include/menu_publicidade_sidebar.php';
              ?>
              </div>
+             <div class="widget widget-ads" >
+             <?php
+             include_once 'include/menu_home_clima_1.php';
+             ?>
+           </div>
+          
            <?php
-             include_once 'include/menu_sidebar_propaganda.php';
            
-             include_once 'include/menu_home_video.php';
+           
+             include_once 'include/menu_sidebar_mapa_localizacao.php';
            ?>
+           
         </div>
         <!-- sidebar -->
         <!-- sidebar -->
@@ -154,26 +130,17 @@ $hoje =  date('d-m-Y');
         <div class="widget-area-5">
          <div class="widget-area-5">
           <div class="multimedia clearfix">
-            <h3 class="multimedia-title kp-title">imagens relacionadas
-                <a class="prev" href="#"></a>
-                <a class="next" href="#"></a>
-            </h3>
+            
             <?php
             include_once 'include/menu_galeria_imagem_relac.php';
            ?>
-            <h3 class="multimedia-title kp-title">vídeos relacionadas
-               <a class="prev" href="#"></a>
-               <a class="next" href="#"></a>
-            </h3>
+           
             <?php
             include_once 'include/menu_galeria_video_relac.php';
            ?>
-            <h3 class="multimedia-title kp-title">áudios relacionadas
-                <a class="prev" href="#"></a>
-                <a class="next" href="#"></a>
-            </h3>
+           
              <?php
-            include_once 'include/menu_galeria_audio_relac.php';
+            //include_once 'include/menu_galeria_audio_relac.php';
            ?>
           </div>
           <!-- multimedia -->

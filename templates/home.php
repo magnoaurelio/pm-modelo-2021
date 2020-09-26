@@ -54,8 +54,13 @@ $ano  =  $hojePartes->getAno();
                 <!-- owl-carousel-images -->
             </div>
             <!-- slider-feature-news -->
-        </div>
-        <!-- fim widget-area-1 -->
+              <?php include 'include/menu_publicidade_home_superior.php'; ?>
+          </div>
+           
+      
+        
+        
+
 
         <div class="clearfix"></div>
 
@@ -100,8 +105,8 @@ $ano  =  $hojePartes->getAno();
 
         <!-- inicio widget-area-2 -->
         <div class="widget-area-2 pull-left">
-             <?php include_once 'include/menu_sidebar_propaganda.php'; ?>
-             <?php include_once 'include/menu_home_clima_1.php'; ?>
+             <?php include 'include/menu_publicidade_sidebar.php'; ?>
+             <?php include_once 'include/menu_home_clima_4.php'; ?>
             <!-- widget-last-post -->
             <div class="widget widget-ads">
                 <!--a href="?p=noticia_detalhe"><img src="files/prefeituras/201002/banner/BANNER_MEIO_INFER_AGR.gif" alt=""></a-->
@@ -130,7 +135,7 @@ $ano  =  $hojePartes->getAno();
         <div class="clearfix"></div>
 
         <!-- inicio widget-area-4 -->
-        <?php include_once 'include/menu_home_foto_inspiradora.php'; ?>
+        <?php include 'include/menu_home_foto_inspiradora.php'; ?>
 
         <!-- fim widget-area-4 -->
 
@@ -139,7 +144,7 @@ $ano  =  $hojePartes->getAno();
 
     <!-- inicio sidebar -->
    
-    <?php include_once 'include/menu_home_sidebar.php'; ?>
+    <?php include 'include/menu_home_sidebar.php'; ?>
     
    
         
@@ -148,6 +153,8 @@ $ano  =  $hojePartes->getAno();
     <!-- fim sidebar -->
     <!-- inicio widget-area-5 BOLETIM DE NOTICIAS -->
     <?php include 'include/menu_home_newsletter.php'; ?>
+    <?php include 'include/menu_publicidade_home_inferior.php'; ?>
+    <br>
     <!-- fim widget-area-5 -->
 
 </div>

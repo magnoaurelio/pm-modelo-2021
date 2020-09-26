@@ -1,13 +1,11 @@
 <!DOCTYPE html>
   
 <?php
+$hoje = date('Y-m-d');
+$hojePartes = new DataCalendario($hoje);
+$data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
+$ano  = $hojePartes->getAno();
 $secretaria =  new Secretaria(intval($_GET['prenumero']));
-
-
-$hoje =  date('d-m-Y');
-//$hojePartes =  MDate::datePart($hoje);
-//$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
-//$ano  = $hojePartes->ano;
 
 ?>  
 <!-- Mirrored from upsidethemes.net/demo/news-times/html/single-video.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Aug 2020 12:02:50 GMT -->

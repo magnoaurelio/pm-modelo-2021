@@ -180,11 +180,11 @@ $hoje =  date('d-m-Y');
         <!-- main-col -->
         <div id="sidebar" class="pull-left">
             <!-- inicio sidebar -->
-             <div class="widget widget-ads" style="margin-left: -25px; margin-top: -16px;" >
+             <div class="widget widget-ads" >
              <?php
             
-             include_once 'include/menu_sidebar_propaganda.php';
-              include_once 'include/menu_home_clima_0.php';
+             include_once 'include/menu_publicidade_sidebar.php';
+            //  include_once 'include/menu_home_clima_0.php';
              ?>
              </div>
              

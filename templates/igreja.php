@@ -106,14 +106,16 @@ $igreja = new Igreja(UNIDADE_GESTORA);
         
         
         <div id="sidebar" class="pull-left">
+            <div class="widget widget-ads" >
              <?php
-                include_once 'include/menu_sidebar_propaganda.php';
+               include_once 'include/menu_publicidade_sidebar.php';
              ?>
-          
+           </div>
+            <div class="widget widget-ads" >
              <?php
              include_once 'include/menu_home_clima_1.php';
              ?>
-           
+              </div>
           
            <?php
            
