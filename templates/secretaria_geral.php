@@ -115,7 +115,7 @@ $hoje =  date('d-m-Y');
              </div>
               <div class="widget widget-ads" >
              <?php
-             include_once 'include/menu_home_sidebar.php';
+             include_once 'include/menu_home_sidebar_adm.php';
             // include_once 'include/menu_sidebar_noticia_popular.php';
              ?>
              </div>
