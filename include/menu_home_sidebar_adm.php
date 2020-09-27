@@ -17,34 +17,32 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
       <?php
        $prefeitoAdmin = new Prefeito(Prefeito::MUNICIPIO . " and pretipo = 0 ");
        foreach ($prefeitoAdmin->getResult() as $prefeito) {
-
-       if ($prefeito['prepartidop'] == 11):
-            $partido = 'pp';
-            $pagina = '?p=prefeito';
-
-       elseif ($prefeito['prepartidop'] == 15):
-            $partido = 'pmdb';
-            $pagina = '?p=prefeito_vice';
-       endif;
+                $prepartidop = $prefeito['prepartidop'];
        ?>
       <ul class="list-unstyled clearfix" >
         <li class="col-sm col-sm-left">
-             <a href="<?= $pagina ?>" class="pull-left">
+             <a href="?p=prefeito" title=" Veja mais sobre...<?= $prefeito['prenomep'] ?>"  class="pull-left">
                  <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/'. $prefeito['prefotop'] ?>" width="150" height="150" alt="prefeito">
               </a>
             <div class="pull-right" >
                <h5>
-                <a href="?p=prefeito" title="<?= $prefeito['prenomep'] ?>" >
+                <a href="?p=prefeito" title=" Veja mais sobre...<?= $prefeito['prenomep'] ?>" >
                        <span ><strong><?= $prefeito['preapep'] ?></strong></span>
                        <p style="color:#9e9e9e;"><em>Prefeito</em></p>
                 </a>
                </h5> 
+                 <?php
+                    $partido = new Partido("where parcodigo = $prepartidop ");
+                    foreach ($partido->getResult() as $partido) {
+                  ?>
+               
                 <h5>
-              <a href="?p=secretaria_geral" class="pull-center" title="Site Oficial do <?= $prefeito['prepartidop'] ?> ">
-                 <img src="<?= FILES . 'partido/'. $partido .'/'. $prefeito['preparfoto'] ?>"  width="140" height="50" alt="partido">              
-                <p style="font-size: 12px; text-align: center;">Nº: <?= $prefeito['prepartidop'] ?> Sigla: <?= $prefeito['prepartidop'] ?></p>
-              </a>
+                     <a href="<?= $partido['parsite'] ?>" target="_blank" class="pull-center" title="Site Oficial do <?= $partido['parnome'] ?> - <?= $partido['parcodigo'] ?> - <?= $partido['parsigla'] ?>">
+                        <img src="<?= FILES . 'partido/'. strtolower($partido['parsigla']) .'/'. $partido['parlogo'] ?>"  width="120" height="40" alt="partido">              
+                         <p style="font-size: 12px; text-align: center;">Nº: <?= $partido['parcodigo'] ?> Sigla: <?= $partido['parsigla'] ?> </p>
+                     </a>
                </h5>
+                 <?php } ?>
             </div>
         </li>
       </ul>
@@ -54,34 +52,32 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
       <?php
        $prefeitoAdmin = new Prefeito(Prefeito::MUNICIPIO . " and pretipo = 1 ");
        foreach ($prefeitoAdmin->getResult() as $prefeito) {
-
-       if ($prefeito['prepartidop'] == 11):
-            $partido = 'pp';
-            $pagina = '?p=prefeito';
-
-       elseif ($prefeito['prepartidop'] == 15):
-            $partido = 'pmdb';
-            $pagina = '?p=prefeito_vice';
-       endif;
+                $prepartidop = $prefeito['prepartidop'];
        ?>
       <ul class="list-unstyled clearfix" >
         <li class="col-sm col-sm-left">
-             <a href="<?= $pagina ?>" class="pull-left">
+             <a href="?p=prefeito_vice" class="pull-left" title=" Veja mais sobre...<?= $prefeito['prenomep'] ?>" >
                  <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/'. $prefeito['prefotop'] ?>" width="150" height="150" alt="prefeito">
               </a>
              <div class="pull-right">
              <h5>
-                 <a href="?p=prefeito" title="<?= $prefeito['prenomep'] ?>">
+                 <a href="?p=prefeito_vice" title=" Veja mais sobre... <?= $prefeito['prenomep'] ?>">
                      <span ><strong><?= $prefeito['preapep'] ?></strong></span>
                      <p style="color:#9e9e9e;"><em>Vice - Prefeito</em></p>
                 </a>
             </h5> 
-              <h5>
-              <a href="?p=secretaria_geral" class="pull-right" title="Site Oficial do <?= $prefeito['prepartidop'] ?> ">
-                 <img src="<?= FILES . 'partido/'. $partido .'/'. $prefeito['preparfoto'] ?>"  width="140" height="50" alt="partido">              
-                <p style="font-size: 12px; text-align: center;">Nº: <?= $prefeito['prepartidop'] ?> Sigla: <?= $prefeito['prepartidop'] ?></p>
-              </a>
-             </h5> 
+              <?php
+                    $partido = new Partido("where parcodigo = $prepartidop ");
+                    foreach ($partido->getResult() as $partido) {
+                  ?>
+               
+                <h5>
+                     <a href="<?= $partido['parsite'] ?>" target="_blank" class="pull-center" title="Site Oficial do <?= $partido['parnome'] ?> - <?= $partido['parcodigo'] ?> - <?= $partido['parsigla'] ?>">
+                        <img src="<?= FILES . 'partido/'. strtolower($partido['parsigla']) .'/'. $partido['parlogo'] ?>"  width="120" height="40" alt="partido">              
+                         <p style="font-size: 12px; text-align: center;">Nº: <?= $partido['parcodigo'] ?> Sigla: <?= $partido['parsigla'] ?> </p>
+                     </a>
+               </h5>
+                 <?php } ?>
              </div>
         </li>
       </ul>

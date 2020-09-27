@@ -33,11 +33,13 @@ $hoje =  date('d-m-Y');
                     foreach ($secretarias->getResult() as $secretaria) {
               ?>
               <header class="clearfix">
-                  <h3>
-                      <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>">
-                        <span ><strong><?=$secretaria['secnome']?></strong></span>
+                   <h3>
+                      <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>" title="<?= $secretaria['secsecretario'] ?>">
+                          <span style="color: #9e9e9e;" ><strong><?=$secretaria['secnome']?></strong>:</span>
+                          &nbsp;&nbsp; <span ><strong><?= strtoupper($secretaria['secusual'])?></strong></span>
                     </a>
                    </h3> 
+                <!-- head
                 <!-- header-bottom -->                
             
               <footer>

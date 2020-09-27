@@ -6,7 +6,7 @@ $hojePartes = new DataCalendario($hoje);
 $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
 
 $prefeito = new Prefeito(UNIDADE_GESTORA);
-
+$prefeitura = new Prefeitura(UNIDADE_GESTORA);
 ?>  
 <!-- Mirrored from upsidethemes.net/demo/news-times/html/single-video.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Aug 2020 12:02:50 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
@@ -29,15 +29,7 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
                   <?php
                      $prefeitoAdmin = new Prefeito(Prefeito::MUNICIPIO . " and pretipo = 1 ");
                      foreach ($prefeitoAdmin->getResult() as $prefeito) {
-
-                     if ($prefeito['prepartidop'] == 11):
-                          $partido = 'pp';
-                          $pagina = '?p=prefeito';
-
-                     elseif ($prefeito['prepartidop'] == 15):
-                          $partido = 'pmdb';
-                          $pagina = '?p=prefeito_vice';
-                     endif;
+                              $prepartidop = $prefeito['prepartidop'];
                      ?>
                 <h3 class="title-post" style="color: #9e9e9e;">Vice-Prefeito(a):  &nbsp;&nbsp; 
                   <span >
@@ -45,12 +37,17 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
                        <span ><strong><?= $prefeito['preapep'] ?></strong></span>
                 </a>
                 &nbsp;&nbsp;
-              
-                   <a href="?p=secretaria_geral" class="pull-center" title="Site Oficial do <?= $prefeito['prepartidop'] ?> ">
-                    <img src="<?= FILES . 'partido/'. $partido .'/'. $prefeito['preparfoto'] ?>"  width="120" height="40" alt="partido">              
-                 </a>
-                       </span>
-                  </h3>
+                       <?php
+                            $partido = new Partido("where parcodigo = $prepartidop ");
+                            foreach ($partido->getResult() as $partido) {
+                        ?>
+                       
+                        <a href="<?= $partido['parsite'] ?>" target="_blank" class="pull-center" title="Site Oficial do <?= $partido['parnome'] ?> - <?= $partido['parcodigo'] ?> - <?= $partido['parsigla'] ?>">
+                            <img src="<?= FILES . 'partido/'. strtolower($partido['parsigla']) .'/'. $partido['parlogo'] ?>"  width="120" height="40" alt="partido">              
+                        </a>
+                         <?php } ?>
+                   </span>
+               </h3>
                 <!-- header-bottom -->                
             
               <footer>
@@ -60,12 +57,12 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
                     <div class="col-sm-right col-12">
                    
                      <div class="item-left" >
-                        <a href="<?= $pagina ?>" class="pull-left" title="<?= $prefeito['prenomep'] ?>">
+                        <a href="#" class="pull-left" title="<?= $prefeito['prenomep'] ?>">
                             <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/'. $prefeito['prefotop'] ?>" width="250" height="250" alt="prefeito">
                             &nbsp;&nbsp;
                          </a>
-                       <div class="item-right" >
-                       <img src="files/prefeituras/201002/unidade/prefeitura1.jpg"  width="470" height="250"  alt="">
+                      <div class="item-right" >
+                       <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/'. $prefeitura->preimagem ?>" width="470" height="250" alt="prefeito">
                        </div>
                      
                       </div>
