@@ -1,13 +1,11 @@
 <!DOCTYPE html>
   
 <?php
-include_once 'include/head.php';
-include_once 'app/control/Router.class.php';
-include_once 'app/control/Layout.class.php';
-$hoje =  date('d-m-Y');
-//$hojePartes =  MDate::datePart($hoje);
-//$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
-//$ano  = $hojePartes->ano;
+$hoje = date('Y-m-d');
+$hojePartes = new DataCalendario($hoje);
+$data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
+
+$prefeito = new Prefeito(UNIDADE_GESTORA);
 
 ?>  
 <!-- Mirrored from upsidethemes.net/demo/news-times/html/single-video.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Aug 2020 12:02:50 GMT -->
@@ -28,46 +26,79 @@ $hoje =  date('d-m-Y');
             <article class="post-content">
               
               <header class="clearfix">
-                <h3 class="title-post">Prefeito(a)</h3>
+                  <?php
+                     $prefeitoAdmin = new Prefeito(Prefeito::MUNICIPIO . " and pretipo = 0 ");
+                     foreach ($prefeitoAdmin->getResult() as $prefeito) {
+
+                     if ($prefeito['prepartidop'] == 11):
+                          $partido = 'pp';
+                          $pagina = '?p=prefeito';
+
+                     elseif ($prefeito['prepartidop'] == 15):
+                          $partido = 'pmdb';
+                          $pagina = '?p=prefeito_vice';
+                     endif;
+                     ?>
+                <h3 class="title-post" style="color: #9e9e9e;">Prefeito(a):  &nbsp;&nbsp; 
+                  <span >
+                <a href="?p=prefeito" title="<?= $prefeito['prenomep'] ?>" >
+                       <span ><strong><?= $prefeito['preapep'] ?></strong></span>
+                </a>
+                &nbsp;&nbsp;
+              
+                <a href="?p=secretaria_geral" class="pull-center" title="Site Oficial do <?= $prefeito['prepartidop'] ?> ">
+                    <img src="<?= FILES . 'partido/'. $partido .'/'. $prefeito['preparfoto'] ?>"  width="120" height="40" alt="partido">              
+                 </a>
+                       </span>
+                  </h3>
                 <!-- header-bottom -->                
             
               <footer>
+                   
                 <div class="kp-author">
-                    <div class="author-body clearfix">
-                      <img src="files/prefeituras/201002/prefeito002.jpg" width="255"   alt="">
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="author-body clearfix">
+                    <div class="col-sm-right col-12">
+                   
+                     <div class="item-left" >
+                        <a href="<?= $pagina ?>" class="pull-left" title="<?= $prefeito['prenomep'] ?>">
+                            <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/'. $prefeito['prefotop'] ?>" width="250" height="250" alt="prefeito">
+                            &nbsp;&nbsp;
+                         </a>
+                       <div class="item-right" >
                        <img src="files/prefeituras/201002/unidade/prefeitura1.jpg"  width="470" height="250"  alt="">
-                       <a href="#" class="caption" title=" Partido: PP 11"  style="margin-left: 30px;" >
-                          <img src="files/partido/pp/logo_num_pp.jpg" width="180" height="60"   alt="">
-                      </a>
-                      <div class="item-left" >
-                      <h4>Walter Alencar</h4>
-                      <h3>Prefeito Municipal</h3>
+                       </div>
                      
+                      </div>
+                        <hr style="color-line: #ccc;">
                        <p class="kp-social">
                         <a href="#" class="icon-vimeo2"></a>
                         <a href="#" class="icon-facebook2"></a>
                         <a href="#" class="icon-linkedin3"></a>
                         <a href="#" class="icon-google-plus"></a>
-                       <hr style="color-line: #ccc;">
+                      
+                       </p>
                        <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i> 86 3255-2587 </span></a>
+                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> <?= $prefeito['prefone'] ?> </span></a>
+                        <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i> <?= $prefeito['precelular'] ?> </span></a>
+                         <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> <?= $prefeito['preemail'] ?> </span></a>
+                         <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> <?= $prefeito['precep'] ?> </span></a>
+                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> <?= $prefeito['preendereco'] ?> </span></a>
+                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> <?= $prefeito['prebairro'] ?> </span></a>
                      </p>
                       <hr style="color-line: #ccc;">
-                      <p> Prefeito de 1ª gestão.. Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão....</p>
+                      <h6>Sobre:</h6>
+                      <p> <?= $prefeito['historico'] ?></p>
                      
                     </div>
-                 
                     <!-- item-right -->
-                  </div>
-              
+                    </div>
                   <!-- author-body -->
                 </div>
+                 
                   </footer>
+                  <?php } ?>
               </header>
+                
                <footer>
               <!-- kp-thumb -->
                   <div class="kp-author">
@@ -191,12 +222,12 @@ $hoje =  date('d-m-Y');
              <div class="widget widget-ads"  >
              <?php
            
-             include_once 'include/menu_publicidade_sidebar.php';
+             include 'include/menu_publicidade_sidebar.php';
             // include_once 'include/menu_home_clima_4.php';
              ?>
              </div>
             <?php
-              include_once 'include/menu_home_sidebar.php';
+              include 'include/menu_home_sidebar_adm.php';
              ?>
          
         <!-- fim sidebar -->

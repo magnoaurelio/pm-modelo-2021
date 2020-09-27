@@ -26,8 +26,9 @@ $secretaria =  new Secretaria(intval($_GET['prenumero']));
            <article class="post-content">
               <header class="clearfix">
                   <h3>
-                      <a href="?p=secretaria_geral&prenumero=<?= $secretaria->prenumero ?>">
-                        <span ><strong><?=$secretaria->secnome?></strong></span>
+                      <a href="?p=secretaria_geral&prenumero=<?= $secretaria->prenumero ?>" title="<?= $secretaria->secsecretario ?>">
+                          <span style="color: #9e9e9e;" ><strong><?=$secretaria->secnome?></strong>:</span>
+                        &nbsp;&nbsp; <span ><strong><?=$secretaria->secusual?></strong></span>
                     </a>
                    </h3> 
                 <!-- header-bottom -->                
@@ -68,8 +69,9 @@ $secretaria =  new Secretaria(intval($_GET['prenumero']));
                          <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= strtolower($secretaria->secendereco) ?> </span></a>
                          <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= $secretaria->secbairro ?> </span></a>
                        </p>
-                       <hr style="color-line: #ccc;">
-                        <p> Prefeito de 1ª gestão.. Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão....</p>
+                        <hr style="color-line: #ccc;">
+                      <h6>Sobre:</h6>
+                      <p> <?= $secretaria->descricao ?></p>
                     </div>
                  
                     <!-- item-right -->
@@ -126,20 +128,14 @@ $secretaria =  new Secretaria(intval($_GET['prenumero']));
             
         </div>
         <!-- main-col -->
-        <div id="sidebar" class="pull-left">
+        <div id="sidebar" class="pull-left" style="margin-top: -12px;">
             <!-- inicio sidebar -->
-             <div class="widget widget-ads" style="margin-left: -25px; margin-top: -16px;" >
+           
              <?php
-             include_once 'include/menu_home_clima_2.php';
+             include_once 'include/menu_home_sidebar_adm.php';
             //include_once 'include/menu_sidebar_noticia_popular.php';
              ?>
-             </div>
-              <div class="widget widget-ads" >
-             <?php
-             include_once 'include/menu_home_sidebar.php';
-            //include_once 'include/menu_sidebar_noticia_popular.php';
-             ?>
-             </div>
+            
               <?php
           //  include_once 'include/menu_sidebar_propaganda.php';
              ?>

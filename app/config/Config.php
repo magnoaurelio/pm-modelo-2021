@@ -11,9 +11,6 @@ define('FILES','http://transparencia.municipiaui.com/files/');
 
 
 /**
- * 201175// santa cruz milagres
-*201009' // amarante
-201184' // sao felix
  * Arquivo resposnsaveis pelas configurações iniciais do site;
  */
 function __autoload($Class) {

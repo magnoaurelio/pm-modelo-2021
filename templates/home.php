@@ -144,7 +144,7 @@ $ano  =  $hojePartes->getAno();
 
     <!-- inicio sidebar -->
    
-    <?php include 'include/menu_home_sidebar.php'; ?>
+    <?php include 'include/menu_home_sidebar_adm.php'; ?>
     
    
         
