@@ -5,6 +5,7 @@ $hoje = date('Y-m-d');
 $hojePartes = new DataCalendario($hoje);
 $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
 $ano  =  $hojePartes->getAno();
+$prefeitura = new Prefeitura(UNIDADE_GESTORA);
 ?>
 <html lang="en">
 
@@ -56,12 +57,7 @@ $ano  =  $hojePartes->getAno();
             <!-- slider-feature-news -->
               <?php include 'include/menu_publicidade_home_superior.php'; ?>
           </div>
-           
-      
-        
-        
-
-
+     
         <div class="clearfix"></div>
 
         <!-- inicio widget-area-3 -->

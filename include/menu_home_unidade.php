@@ -15,19 +15,29 @@ $secretaria =  new Secretaria(intval($_GET['prenumero']));
 
               if (is_file($unidade['uniimagem'])) {
                   $uniimagem = FILES . 'prefeituras/'.UNIDADE_GESTORA.'/galeria.png';
+                  
               }else{
                    $uniimagem = FILES . 'prefeituras/'.UNIDADE_GESTORA.'/unidade/'. $unidade['uniimagem'];
+                   $unifoto   = FILES . 'prefeituras/'.UNIDADE_GESTORA.'/unidade/'. $unidade['unifoto'];
               }
              // var_dump($uniimagem);
           ?>
        <li>
         <div class="item">
+            <p class="kp-metadata"><span><i class="icon-user"></i><strong> <?=$unidade['unifuncao'] ?></strong></span></p>
             <a target="_blank"  href="<?= $uniimagem ?>" class="caption" data-lightbox="example-set" >
-            <img src="<?= $uniimagem ?>" style="max-height:350px; margin:5px; border-radius:6px;" alt="">
+            
+            <img src="<?= $uniimagem ?>" style=" width: 250px; max-height:350px; margin:5px; border-radius:6px;" alt="">
             <span><i class="icon-images"></i></span>
           </a>
-          <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-           <p><?= $unidade['unifuncao'] ?></p>
+          <p class="kp-metadata">
+              <span><i class="icon-calendar"></i> <?=DataCalendario::date2br($unidade['unidata']) ?></span><br>
+              <span><i class="icon-home"></i> <?=$unidade['unilocal'] ?></span><br>
+              <span><i class="icon-home"></i> <?=$unidade['unibairro'] ?></span><br>
+              <span><i class="icon-email"></i> <?=$unidade['uniemail'] ?></span><br>
+              <span><i class="icon-phone"></i> <?=$unidade['unifone'] ?></span>
+          </p>
+         
           <h3><a href="?p=noticia_detalhe"><?= $unidade['unisobre'] ?></a></h3>
         </div>
       </li>

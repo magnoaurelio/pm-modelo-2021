@@ -73,7 +73,7 @@ $secretaria =  new Secretaria(intval($_GET['prenumero']));
                         <hr style="color-line: #ccc;">
                       <h6>Sobre:</h6>
                        <?php
-                        $secretariatipoAdm = new Secretaria_Tipo(Secretaria_Tipo::MUNICIPIO . "and sectipocodigo = $secretaria->sectipocodigo");
+                        $secretariatipoAdm = new Secretaria_Tipo(" WHERE sectipocodigo = $secretaria->sectipocodigo");
                         foreach ($secretariatipoAdm->getResult() as $sectipocodigo) {
                         ?>
                       <p> <?= $sectipocodigo['sectipodescricao'] ?></p>
@@ -100,19 +100,20 @@ $secretaria =  new Secretaria(intval($_GET['prenumero']));
                   <h4>Diretores e Assessores</h4>
                   <div class="author-body clearfix">
                        <?php
+                       
                         $unidadeAdm = new Unidade(Unidade::MUNICIPIO . "and unisec = $secretaria->prenumero");
                         foreach ($unidadeAdm->getResult() as $unidade) {
-                        
-                          if (is_file($unidade['unifoto'])) {
-                             $unifoto = FILES . 'prefeituras/'.UNIDADE_GESTORA.'/secretaria/'. $unidade['unifoto'];
+                          if (! is_file($unidade['unifoto'])) {
+                             $unifoto = FILES . 'prefeituras/'.UNIDADE_GESTORA.'/unidade/'. $unidade['unifoto'];
+                           
                           }else{
                              $unifoto = FILES . 'prefeituras/'.UNIDADE_GESTORA.'/user.png';
                           }
                         ?>
                        
-                       <h5><a href="#">&nbsp;&nbsp;<?=$unidade['uninome']?></a></h5>
+                       <h5><a href="#"><i class="icon-user"></i>&nbsp;&nbsp;<?=$unidade['uninome']?></a></h5>
                         <a href="#" class="pull-left" >
-                           <img src="<?= $unifoto ?>" width="111" height="111" alt="">
+                            <img src="<?= $unifoto ?>" width="111" height="111" alt="">
                          </a>
                          <div class="item-right" >
                                 <h5>
@@ -132,8 +133,8 @@ $secretaria =  new Secretaria(intval($_GET['prenumero']));
                                    <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= $unidade['unifone'] ?> </span></a>
                                    <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?= $unidade['uniemail'] ?> </span></a>
                                    <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= $unidade['unibairro']?></span></a>
-                                   <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= strtolower($unidade['unitipo']) ?> </span></a>
-                                   <a href="#" class="kp-metadata"><span><i class="icon-user  fa-lg"></i>&nbsp;&nbsp;<?= $unidade['unilocal']?> </span></a>
+                                   <a href="#" class="kp-metadata"><span><i class="icon-user  fa-lg"></i>&nbsp;&nbsp;<?= strtolower($unidade['unitipo']) ?> </span></a>
+                                   <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= $unidade['unilocal']?> </span></a>
                                 </p>
                                                                 <hr style="color-line: #ccc;">
 
