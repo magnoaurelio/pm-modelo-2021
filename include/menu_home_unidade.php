@@ -7,21 +7,33 @@ $ano  = $hojePartes->getAno();
 $secretaria =  new Secretaria(intval($_GET['prenumero']));
 ?>
 <div class="widget widget-more-news multimedia">
-    <h3 class="widget-title"><a href="?p=noticia_geral">Unidades da Secretaria de EDUCAÇÃO </a></h3>
+    <h4 class="widget-title"><a href="?p=secretaria_geral">Unidades da:<strong> <?= $secretaria->secnome ?></strong> </a></h4>
     <ul class="list-unstyled clearfix">
+         <?php
+            $unidadeAdm = new Unidade(Unidade::MUNICIPIO . "and unisec = $secretaria->prenumero");
+            foreach ($unidadeAdm->getResult() as $unidade) {
+
+              if (is_file($unidade['uniimagem'])) {
+                  $uniimagem = FILES . 'prefeituras/'.UNIDADE_GESTORA.'/galeria.png';
+              }else{
+                   $uniimagem = FILES . 'prefeituras/'.UNIDADE_GESTORA.'/unidade/'. $unidade['uniimagem'];
+              }
+             // var_dump($uniimagem);
+          ?>
        <li>
         <div class="item">
-            <a target="_blank"  href="files/prefeituras/201002/unidade/seduc1.jpg" class="caption" data-lightbox="example-set" >
-            <img src="files/prefeituras/201002/unidade/seduc1.jpg" style="max-height:350px; margin:5px; border-radius:6px;" alt="">
+            <a target="_blank"  href="<?= $uniimagem ?>" class="caption" data-lightbox="example-set" >
+            <img src="<?= $uniimagem ?>" style="max-height:350px; margin:5px; border-radius:6px;" alt="">
             <span><i class="icon-images"></i></span>
           </a>
           <p class="kp-metadata"><span><i class="icon-calendar"></i> <?=$hoje ?></span></p>
-           <p>SECRETARIA EDUCAÇÃO</p>
-          <h3><a href="?p=noticia_detalhe">A secretaria de Educação está em 1º lugar de todas as secretarias da região</a></h3>
+           <p><?= $unidade['unifuncao'] ?></p>
+          <h3><a href="?p=noticia_detalhe"><?= $unidade['unisobre'] ?></a></h3>
         </div>
       </li>
-      
-
+       <?php
+        }
+       ?>
     </ul>
 </div>
           <!-- widget-morenews -->

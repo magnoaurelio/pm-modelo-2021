@@ -39,7 +39,7 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
                 <h5>
                      <a href="<?= $partido['parsite'] ?>" target="_blank" class="pull-center" title="Site Oficial do <?= $partido['parnome'] ?> - <?= $partido['parcodigo'] ?> - <?= $partido['parsigla'] ?>">
                         <img src="<?= FILES . 'partido/'. strtolower($partido['parsigla']) .'/'. $partido['parlogo'] ?>"  width="120" height="40" alt="partido">              
-                         <p style="font-size: 12px; text-align: center;">Nº: <?= $partido['parcodigo'] ?> Sigla: <?= $partido['parsigla'] ?> </p>
+                         <p style="font-size: 12px; text-align: center; color:#9e9e9e;">Nº: <?= $partido['parcodigo'] ?> Sigla: <?= $partido['parsigla'] ?> </p>
                      </a>
                </h5>
                  <?php } ?>
@@ -74,7 +74,7 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
                 <h5>
                      <a href="<?= $partido['parsite'] ?>" target="_blank" class="pull-center" title="Site Oficial do <?= $partido['parnome'] ?> - <?= $partido['parcodigo'] ?> - <?= $partido['parsigla'] ?>">
                         <img src="<?= FILES . 'partido/'. strtolower($partido['parsigla']) .'/'. $partido['parlogo'] ?>"  width="120" height="40" alt="partido">              
-                         <p style="font-size: 12px; text-align: center;">Nº: <?= $partido['parcodigo'] ?> Sigla: <?= $partido['parsigla'] ?> </p>
+                         <p style="font-size: 12px; text-align: center; center; color:#9e9e9e;">Nº: <?= $partido['parcodigo'] ?> Sigla: <?= $partido['parsigla'] ?> </p>
                      </a>
                </h5>
                  <?php } ?>

@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-  
 <?php
 $hoje = date('Y-m-d');
 $hojePartes = new DataCalendario($hoje);
 $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
 $ano  = $hojePartes->getAno();
+
+$unidade =  new Unidade(UNIDADE_GESTORA);
+//$sectipocodigo =  new SecTipoSecretaria(UNIDADE_GESTORA);
 $secretaria =  new Secretaria(intval($_GET['prenumero']));
 
 ?>  
@@ -50,12 +51,12 @@ $secretaria =  new Secretaria(intval($_GET['prenumero']));
                        </span>   
                       
                       <div class="item-right">
-                      <h5> 
+                      <h4> 
                         <a href="?p=secretaria_geral&prenumero=<?= $secretaria->prenumero ?>">
                             <span ><strong><?=$secretaria->secusual?></strong></span>
                         </a>
-                      </h5>
-                      <h3><a href="#">Secretário(a) Municipal</a></h3>
+                      </h4>
+                      <h5><a href="#">Secretário(a) Municipal</a></h5>
                       <p class="kp-social">
                         <a href="#" class="icon-vimeo2"></a>
                         <a href="#" class="icon-facebook2"></a>
@@ -71,7 +72,14 @@ $secretaria =  new Secretaria(intval($_GET['prenumero']));
                        </p>
                         <hr style="color-line: #ccc;">
                       <h6>Sobre:</h6>
-                      <p> <?= $secretaria->descricao ?></p>
+                       <?php
+                        $secretariatipoAdm = new Secretaria_Tipo(Secretaria_Tipo::MUNICIPIO . "and sectipocodigo = $secretaria->sectipocodigo");
+                        foreach ($secretariatipoAdm->getResult() as $sectipocodigo) {
+                        ?>
+                      <p> <?= $sectipocodigo['sectipodescricao'] ?></p>
+                      <?php
+                        }
+                        ?>
                     </div>
                  
                     <!-- item-right -->
@@ -86,34 +94,55 @@ $secretaria =  new Secretaria(intval($_GET['prenumero']));
        
             <!-- related-article -->
             <article class="post-content">
-            <footer>
+                <footer >
               <!-- kp-thumb -->
                   <div class="kp-author">
                   <h4>Diretores e Assessores</h4>
                   <div class="author-body clearfix">
-                      <img src="images/user.png" class="pull-left" width="100" height="100" alt="">
-                    <div class="item-right">
-                      <h4><a href="#">Maria Luiza</a></h4>
-                      <h3><a href="#">Diretora da Unidade Escolar UE EVARISTO...</a></h3>
-                       <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                      </p>
-                      <hr style="color-line: #ccc;">
-                      <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                        <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                     </p>
-                      <hr style="color-line: #ccc;">
-                      <p> Assessor de Comunicação é respnsável pela..</p>
+                       <?php
+                        $unidadeAdm = new Unidade(Unidade::MUNICIPIO . "and unisec = $secretaria->prenumero");
+                        foreach ($unidadeAdm->getResult() as $unidade) {
+                        
+                          if (is_file($unidade['unifoto'])) {
+                             $unifoto = FILES . 'prefeituras/'.UNIDADE_GESTORA.'/secretaria/'. $unidade['unifoto'];
+                          }else{
+                             $unifoto = FILES . 'prefeituras/'.UNIDADE_GESTORA.'/user.png';
+                          }
+                        ?>
+                       
+                       <h5><a href="#">&nbsp;&nbsp;<?=$unidade['uninome']?></a></h5>
+                        <a href="#" class="pull-left" >
+                           <img src="<?= $unifoto ?>" width="111" height="111" alt="">
+                         </a>
+                         <div class="item-right" >
+                                <h5>
+                                  <a href="#">
+                                    <span ><strong>&nbsp;&nbsp;<?=$unidade['unifuncao']?></strong></span>
+                                  </a>
+                                </h5>
+                          <p style="margin-left: 10px;"> <?=$unidade['unisobre']?></p>
+                                 <p class="kp-social" style="margin-left: 10px;">
+                                  <a href="#" class="icon-vimeo2"></a>
+                                  <a href="#" class="icon-facebook2"></a>
+                                  <a href="#" class="icon-linkedin3"></a>
+                                  <a href="#" class="icon-google-plus"></a>
+                                </p>
+                                <hr style="color-line: #ccc;">
+                               <p class="kp-social" style="margin-left: 10px;">
+                                   <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= $unidade['unifone'] ?> </span></a>
+                                   <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?= $unidade['uniemail'] ?> </span></a>
+                                   <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= $unidade['unibairro']?></span></a>
+                                   <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= strtolower($unidade['unitipo']) ?> </span></a>
+                                   <a href="#" class="kp-metadata"><span><i class="icon-user  fa-lg"></i>&nbsp;&nbsp;<?= $unidade['unilocal']?> </span></a>
+                                </p>
+                                                                <hr style="color-line: #ccc;">
+
                      
                     </div>
                     <!-- item-right -->
+                      <?php } ?>  
                   </div>
+                
                   <!-- author-body -->
                 </div>
               <!-- entry-content -->
@@ -122,7 +151,6 @@ $secretaria =  new Secretaria(intval($_GET['prenumero']));
             </article>
             <div class="clearfix"></div>
                <!-- inicio widget-area-4 -->
-             <?php //include_once 'include/menu_home_foto_inspiradora.php'; ?>
            <!-- fim widget-area-4 -->
             <!-- widget-area-4 -->
             

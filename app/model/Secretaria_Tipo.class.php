@@ -1,19 +1,17 @@
 <?php
 
-class Unidade extends Read
+class Secretaria_Tipo extends Read
 {
 
     private $properties;
-    private $Table = 'unidade';
+    private $Table = 'secretaria_tipo';
     private $read;
     const MUNICIPIO = " WHERE unidadeGestora = '" . UNIDADE_GESTORA . "' ";
 
     public function __construct($criterio = null)
     {
-        if (strlen($criterio) == 6) {
-            parent::ExeRead($this->Table, self::MUNICIPIO);
-        } elseif (is_int($criterio)) {
-            parent::ExeRead($this->Table, " WHERE uniid = :id", "id={$criterio}");
+        if (is_int($criterio)) {
+            parent::ExeRead($this->Table, "WHERE sectipocodigo = :id", "id={$criterio}");
         } else {
             $criterio = $criterio ? $criterio : self::MUNICIPIO;
             parent::ExeRead($this->Table, $criterio);
@@ -49,6 +47,7 @@ class Unidade extends Read
             return $this->properties[$name];
         }
     }
+
 
 
 }

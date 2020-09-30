@@ -2,14 +2,11 @@
   
 <?php
 
-//$secretaria =  new Secretaria(intval($_GET['prenumero']));
-//include_once 'include/head.php';
-//include_once 'app/control/Router.class.php';
-//include_once 'app/control/Layout.class.php';
-$hoje =  date('d-m-Y');
-//$hojePartes =  MDate::datePart($hoje);
-//$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
-//$ano  = $hojePartes->ano;
+$hoje = date('Y-m-d');
+$hojePartes = new DataCalendario($hoje);
+$data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
+$ano  = $hojePartes->getAno();
+
 
 ?>  
 <!-- Mirrored from upsidethemes.net/demo/news-times/html/single-video.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Aug 2020 12:02:50 GMT -->
@@ -123,7 +120,8 @@ $hoje =  date('d-m-Y');
              </div>
             <div class="widget widget-ads" >
               
-        <!-- fim sidebar -->
+        <!-- fim sidebar
+        -->
         <!-- widget-random -->
          <!-- widget-ads -->
             
