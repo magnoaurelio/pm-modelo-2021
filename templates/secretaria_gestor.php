@@ -22,7 +22,7 @@ $secretaria =  new Secretaria(intval($_GET['prenumero']));
         <div id="main-col" class="pull-left">
              <ul class="breadcrumb">
               <li><a href="index.php">Início</a></li>
-              <li class="active" >SECRETARIAS</li>
+              <li class="active" >SECRETARIAS e ASSESSORIAS</li>
             </ul>
            <article class="post-content">
               <header class="clearfix">
@@ -136,7 +136,7 @@ $secretaria =  new Secretaria(intval($_GET['prenumero']));
                                    <a href="#" class="kp-metadata"><span><i class="icon-user  fa-lg"></i>&nbsp;&nbsp;<?= strtolower($unidade['unitipo']) ?> </span></a>
                                    <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= $unidade['unilocal']?> </span></a>
                                 </p>
-                                                                <hr style="color-line: #ccc;">
+                            <hr style="color-line: #ccc;">
 
                      
                     </div>

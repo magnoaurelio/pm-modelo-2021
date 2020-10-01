@@ -5,6 +5,7 @@ $hoje = date('Y-m-d');
 $hojePartes = new DataCalendario($hoje);
 $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
 
+$unidade =  new Unidade(UNIDADE_GESTORA);
 $prefeito = new Prefeito(UNIDADE_GESTORA);
 $prefeitura = new Prefeitura(UNIDADE_GESTORA);
 
@@ -100,102 +101,51 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                <footer>
               <!-- kp-thumb -->
                   <div class="kp-author">
-                  <h3>ASSESSORES DA ADMINISTRAÇÃO </h3>
-                  <div class="author-body clearfix">
-                    <img src="images/user.png" class="pull-left" alt="">
-                    <div class="item-right">
-                      <h4><a href="#">Diego</a></h4>
-                      <h3><a href="#">Assessor de Comunicação,,</a></h3>
-                    
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                      </p>
-                       <hr style="color-line: #ccc;">
-                      <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                        <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                     </p>
-                      <hr style="color-line: #ccc;">
-                        <p> Assessor de Comunicação é respnsável pela..</p>
-                    </div>
-                    <!-- item-right -->
-                  </div>
-                  <div class="author-body clearfix">
-                    <img src="images/user.png" class="pull-left" alt="">
-                    <div class="item-right">
-                      <h4><a href="#">Gustavo</a></h4>
-                      <h3><a href="#">Assessor Jurídico,,</a></h3>
-                      
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                      </p>
-                       <hr style="color-line: #ccc;">
-                      <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                        <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                     </p>
-                      <hr style="color-line: #ccc;">
-                      <p> Assessoria  Jurídica é respnsável pela..</p>
-                    </div>
-                    <!-- item-right -->
-                  </div>
-                  <div class="author-body clearfix">
-                    <img src="images/user.png" class="pull-left" alt="">
-                    <div class="item-right">
-                      <h4><a href="#">Diego</a></h4>
-                      <h3><a href="#">Assessor de Comunicação,,</a></h3>
+                  <h3>ASSESSORES DA ADMINISTRAÇÃO DO PREFEITO  </h3>
+                   <div class="author-body clearfix">
+                       <?php
+                        $unitipocodigo = 2;
+                        $unidadeAdm = new Unidade("WHERE unitipocodigo = $unitipocodigo and unidadeGestora = '201002'");
+                        foreach ($unidadeAdm->getResult() as $unidade) {
+                          if (! is_file($unidade['unifoto'])) {
+                             $unifoto = FILES . 'prefeituras/'.UNIDADE_GESTORA.'/unidade/'. $unidade['unifoto'];
+                           
+                          }else{
+                             $unifoto = FILES . 'prefeituras/'.UNIDADE_GESTORA.'/user.png';
+                          }
+                        ?>
+                       
+                       <h5><a href="#"><i class="icon-user"></i>&nbsp;&nbsp;<?=$unidade['uninome']?></a></h5>
+                        <a href="#" class="pull-left" >
+                            <img src="<?= $unifoto ?>" width="111" height="111" alt="">
+                         </a>
+                         <div class="item-right" >
+                                <h5>
+                                  <a href="#">
+                                    <span ><strong>&nbsp;&nbsp;<?=$unidade['unifuncao']?></strong></span>
+                                  </a>
+                                </h5>
+                                <p style="margin-left: 10px; "> <?=$unidade['unisobre']?></p>
+                                 <p class="kp-social" style="margin-left: 10px;">
+                                  <a href="#" class="icon-vimeo2"></a>
+                                  <a href="#" class="icon-facebook2"></a>
+                                  <a href="#" class="icon-linkedin3"></a>
+                                  <a href="#" class="icon-google-plus"></a>
+                                </p>
+                                <hr style="color-line: #ccc;">
+                               <p class="kp-social" style="margin-left: 10px;">
+                                   <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= $unidade['unifone'] ?> </span></a>
+                                   <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?= $unidade['uniemail'] ?> </span></a>
+                                   <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= $unidade['unibairro']?></span></a>
+                                   <a href="#" class="kp-metadata"><span><i class="icon-user  fa-lg"></i>&nbsp;&nbsp;<?= strtolower($unidade['unitipo']) ?> </span></a>
+                                   <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= $unidade['unilocal']?> </span></a>
+                                </p>
+                                                                <hr style="color-line: #ccc;">
+
                      
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                      </p>
-                       <hr style="color-line: #ccc;">
-                      <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                        <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                     </p>
-                      <hr style="color-line: #ccc;">
-                       <p> Assessor de Comunicação é respnsável pela..</p>
                     </div>
                     <!-- item-right -->
-                  </div>
-                  <div class="author-body clearfix">
-                    <img src="images/user.png" class="pull-left" alt="">
-                    <div class="item-right">
-                      <h4><a href="#">Gustavo</a></h4>
-                      <h3><a href="#">Assessor Jurídico,,</a></h3>
-                     
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                      </p>
-                       <hr style="color-line: #ccc;">
-                      <p class="kp-social">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                        <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i> seduc@agricolandia.pi.gov.br </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> Rua da flores 735 </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> 86 3255-2587 </span></a>
-                     </p>
-                      <hr style="color-line: #ccc;">
-                       <p> Assessor de Comunicação é respnsável pela..</p>
-                    </div>
-                    <!-- item-right -->
+                      <?php } ?>  
                   </div>
                   <!-- author-body -->
                 </div>

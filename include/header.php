@@ -342,17 +342,16 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                         <li><a href="?p=banco" title="Bancos, Loterias e CASH em: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-money fl-fg"></i> Bancos</a></li>
                         <li><a href="?p=combustivel" title="Postos de Combustíveis em: <?=$prefeitura->prenome?>"><i
-                                        class="fa fa-filter fl-fg"></i> Combustível</a></li>
+                                        class="fa fa-taxi fl-fg"></i> Combustível</a></li>
                         <li><a href="?p=igreja" title="Santuários e Igrejas de: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-bell-o fl-fg"></i> Igrejas</a></li>
                         <li><a href="?p=hotel" title="Hotéis, Pensões e Pousadas em: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-bed fl-fg"></i> Hotelaria</a></li>
                         <li><a href="?p=transporte" title="Transportes Diversos para: <?=$prefeitura->prenome?>"><i
-                                        class="fa fa-taxi fl-fg"></i> Transportes</a></li>
+                                        class="fa fa-bus fl-fg"></i> Transportes</a></li>
                         <li><a href="?p=turismo" title="Pontos Turísiticos  Diversos para: <?=$prefeitura->prenome?>"><i
-                                        class="fa fa-camera fl-fg"></i> Turísmo</a></li>
-                        <li><a href="#" title="Festejos: <?=$prefeitura->prenome?>"><i class="fa fa-hand-o-right  fl-fg"></i>
-                                Festejos</a></li>
+                                        class="fa fa-camera fl-fg"></i> Turísmo e Eventos</a></li>
+                       
 
                     </ul>
                 </li>

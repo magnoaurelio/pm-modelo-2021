@@ -19,16 +19,16 @@ $ano  = $hojePartes->getAno();
         include 'include/menu_home_topo.php';
         ?>
         <!-- main-top -->
-        <div id="main-col" class="pull-left">
-             <ul class="breadcrumb">
-              <li><a href="index.php">Início</a></li>
-              <li class="active" >SECRETARIAS GERAL</li>
-            </ul>
-            <article class="post-content">
-              <?php
+        <div id="main-col" class="pull-left" >
+             <?php
                     $secretarias = new Secretaria(Secretaria::MUNICIPIO);
                     foreach ($secretarias->getResult() as $secretaria) {
               ?>
+            <ul class="breadcrumb" >
+                <li><a href="index.php">Início</a></li>
+                <li class="active" >SECRETARIAS GERAL</li>
+            </ul>
+            <article class="post-content">
               <header class="clearfix">
                    <h3>
                       <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>" title="<?= $secretaria['secsecretario'] ?>">
@@ -36,58 +36,60 @@ $ano  = $hojePartes->getAno();
                           &nbsp;&nbsp; <span ><strong><?= strtoupper($secretaria['secusual'])?></strong></span>
                     </a>
                    </h3> 
-                <!-- head
-                <!-- header-bottom -->                
-            
-              <footer>
-                <div class="kp-author">
-                  <div class="author-body clearfix">
-                      <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>" class="pull-left">
-                        <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/secretaria/'. $secretaria['secfotor'] ?>" width="250" height="250" alt="">
-                      </a>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>" title="Página deste Gestor...">
-                           <img src="files/prefeituras/201002/unidade/prefeitura1.jpg"  width="470" height="250" alt="">
-                       </a>
-                      <span>
-                      <a href="#" class="item-left">
-                      
-                      </a>
-                       </span>   
-                      
-                      <div class="item-right">
-                      <h5> 
-                        <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>">
-                            <span ><strong><?=$secretaria['secusual']?></strong></span>
-                        </a>
-                      </h5>
-                      <h3><a href="#">Secretário(a) Municipal</a></h3>
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                       <hr style="color-line: #ccc;">
-                       <p class="kp-social">
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= $secretaria['secfone'] ?> </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?= $secretaria['seccelular'] ?> </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= $secretaria['secemail'] ?></span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= strtolower($secretaria['secendereco']) ?> </span></a>
-                         <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= $secretaria['secbairro'] ?> </span></a>
-                       </p>
-                       <hr style="color-line: #ccc;">
-                        <p> Prefeito de 1ª gestão.. Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão..Prefeito de 1ª gestão....</p>
+                   <footer>
+                    <div class="kp-author">
+                      <div class="author-body clearfix">
+                          <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>" class="pull-left">
+                            <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/secretaria/'. $secretaria['secfotor'] ?>" width="250" height="250" alt="">
+                          </a>
+                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>" title="Página deste Gestor...">
+                               <img src="files/prefeituras/201002/unidade/prefeitura1.jpg"  width="470" height="250" alt="">
+                           </a>
+
+                          <div class="item-right">
+                          <h5> 
+                            <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>">
+                                <span ><strong><?=$secretaria['secusual']?></strong></span>
+                            </a>
+                          </h5>
+                          <h3><a href="#">Secretário(a) Municipal</a></h3>
+                          <p class="kp-social">
+                            <a href="#" class="icon-vimeo2"></a>
+                            <a href="#" class="icon-facebook2"></a>
+                            <a href="#" class="icon-linkedin3"></a>
+                            <a href="#" class="icon-google-plus"></a>
+                           <hr style="color-line: #ccc;">
+                           <p class="kp-social">
+                             <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= $secretaria['secfone'] ?> </span></a>
+                             <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= $secretaria['seccelular'] ?> </span></a>
+                             <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?= $secretaria['secemail'] ?></span></a>
+                             <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= strtolower($secretaria['secendereco']) ?> </span></a>
+                             <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= $secretaria['secbairro'] ?> </span></a>
+                           </p>
+                              <hr style="color-line: #ccc;">
+                          <h6>Sobre:</h6>
+                           <?php
+                            $sectipocodigo1 = $secretaria['sectipocodigo'];
+                            $secretariatipoAdm = new Secretaria_Tipo(" WHERE sectipocodigo = $sectipocodigo1");
+                            foreach ($secretariatipoAdm->getResult() as $sectipocodigo) {
+                            ?>
+                          <p> <?= $sectipocodigo['sectipodescricao'] ?></p>
+                          <?php
+                            }
+                            ?>
+                        </div>
+
+                        <!-- item-right -->
+                      </div>
+
+                      <!-- author-body -->
                     </div>
-                 
-                    <!-- item-right -->
-                  </div>
-              
-                  <!-- author-body -->
-                </div>
                   </footer>
               </header>
-              <?php } ?>  
+            
             </article>
+              <?php } ?>  
        
             <!-- related-article -->
            
@@ -101,41 +103,23 @@ $ano  = $hojePartes->getAno();
             
         </div>
         <!-- main-col -->
-        <div id="sidebar" class="pull-left">
+        <div id="sidebar" class="pull-left" style="margin-top: -12px;">
             <!-- inicio sidebar -->
-             <?php
-             include_once 'include/menu_sidebar_propaganda.php';
+            <br>
+          <?php
+             include 'include/menu_publicidade_sidebar.php';
              ?>
-             <div class="widget widget-ads" style="margin-left: -25px; margin-top: -16px;" >
-             <?php
-             include_once 'include/menu_home_clima_2.php';
-            //include_once 'include/menu_sidebar_noticia_popular.php';
+           <?php
+             include 'include/menu_home_sidebar_adm.php';
              ?>
-             </div>
-              <div class="widget widget-ads" >
+           
              <?php
-             include_once 'include/menu_home_sidebar_adm.php';
-            // include_once 'include/menu_sidebar_noticia_popular.php';
+             include 'include/menu_home_clima_3.php';
              ?>
-             </div>
-            <div class="widget widget-ads" >
-              
-        <!-- fim sidebar
-        -->
-        <!-- widget-random -->
-         <!-- widget-ads -->
-            
-        
-       
-            <!-- widget-video -->
-
-        </div>
+          
+         
         <!-- sidebar -->
-        
-      <!-- inicio widget-area-5 BOLETIM DE NOTICIAS -->
-        <?php// include_once 'include/menu_home_unidade.php'; ?>
-        <!-- fim widget-area-5 -->
-        <!-- widget-area-5 -->
+     
     </div>
     <!-- main-content -->
 </body>
