@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
 <?php
-include_once 'include/head.php';
-include_once 'app/control/Router.class.php';
-include_once 'app/control/Layout.class.php';
-$hoje =  date('d-m-Y');
-//$hojePartes =  MDate::datePart($hoje);
-//$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
-//$ano  = $hojePartes->ano;
+$hoje = date('Y-m-d');
+$hojePartes = new DataCalendario($hoje);
+$data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
+$ano =  $hojePartes->getAno();
+
+$prefeitura = new Prefeitura(UNIDADE_GESTORA);
+$prefeito = new Prefeito(UNIDADE_GESTORA);
 
 ?>  
 <!-- Mirrored from upsidethemes.net/demo/news-times/html/single-video.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Aug 2020 12:02:50 GMT -->
@@ -29,12 +29,12 @@ $hoje =  date('d-m-Y');
               
               <header class="clearfix">
                 <h3 class="title-post">O Histórico de AGRICOLÂNDIA  </h3>
-                <div class="header-bottom">
+                 <div class="header-bottom">
                   <p class="kp-metadata style-2">
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                </p>
+                   <i class="fa fa-calendar fa-fw fa-lg"></i><span><?=$data?></span>
+                   <i class="fa fa-home fa-fw fa-lg"></i><span><?=$data?></span>
+                   <i class="fa fa-feed fa-fw fa-lg"></i><span></span>
+                 </p>
                 <p class="kp-share">
                   <span>Compartilhar:</span> 
                   <a href="#" class="icon-facebook3"></a>
@@ -64,7 +64,15 @@ $hoje =  date('d-m-Y');
               
               <!-- kp-thumb -->
               <div class="entry-content">
-                  <p>O Município de agricolândia...</p>
+                   <?php
+                     $prefeituraAdmin = new Prefeitura(Prefeitura::MUNICIPIO . "");
+                     foreach ($prefeituraAdmin->getResult() as $prefeitura) {
+                        
+                     ?>
+                  <p>  <?= $prefeitura['historico']?></p>
+                   <?php
+                     }
+                     ?>
               </div>
               <!-- entry-content -->
               
@@ -75,9 +83,13 @@ $hoje =  date('d-m-Y');
                   <li><a href="#" class="page-numbers">3</a></li>
               </ul>
 
-              
-              
               <footer>
+              <?php
+              include 'include/menu_publicidade_home_inferior.php';
+              ?> 
+              </footer>
+              
+              <!--footer>
                 <ul class="pager-page list-unstyled clearfix">
                   <li class="prev pull-left">
                     <h3><span class="icon-double-angle-left"></span><a href="#">Artigos Anteriores </a></h3>
@@ -89,29 +101,14 @@ $hoje =  date('d-m-Y');
                   </li>
                 </ul>
              
-                <!-- kp-author -->
-              </footer>
+                <!-- kp-author >
+              </footer-->
             </article>
            <div class="related-article">
-              <div class="widget-title">ARTIGOS RELACIONADOS</div>
-              <div class="owl-carousel owl-carousel-related">
-                 <?php
-                    $galeriaTur = new Galeria(Galeria::MUNICIPIO);
-                    foreach ($galeriaTur->getResult() as $galeria) {
-                 ?>  
-                    <div class="item">
-                      <a href="#" class="caption">
-                        <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/galeria/'. $galeria['galarquivo'] ?>" alt="imagem" />
-                        <span class="icon-plus"></span>
-                        <p><?= trim($galeria['galnome']) ?></p>
-                      </a>
-                    </div>
-                 <?php } ?>
-                    <!-- item -->
-                  
-                              
-              
-              </div>
+              <div class="widget-title">IMAGENS RELACIONADAS</div>
+               <?php
+              include 'include/menu_foto_relacionada.php';
+              ?>
               <!-- owl-carousel-related -->
             </div>
             <!-- related-article -->
@@ -128,7 +125,7 @@ $hoje =  date('d-m-Y');
                         <h4>Jolie Angelina</h4>
                         <p class="kp-metadata">  <i class="fa fa-calendar fa-fw fa-lg"></i>
                             <?=$hoje ?>
-                            {header_data}
+                          
                         </p>
                         <p class="reply">
                          <a href="#" class="edit-link">Editar /</a>
@@ -209,7 +206,7 @@ $hoje =  date('d-m-Y');
                         <h4>Jolie Angelina</h4>
                        <p class="kp-metadata">  <i class="fa fa-calendar fa-fw fa-lg"></i>
                             <?=$hoje ?>
-                            {header_data}
+                            
                         </p>
                         <p class="reply">
                           <a href="#" class="edit-link">Editar /</a>
@@ -285,14 +282,9 @@ $hoje =  date('d-m-Y');
             //include_once 'include/menu_sidebar_noticia_popular.php';
              ?>
              </div>
-            <div class="widget widget-ads" >
+         
              <?php
-             include_once 'include/menu_home_administra.php';
-            //include_once 'include/menu_sidebar_noticia_popular.php';
-             ?>
-             </div>
-             <?php
-             include_once 'include/menu_sidebar_propaganda.php';
+             include_once 'include/menu_publicidade_sidebar.php';
              ?>
            <?php
            //  include_once 'include/menu_sidebar_servico.php';
@@ -310,9 +302,12 @@ $hoje =  date('d-m-Y');
 
         </div>
         <!-- sidebar -->
-        
+         <hr>
       <!-- inicio widget-area-5 BOLETIM DE NOTICIAS -->
-        <?php include_once 'include/menu_home_newsletter.php'; ?>
+        <?php 
+        //include 'include/menu_publicidade_home_inferior.php';
+        ?>
+      <br>
         <!-- fim widget-area-5 -->
         <!-- widget-area-5 -->
     </div>

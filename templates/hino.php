@@ -1,18 +1,14 @@
 <!DOCTYPE html>
-  
-<?php
-include_once 'include/head.php';
-include_once 'app/control/Router.class.php';
-include_once 'app/control/Layout.class.php';
-$hoje =  date('d-m-Y');
-//$hojePartes =  MDate::datePart($hoje);
-//$data = MDate::getDiaSemana($hoje).", ".$hojePartes->dia." de ".MDate::getMeses(1, $hojePartes->mes)." de ".$hojePartes->ano;
-//$ano  = $hojePartes->ano;
+ <?php
+$hoje = date('Y-m-d');
+$hojePartes = new DataCalendario($hoje);
+$data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
+$ano =  $hojePartes->getAno();
 
-?>  
-<!-- Mirrored from upsidethemes.net/demo/news-times/html/single-video.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Aug 2020 12:02:50 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+$prefeitura = new Prefeitura(UNIDADE_GESTORA);
+$prefeito = new Prefeito(UNIDADE_GESTORA);
 
+?> 
 <body class="kp-single">
     <!-- page-header -->
     <div id="main-content" class="container clearfix">

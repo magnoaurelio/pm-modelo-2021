@@ -60,42 +60,18 @@ $igreja = new Igreja(UNIDADE_GESTORA);
             <div class="related-article">
                 <div class="widget-title">FOTOS RELACIONADAS</div>
                 <div class="owl-carousel owl-carousel-related">
-
-                    <div class="item">
-                        <a href="#" class="caption">
-                            <img src="placeholders/posts/img-18.jpg" alt="">
+                     <?php
+                        $galeriaTur = new Galeria(Galeria::MUNICIPIO);
+                        foreach ($galeriaTur->getResult() as $galeria) {
+                     ?>  
+                        <div class="item">
+                          <a href="#" class="caption">
+                              <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/galeria/'. $galeria['galarquivo'] ?>" height="180" alt="imagem" />
                             <span class="icon-plus"></span>
-                            <p>1914 translation by H. Rack</p>
-                        </a>
-                    </div>
-                    <!-- item -->
-
-                    <div class="item">
-                        <a href="#" class="caption">
-                            <img src="placeholders/posts/img-18.jpg" alt="">
-                            <span class="icon-plus"></span>
-                            <p>1914 translation by H. Rack</p>
-                        </a>
-                    </div>
-                    <!-- item -->
-
-                    <div class="item">
-                        <a href="#" class="caption">
-                            <img src="placeholders/posts/img-18.jpg" alt="">
-                            <span class="icon-plus"></span>
-                            <p>1914 translation by H. Rack</p>
-                        </a>
-                    </div>
-                    <!-- item -->
-
-                    <div class="item">
-                        <a href="#" class="caption">
-                            <img src="placeholders/posts/img-18.jpg" alt="">
-                            <span class="icon-plus"></span>
-                            <p>1914 translation by H. Rack</p>
-                        </a>
-                    </div>
-                    <!-- item -->
+                            <p><?= trim($galeria['galnome']) ?></p>
+                          </a>
+                        </div>
+                     <?php } ?>
 
                 </div>
                 <!-- owl-carousel-related -->

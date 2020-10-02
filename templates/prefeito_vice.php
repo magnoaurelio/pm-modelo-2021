@@ -25,8 +25,8 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
               <li class="active" >VICE - PREFEITO(a)</li>
             </ul>
             <article class="post-content">
-              
-                  <header class="clearfix">
+           
+             <header class="clearfix">
                   <?php
                      $prefeitoAdmin = new Prefeito(Prefeito::MUNICIPIO . " and pretipo = 1 ");
                      foreach ($prefeitoAdmin->getResult() as $prefeito) {
@@ -83,6 +83,67 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                          <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> <?= $prefeito['preendereco'] ?> </span></a>
                          <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i> <?= $prefeito['prebairro'] ?> </span></a>
                      </p>
+                      <hr style="color-line: #ccc;">
+                      <h6>Sobre:</h6>
+                      <p> <?= $prefeito['historico'] ?></p>
+                    </div>
+                    <!-- item-right -->
+                    </div>
+                  <!-- author-body -->
+                </div>
+                 
+                  </footer>
+                  <?php } ?>
+              </header>
+                 <header class="clearfix">
+                  <?php
+                     $prefeitoAdmin = new Prefeito(Prefeito::MUNICIPIO . " and pretipo = 1 ");
+                     foreach ($prefeitoAdmin->getResult() as $prefeito) {
+                            $prepartidop = $prefeito['prepartidop'];
+                            if ($prefeito['presexoc'] =='F'):
+                                $conjuge = '2ª Dama';
+                            else:
+                                 $conjuge = '2º Cavalheiro';
+                            endif;
+                     ?>
+                <h3 class="title-post" style="color: #9e9e9e;"><?= $conjuge ?>:  &nbsp;&nbsp; 
+                  <span >
+                         <a href="?p=prefeito" title="<?= $prefeito['preconjuge'] ?>" >
+                               <span ><strong><?= $prefeito['preconusual'] ?></strong></span>
+                        </a>
+                   </span>
+               </h3>
+                <!-- header-bottom -->                
+            
+              <footer>
+                   
+                <div class="kp-author">
+                  <div class="author-body clearfix">
+                    <div class="col-sm-right col-12">
+                   
+                     <div class="item-left" >
+                        <a href="#" class="pull-left" title="<?= $prefeito['prenomep'] ?>">
+                            <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/'. $prefeito['prefotoc'] ?>" width="250" height="250" alt="conjuge">
+                            &nbsp;&nbsp;
+                         </a>
+                      <div class="item-right" >
+                       <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/'. $prefeitura->preimagem ?>" width="470" height="250" alt="viceprefeito">
+                       </div>
+                     
+                      </div>
+                        <hr style="color-line: #ccc;">
+                       <p class="kp-social">
+                        <a href="#" class="icon-vimeo2"></a>
+                        <a href="#" class="icon-facebook2"></a>
+                        <a href="#" class="icon-linkedin3"></a>
+                        <a href="#" class="icon-google-plus"></a>
+                      
+                       </p>
+                         <p class="kp-social">
+                        <a href="#" class="kp-metadata"><span><i class="icon-calendar  fa-lg"></i> <?=DataCalendario::date2br( $prefeito['preniverc']) ?> </span></a>
+                        <a href="#" class="kp-metadata"><span><i class="icon-user  fa-lg"></i> <?= $prefeito['presexoc'] ?> </span></a>
+                         <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> <?= $prefeito['precelulac'] ?> </span></a>
+                        </p>
                       <hr style="color-line: #ccc;">
                       <h6>Sobre:</h6>
                       <p> <?= $prefeito['historico'] ?></p>
