@@ -210,7 +210,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                 <li class="{home_current}">
                     <a href="index.php"><i class="fa fa-hospital-o"></i></i> Cidade</a>
                     <ul>
-                        <li><a href="?p=historia" title="Simbolos de: <?=$prefeitura->prenome?> "><i class="fa fa-flag  fl-fg"></i> Simbolos
+                        <li><a href="?p=simbolo" title="Simbolos de: <?=$prefeitura->prenome?> "><i class="fa fa-flag  fl-fg"></i> Simbolos
                                 </a></li>
                         <li><a href="?p=historia" title="História de: <?=$prefeitura->prenome?> "><i class="fa fa-history  fl-fg"></i> História
                                </a></li>

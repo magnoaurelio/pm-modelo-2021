@@ -1,5 +1,3 @@
-
-
 <div id="sidebar" class="pull-left">
 
    <div class="widget widget-video">

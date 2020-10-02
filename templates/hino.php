@@ -19,18 +19,18 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
         <div id="main-col" class="pull-left">
              <ul class="breadcrumb">
               <li><a href="index.php">Início</a></li>
-              <li class="active" style="font-size: 20px;">HINO DE AGRICOLÂNDIA</li>
+              <li class="active" >HINO DE AGRICOLÂNDIA</li>
             </ul>
             <article class="post-content">
               
               <header class="clearfix">
                 <h3 class="title-post">O Hino Oficial de AGRICOLÂNDIA (+ letra) </h3>
-                <div class="header-bottom">
+              <div class="header-bottom">
                   <p class="kp-metadata style-2">
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                  <i class="icon-eye"></i><span>50</span>
-                </p>
+                   <i class="fa fa-calendar fa-fw fa-lg"></i><span><?=$data?></span>
+                   <i class="fa fa-home fa-fw fa-lg"></i><span><?=$data?></span>
+                   <i class="fa fa-feed fa-fw fa-lg"></i><span></span>
+                 </p>
                 <p class="kp-share">
                   <span>Compartilhar:</span> 
                   <a href="#" class="icon-facebook3"></a>
@@ -43,11 +43,31 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
                 <!-- header-bottom -->                
               </header>
               <div class="kp-thumb">
-                <div class="video-wrapper">
+               
                 <?php
-                    include_once 'include/menu_home_video.php';
-                 ?>      
+                $videoBloco = new Videos(Videos::MUNICIPIO . " order by rand() limit 3 ");
+                foreach ($videoBloco->getResult() as $video) {
+                ?>
+                      <div class="item pull-left">
+                 <p class="kp-metadata style-2">
+                    <i class="fa fa-calendar fa-fw fa-lg"></i><span><?=$video['viddata'] ?></span>
+                    <i class="fa fa-home fa-fw fa-lg"></i><span><?=$video['videstado']?></span>
+                    <i class="fa fa-feed fa-fw fa-lg"></i><span><?=$video['vidmesano']?></span>
+                  </p>
+                  <!--Z7pFwsX6UVc -->
+                     <a href="#" title="Click para Assistir..." class="caption">
+                         <iframe width="800" height="425" src="<?= $video['vidurl'] ?>" frameborder="0" allowfullscreen></iframe>
+                    </a>
+                    <h6>
+                        <a href="?p=video_detalhe&prenumero=<?= $video['prenumero'] ?>"><?= $video["descricao"] ?>
+                        </a>
+                    </h6>
+                    <a href="?p=video_detalhe&prenumero=<?= $video['prenumero'] ?>" class="continue-reading">Mais ...</a>
                 </div>
+                <?php
+                }
+                ?>      
+               
               </div>
               
               <!-- kp-thumb -->
