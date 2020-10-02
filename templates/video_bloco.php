@@ -7,7 +7,6 @@ $ano  =  $hojePartes->getAno();
 
 ?>
 
-
 <body class="page-full-width">
    
     <!-- page-header -->

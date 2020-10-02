@@ -22,7 +22,10 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
               <li class="active" >HINO DE AGRICOLÂNDIA</li>
             </ul>
             <article class="post-content">
-              
+                 <?php
+                $videoBloco = new Videos(Videos::MUNICIPIO . " and vidtipo = '0' ");
+                foreach ($videoBloco->getResult() as $video) {
+                ?>
               <header class="clearfix">
                 <h3 class="title-post">O Hino Oficial de AGRICOLÂNDIA (+ letra) </h3>
               <div class="header-bottom">
@@ -44,11 +47,7 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
               </header>
               <div class="kp-thumb">
                
-                <?php
-                $videoBloco = new Videos(Videos::MUNICIPIO . " order by rand() limit 3 ");
-                foreach ($videoBloco->getResult() as $video) {
-                ?>
-                      <div class="item pull-left">
+               <div class="item pull-left">
                  <p class="kp-metadata style-2">
                     <i class="fa fa-calendar fa-fw fa-lg"></i><span><?=$video['viddata'] ?></span>
                     <i class="fa fa-home fa-fw fa-lg"></i><span><?=$video['videstado']?></span>
@@ -59,77 +58,68 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
                          <iframe width="800" height="425" src="<?= $video['vidurl'] ?>" frameborder="0" allowfullscreen></iframe>
                     </a>
                     <h6>
-                        <a href="?p=video_detalhe&prenumero=<?= $video['prenumero'] ?>"><?= $video["descricao"] ?>
+                        <a href="?p=video_detalhe&vidcodigo=<?= $video['vidcodigo'] ?>"><?= $video["descricao"] ?>
                         </a>
                     </h6>
-                    <a href="?p=video_detalhe&prenumero=<?= $video['prenumero'] ?>" class="continue-reading">Mais ...</a>
-                </div>
-                <?php
-                }
-                ?>      
-               
-              </div>
-              
-              <!-- kp-thumb -->
-              <div class="entry-content">
-                  <p>Salve a agricolândia...</p>
-              </div>
-              <!-- entry-content -->
-              
-              <ul class="page-numbers clearfix">
-                  <li><span>Page:</span></li>
-                  <li><a href="#" class="page-numbers">1</a></li>
-                  <li><span class="page-numbers current">2</span></li>
-                  <li><a href="#" class="page-numbers">3</a></li>
-              </ul>
-
-              
-              
-              <footer>
+                    <a href="?p=video_detalhe&vidcodigo=<?= $video['vidcodigo'] ?>" class="continue-reading">Mais ...</a>
+            
+                    
+               <footer>
+                <div class="kp-author">
+                    <h3>SOBRE O AUTOR DO <strong><?= $video["descricao"] ?></strong> </h3>
                 <ul class="pager-page list-unstyled clearfix">
                   <li class="prev pull-left">
-                    <h3><span class="icon-double-angle-left"></span><a href="#">Artigos Anteriores </a></h3>
-                    <a href="#">Dia da Proclamação da Repubica</a>
+                    <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/videos/'. $video["vidautorimg1"] ?>" width="100" height="100" class="pull-left"  alt="autor" />
+                    <div class="item-right">
+                      <h4><a href="#"><?= $video["vidautor1"] ?>"</a></h4>
+                      <p> <?= $video["vidautornot1"] ?></p>
+                      <p class="kp-social">
+                        <a href="#" class="icon-vimeo2"></a>
+                        <a href="#" class="icon-facebook2"></a>
+                        <a href="#" class="icon-linkedin3"></a>
+                        <a href="#" class="icon-google-plus"></a>
+                      </p>
+                    </div>
                   </li>
                   <li class="next pull-right">
-                    <h3><a href="#">Próximos Artigos </a> <span class="icon-double-angle-right"></span></h3>
-                    <a href="#">Emancipação do Municipio de Agricolandia</a>
+                      <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/videos/'. $video["vidautorimg2"] ?>" width="100" height="100" class="pull-left"  alt="autor" />
+                    <div class="item-right">
+                      <h4><a href="#"><?= $video["vidautor2"] ?>"</a></h4>
+                      <p> <?= $video["vidautornot2"] ?></p>
+                      <p class="kp-social">
+                        <a href="#" class="icon-vimeo2"></a>
+                        <a href="#" class="icon-facebook2"></a>
+                        <a href="#" class="icon-linkedin3"></a>
+                        <a href="#" class="icon-google-plus"></a>
+                      </p>
+                    </div>
                   </li>
                 </ul>
-                <div class="kp-author">
-                  <h3>SOBRE O AUTOR</h3>
-                  <div class="author-body clearfix">
-                    <img src="placeholders/avartar/img.jpg" class="pull-left" alt="">
-                    <div class="item-right">
-                      <h3><a href="#">Francisco Manuel da Silva,</a></h3>
-                      <p> autor da música do hino nacional brasileiro..</p>
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                      </p>
-                    </div>
-                    <!-- item-right -->
-                  </div>
-                   <div class="author-body clearfix">
-                    <img src="placeholders/avartar/img.jpg" class="pull-left" alt="">
-                    <div class="item-right">
-                      <h3><a href="#">Joaquim Osório Duque-Estrada,,</a></h3>
-                      <p>  autor da letra do hino nacional brasileiro.</p>
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                      </p>
-                    </div>
-                    <!-- item-right -->
-                  </div>
-                  <!-- author-body -->
                 </div>
                 <!-- kp-author -->
               </footer>
+                </div>
+            <!-- kp-thumb -->
+              <footer>  
+              <div class="kp-author">
+                  <h3>LETRA OFICIAL</h3>
+                  <p><?=$video['vidhino'] ?>"</p>
+              </div>
+              
+                     
+              <div class="kp-author">
+                   <h3>HISTÓRICO</h3>
+                  <p><?=$video['vidsobre'] ?>"</p>
+              </div>
+                   </footer> 
+              <!-- entry-content -->
+               </div>
+              
+                <?php
+                }
+                ?> 
+              
+              
             </article>
            <div class="related-article">
               <div class="widget-title">ARTIGOS RELACIONADOS</div>
@@ -368,26 +358,24 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
             <!-- inicio sidebar -->
              <div class="widget widget-ads" style="margin-left: -25px; margin-top: -16px;" >
              <?php
-             include_once 'include/menu_home_clima_2.php';
+             include 'include/menu_home_clima_2.php';
             //include_once 'include/menu_sidebar_noticia_popular.php';
              ?>
              </div>
              <div class="widget widget-ads" >
              <?php
-             include_once 'include/menu_home_administra.php';
+             include 'include/menu_home_administra.php';
             //include_once 'include/menu_sidebar_noticia_popular.php';
              ?>
              </div>
            <?php
-             include_once 'include/menu_sidebar_propaganda.php';
+             include 'include/menu_sidebar_propaganda.php';
             
            ?>
            <?php
-           include_once 'include/menu_sidebar_servico.php';
+           include 'include/menu_sidebar_servico.php';
            ?>
-          <?php
-            include_once 'include/menu_home_video.php';
-           ?>
+       
        
             <!-- widget-video -->
 
@@ -395,7 +383,7 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
         <!-- sidebar -->
         
       <!-- inicio widget-area-5 BOLETIM DE NOTICIAS -->
-        <?php include_once 'include/menu_home_newsletter.php'; ?>
+        <?php // include_once 'include/menu_home_newsletter.php'; ?>
         <!-- fim widget-area-5 -->
         <!-- widget-area-5 -->
     </div>
