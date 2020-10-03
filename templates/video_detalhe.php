@@ -7,6 +7,7 @@ $hoje = date('Y-m-d');
 $hojePartes = new DataCalendario($hoje);
 $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
 
+ $video = new Videos(intval($_GET['vidcodigo']));
 
 ?>  
 <!-- Mirrored from upsidethemes.net/demo/news-times/html/single-video.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Aug 2020 12:02:50 GMT -->
@@ -17,7 +18,7 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
     <div id="main-content" class="container clearfix">
        <?php
         include 'include/menu_home_topo.php';
-        $video = new Videos(intval($_GET['prenumero']));
+       
         ?>
         <!-- main-top -->
         <div id="main-col" class="pull-left">
@@ -56,11 +57,17 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
                     </h6>    
                 </div>
               </div>
+                  <footer>  
+                        <div class="kp-author">
+                            <h3>LETRA OFICIAL</h3>
+                            <p><?=$video->vidhino ?>"</p>
+                        </div>
+                        <div class="kp-author">
+                             <h3>HISTÓRICO</h3>
+                            <p><?=$video->vidsobre ?>"</p>
+                        </div>
+                   </footer> 
               
-              <!-- kp-thumb -->
-              <div class="entry-content">
-                  <p><?= $video->vidsobre ?></p>
-              </div>
               <!-- entry-content -->
               
               <ul class="page-numbers clearfix">
@@ -72,48 +79,37 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
 
               
               
-              <footer>
+               <footer>
+                <div class="kp-author">
+                    <h3>SOBRE O AUTOR DO <strong><?= $video->descricao ?></strong> </h3>
                 <ul class="pager-page list-unstyled clearfix">
                   <li class="prev pull-left">
-                    <h3><span class="icon-double-angle-left"></span><a href="#">Artigos Anteriores </a></h3>
-                    <a href="#">Dia da Proclamação da Repubica</a>
+                    <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/videos/'. $video->vidautorimg1 ?>" width="100" height="100" class="pull-left"  alt="autor" />
+                    <div class="item-right">
+                      <h4><a href="#"><?= $video->vidautor1 ?>"</a></h4>
+                      <p> <?= $video->vidautornot1 ?></p>
+                      <p class="kp-social">
+                        <a href="#" class="icon-vimeo2"></a>
+                        <a href="#" class="icon-facebook2"></a>
+                        <a href="#" class="icon-linkedin3"></a>
+                        <a href="#" class="icon-google-plus"></a>
+                      </p>
+                    </div>
                   </li>
                   <li class="next pull-right">
-                    <h3><a href="#">Próximos Artigos </a> <span class="icon-double-angle-right"></span></h3>
-                    <a href="#">Emancipação do Municipio de Agricolandia</a>
+                      <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/videos/'. $video->vidautorimg2 ?>" width="100" height="100" class="pull-left"  alt="autor" />
+                    <div class="item-right">
+                      <h4><a href="#"><?= $video->vidautor2 ?>"</a></h4>
+                      <p> <?= $video->vidautornot2 ?></p>
+                      <p class="kp-social">
+                        <a href="#" class="icon-vimeo2"></a>
+                        <a href="#" class="icon-facebook2"></a>
+                        <a href="#" class="icon-linkedin3"></a>
+                        <a href="#" class="icon-google-plus"></a>
+                      </p>
+                    </div>
                   </li>
                 </ul>
-                <div class="kp-author">
-                  <h3>SOBRE O AUTOR</h3>
-                  <div class="author-body clearfix">
-                    <img src="placeholders/avartar/img.jpg" class="pull-left" alt="">
-                    <div class="item-right">
-                      <h3><a href="#">Francisco Manuel da Silva,</a></h3>
-                      <p> autor da música do hino nacional brasileiro..</p>
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                      </p>
-                    </div>
-                    <!-- item-right -->
-                  </div>
-                   <div class="author-body clearfix">
-                    <img src="placeholders/avartar/img.jpg" class="pull-left" alt="">
-                    <div class="item-right">
-                      <h3><a href="#">Joaquim Osório Duque-Estrada,,</a></h3>
-                      <p>  autor da letra do hino nacional brasileiro.</p>
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                      </p>
-                    </div>
-                    <!-- item-right -->
-                  </div>
-                  <!-- author-body -->
                 </div>
                 <!-- kp-author -->
               </footer>

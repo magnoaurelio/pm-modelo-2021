@@ -69,7 +69,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                     <div class="item-wrapper clearfix">
 
                         <?php
-                        $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " and home != 1");
+                        $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " and home != 1 "); // and home != 1
                         foreach ($noticiasDestaque->getResult() as $noticia) {
                             ?>
                             <div class="item pull-left">
@@ -102,7 +102,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
         <!-- inicio widget-area-2 -->
         <div class="widget-area-2 pull-left">
              <?php include 'include/menu_publicidade_sidebar.php'; ?>
-             <?php include_once 'include/menu_home_clima_4.php'; ?>
+             <?php include 'include/menu_home_clima_4.php'; ?>
             <!-- widget-last-post -->
             <div class="widget widget-ads">
                 <!--a href="?p=noticia_detalhe"><img src="files/prefeituras/201002/banner/BANNER_MEIO_INFER_AGR.gif" alt=""></a-->
@@ -122,6 +122,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                 </div>
                 <a href="?p=noticia_detalhe" class="clearfix"><span class="icon-facebook"></span>Siga...</a>
             </div>
+            <?php include 'include/menu_publicidade_home_esquerda.php'; ?>
 
             <!-- widget-tw -->
         </div>

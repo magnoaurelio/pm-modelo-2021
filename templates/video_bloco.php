@@ -40,10 +40,10 @@ $ano  =  $hojePartes->getAno();
                          <iframe width="400" height="225" src="<?= $video['vidurl'] ?>" frameborder="0" allowfullscreen></iframe>
                     </a>
                     <h6>
-                        <a href="?p=video_detalhe&prenumero=<?= $video['prenumero'] ?>"><?= $video["descricao"] ?>
+                        <a href="?p=video_detalhe&vidcodigo=<?= $video['vidcodigo'] ?>"><?= $video["descricao"] ?>
                         </a>
                     </h6>
-                    <a href="?p=video_detalhe&prenumero=<?= $video['prenumero'] ?>" class="continue-reading">Mais ...</a>
+                    <a href="?p=video_detalhe&vidcodigo=<?= $video['vidcodigo'] ?>" class="continue-reading">Mais ...</a>
                 </div>
             <?php } ?>
                

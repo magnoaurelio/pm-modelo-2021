@@ -3,7 +3,7 @@
 $hoje = date('Y-m-d');
 $hojePartes = new DataCalendario($hoje);
 $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
-
+$ano = $hojePartes->getAno();
 $prefeitura = new Prefeitura(UNIDADE_GESTORA);
 ?>
 <header id="page-header" style="background-color:#F2F2F2;">

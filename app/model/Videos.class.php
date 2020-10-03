@@ -13,7 +13,7 @@ class Videos extends Read
         if (strlen($criterio) == 6) {
             parent::ExeRead($this->Table, self::MUNICIPIO);
         } elseif (is_int($criterio)) {
-            parent::ExeRead($this->Table, " WHERE prenumero = :id", "id={$criterio}");
+            parent::ExeRead($this->Table, " WHERE vidcodigo = :id", "id={$criterio}");
         } else {
             $criterio = $criterio ? $criterio : self::MUNICIPIO;
             parent::ExeRead($this->Table, $criterio);

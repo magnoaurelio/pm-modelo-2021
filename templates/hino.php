@@ -64,40 +64,7 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
                     <a href="?p=video_detalhe&vidcodigo=<?= $video['vidcodigo'] ?>" class="continue-reading">Mais ...</a>
             
                     
-               <footer>
-                <div class="kp-author">
-                    <h3>SOBRE O AUTOR DO <strong><?= $video["descricao"] ?></strong> </h3>
-                <ul class="pager-page list-unstyled clearfix">
-                  <li class="prev pull-left">
-                    <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/videos/'. $video["vidautorimg1"] ?>" width="100" height="100" class="pull-left"  alt="autor" />
-                    <div class="item-right">
-                      <h4><a href="#"><?= $video["vidautor1"] ?>"</a></h4>
-                      <p> <?= $video["vidautornot1"] ?></p>
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                      </p>
-                    </div>
-                  </li>
-                  <li class="next pull-right">
-                      <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/videos/'. $video["vidautorimg2"] ?>" width="100" height="100" class="pull-left"  alt="autor" />
-                    <div class="item-right">
-                      <h4><a href="#"><?= $video["vidautor2"] ?>"</a></h4>
-                      <p> <?= $video["vidautornot2"] ?></p>
-                      <p class="kp-social">
-                        <a href="#" class="icon-vimeo2"></a>
-                        <a href="#" class="icon-facebook2"></a>
-                        <a href="#" class="icon-linkedin3"></a>
-                        <a href="#" class="icon-google-plus"></a>
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-                </div>
-                <!-- kp-author -->
-              </footer>
+         
                 </div>
             <!-- kp-thumb -->
               <footer>  
@@ -107,10 +74,7 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
               </div>
               
                      
-              <div class="kp-author">
-                   <h3>HISTÓRICO</h3>
-                  <p><?=$video['vidsobre'] ?>"</p>
-              </div>
+             
                    </footer> 
               <!-- entry-content -->
                </div>

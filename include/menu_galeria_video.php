@@ -10,7 +10,7 @@
                  <iframe width="270" height="160" src="<?= $video['vidurl'] ?>" frameborder="0" allowfullscreen></iframe>
                </a>
                <p><?= trim($video['descricao']) ?></p>
-                <a href="?p=video_detalhe&prenumero=<?= $video['prenumero'] ?>" class="continue-reading">Mais ...</a>
+                <a href="?p=video_detalhe&vidcodigo=<?= $video['vidcodigo'] ?>" class="continue-reading">Mais ...</a>
            
           </div>
        <?php } ?>
