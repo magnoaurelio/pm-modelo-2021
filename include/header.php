@@ -29,7 +29,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                         <a href="?p=contracheque"><i class="fa fa-money  fa-fw fa-lg"></i> Contra-Cheque</a>
                     </li>
                     <li class="current-menu-item">
-                        <a href="../index-2.html"><i class="fa fa-book fa-fw  fa-lg"></i> DIOFE</a>
+                        <a href="index.php"><i class="fa fa-book fa-fw  fa-lg"></i> DIOFE</a>
                     </li>
                     <li>
                         <a href="index.php">
