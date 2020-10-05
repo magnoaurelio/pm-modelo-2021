@@ -44,7 +44,7 @@ $ano  = $hojePartes->getAno();
                           </a>
                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                            <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>" title="Página deste Gestor...">
-                               <img src="files/prefeituras/201002/unidade/prefeitura1.jpg"  width="470" height="250" alt="">
+                                <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/secretaria/'. $secretaria['secfoto'] ?>"  width="470" height="250" alt="">
                            </a>
 
                           <div class="item-right">

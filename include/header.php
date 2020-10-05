@@ -265,70 +265,70 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                     </ul>
                 </li>
                 <li class="{{negocio_current}">
-                    <a href="?p=agronegocio_geral"> <i class="fa fa-industry "></i> </i> AgroNegócio</a>
+                    <a href="?p=agronegocio_exposicao_listagem"> <i class="fa fa-industry "></i> </i> AgroNegócio</a>
                     <ul>
-                        <li><a href="?p=agronegocio_atividade" title="Feiras e Exposição em: <?=$prefeitura->prenome?>"><i
-                                        class="fa fa-bullseye fl-fg"></i> Feiras e Exposição</a></li>
-                        <li><a href="?p=agronegocio_atividade" title=" Monocultura em: <?=$prefeitura->prenome?>"><i
-                                        class="fa fa-calculator fl-fg"></i> Monocultura</a>
+                        <li><a href="?p=agronegocio_exposicao_geral" title="Feiras e Exposição em: <?=$prefeitura->prenome?>"><i
+                                        class="fa fa-feed fl-fg"></i> Exposição e Feiras</a></li>
+                        <li><a href="?p=agronegocio_produto_listagem" title=" Monocultura em: <?=$prefeitura->prenome?>"><i
+                                        class="fa fa-apple fl-fg"></i> Produtos Agrícolas</a>
                             <ul>
-                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Soja</a>
+                                <li><a href="?p=agronegocio_produto_listagem"><i class="fa fa-bullseye fl-fg"></i> Soja</a>
                                 </li>
-                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Algodão</a>
+                                <li><a href="?p=agronegocio_produto_listagem"><i class="fa fa-bullseye fl-fg"></i> Algodão</a>
                                 </li>
-                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Milho</a>
+                                <li><a href="?p=agronegocio_produto_listagem"><i class="fa fa-bullseye fl-fg"></i> Milho</a>
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="?p=agronegocio_atividade" title="Agricultura: <?=$prefeitura->prenome?>"><i
+                        <li><a href="?p=agronegocio_produto_listagem" title="Agricultura: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-hand-o-right  fl-fg"></i> Apicultura</a>
                             <ul>
-                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Mel</a></li>
+                                <li><a href="?p=agronegocio_produto_listagem"><i class="fa fa-bullseye fl-fg"></i> Mel</a></li>
                             </ul>
                         </li>
-                        <li><a href="?p=agronegocio_atividade" title="Agricultura: <?=$prefeitura->prenome?>"><i
+                        <li><a href="?p=agronegocio_produto_listagem" title="Agricultura: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-hand-o-right  fl-fg"></i> Bovinocultura</a>
                             <ul>
-                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Gado
+                                <li><a href="?p=agronegocio_produto_listagem"><i class="fa fa-bullseye fl-fg"></i> Gado
                                         Corte</a></li>
-                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Gado
+                                <li><a href="?p=agronegocio_produto_listagem"><i class="fa fa-bullseye fl-fg"></i> Gado
                                         Leite</a></li>
                             </ul>
                         </li>
-                        <li><a href="?p=agronegocio_atividade" title="Agricultura: <?=$prefeitura->prenome?>"><i
+                        <li><a href="?p=agronegocio_produto_listagem" title="Agricultura: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-fish fl-fg"></i> Pisicultura</a>
                             <ul>
-                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Tilápia</a>
+                                <li><a href="?p=agronegocio_produto_listagem"><i class="fa fa-bullseye fl-fg"></i> Tilápia</a>
                                 </li>
-                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Tambaqui</a>
+                                <li><a href="?p=agronegocio_produto_listagem"><i class="fa fa-bullseye fl-fg"></i> Tambaqui</a>
                                 </li>
-                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Outros</a>
+                                <li><a href="?p=agronegocio_produto_listagem"><i class="fa fa-bullseye fl-fg"></i> Outros</a>
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="?p=agronegocio_atividade" title="Agricultura: <?=$prefeitura->prenome?>"><i
+                        <li><a href="?p=agronegocio_produto_listagem" title="Agricultura: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-hand-o-right  fl-fg"></i> Caprinocultura</a>
                             <ul>
-                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Cabra</a>
+                                <li><a href="?p=agronegocio_produto_listagem"><i class="fa fa-bullseye fl-fg"></i> Cabra</a>
                                 </li>
-                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Ovelha</a>
+                                <li><a href="?p=agronegocio_produto_listagem"><i class="fa fa-bullseye fl-fg"></i> Ovelha</a>
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="?p=agronegocio_atividade" title="Agricultura Familiar: <?=$prefeitura->prenome?>"><i
+                        <li><a href="?p=agronegocio_produto_listagem" title="Agricultura Familiar: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-hand-o-right  fl-fg"></i> Horto-Fruto-Granjeiro</a>
                             <ul>
-                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Arroz</a>
+                                <li><a href="?p=agronegocio_produto_listagem"><i class="fa fa-bullseye fl-fg"></i> Arroz</a>
                                 </li>
-                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Frango</a>
+                                <li><a href="?p=agronegocio_produto_listagem"><i class="fa fa-bullseye fl-fg"></i> Frango</a>
                                 </li>
-                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Galinha</a>
+                                <li><a href="?p=agronegocio_produto_listagem"><i class="fa fa-bullseye fl-fg"></i> Galinha</a>
                                 </li>
-                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Ovos</a>
+                                <li><a href="?p=agronegocio_produto_listagem"><i class="fa fa-bullseye fl-fg"></i> Ovos</a>
                                 </li>
-                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Feijão</a>
+                                <li><a href="?p=agronegocio_produto_listagem"><i class="fa fa-bullseye fl-fg"></i> Feijão</a>
                                 </li>
-                                <li><a href="?p=agronegocio_atividade"><i class="fa fa-bullseye fl-fg"></i> Milho</a>
+                                <li><a href="?p=agronegocio_produto_listagem"><i class="fa fa-bullseye fl-fg"></i> Milho</a>
                                 </li>
                             </ul>
                         </li>
@@ -359,13 +359,13 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                     <a href="index.php"><i class="icon-feed2  "></i> Notícia</a>
                     <ul>
                         <li><a href="?p=galeria" title="Fotos de: <?=$prefeitura->prenome?>"><i
-                                        class="fa fa-vid fa-picture-o fl-fg"></i> Galeria de Fotos</a></li>
+                                        class="fa fa-picture-o fl-fg"></i> Galeria de Fotos</a></li>
                         <li><a href="?p=noticia_geral" title="Noticias Gerais de: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-newspaper-o fl-fg"></i> Notícias Geral</a></li>
                         <li><a href="?p=noticia_bloco" title="Noticias em Bloco de: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-newspaper-o fl-fg"></i> Notícias Diversas</a></li>
                         <li><a href="?p=video_bloco" title="Vídeos Diversos de: <?=$prefeitura->prenome?>"><i
-                                        class="fa fa-vid fa-video-camera fl-fg"></i> Vídeos Diversos </a></li>
+                                        class="fa fa-video-camera fl-fg"></i> Vídeos Diversos </a></li>
                         <li><a href="?p=multimidia"><i class="icon-rss"></i> Multimídia</a></li>
                     </ul>
                 </li>
@@ -373,8 +373,21 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                 <li class="{comunicacao_current}">
                     <a href="index.php"> <i class="fa fa-wrench  "></i> Serviço</a>
                     <ul>
-                        <li><a href="?p=erro_404" title="Prefeito(a) de: <?=$prefeitura->prenome?>"><i
-                                        class="fa fa-user fa-fw  fa-lg"></i> Erro 404</a></li>
+                        <li>
+                            <a href="?p=contra-cheque" title="Prefeito(a) de: <?=$prefeitura->prenome?>">
+                                <i class="fa fa-money fa-fw  fa-lg"></i> Contra-Cheque
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?p=diario_oficial" title="Prefeito(a) de: <?=$prefeitura->prenome?>">
+                                <i class="fa fa-book fa-fw  fa-lg"></i> Diário Oficial
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?p=erro_404" title="Prefeito(a) de: <?=$prefeitura->prenome?>">
+                              <i class="fa fa-user fa-fw  fa-lg red "></i> Erro 404
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="{covid_current}">

@@ -69,7 +69,6 @@ $ano  =  $hojePartes->getAno();
      <?php include_once 'include/menu_home_newsletter.php'; ?>
         <!-- fim widget-area-5 -->
         <!-- widget-area-5 -->
-    </div>
     <!-- main-content -->
     
 </body>
