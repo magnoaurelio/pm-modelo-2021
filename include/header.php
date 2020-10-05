@@ -32,7 +32,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                         <a href="index.php"><i class="fa fa-book fa-fw  fa-lg"></i> DIOFE</a>
                     </li>
                     <li>
-                        <a href="?p=erro_404">
+                        <a href="portal/#/?unidade={unidadeGestora}" title="Transparência e CORONAVÍRUS - COVID 19 de {header_nome}" target="_blank" >
                             <button style="font-size:12px;">
                                 &nbsp;<i class="fa fa-medkit" style="font-size:14px; color:red"></i>
                                 TRANSCOVID &nbsp;
