@@ -4,7 +4,7 @@ include './include/head.php';
 $hoje = date('Y-m-d');
 $hojePartes = new DataCalendario($hoje);
 $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
-$igreja = new Igreja(UNIDADE_GESTORA);
+
 ?>
 <body class="page-full-width">
 

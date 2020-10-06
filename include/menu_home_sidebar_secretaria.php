@@ -1,11 +1,13 @@
-
+  <?php
+ // $secretaria = new Secretaria(UNIDADE_GESTORA);
+    ?>
 <div class="widget widget-last-post" >
     <a href="?p=secretaria_geral">
        <h3 class="widget-title">Secretarias e Gestores</h3>
     </a>
    <ul class="list-news list-unstyled">
         <?php
-         $secretarias = new Secretaria(Secretaria::MUNICIPIO);
+         $secretarias = new Secretaria(Secretaria::MUNICIPIO . " "); // and sectipo !== 'S'
          foreach ($secretarias->getResult() as $secretaria) {
         ?>
 
