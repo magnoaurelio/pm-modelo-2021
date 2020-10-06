@@ -78,7 +78,7 @@ $igreja = new Igreja(UNIDADE_GESTORA);
             </div>
 
 
-            <footer>
+            <!--footer>
                 <ul class="pager-page list-unstyled clearfix">
                     <li class="prev pull-left">
                         <h3><span class="icon-double-angle-left"></span><a href="#">previous article</a></h3>
@@ -104,118 +104,18 @@ $igreja = new Igreja(UNIDADE_GESTORA);
                                 <a href="#" class="icon-google-plus"></a>
                             </p>
                         </div>
-                        <!-- item-right -->
+                      
                     </div>
-                    <!-- author-body -->
+                  
                 </div>
-                <!-- kp-author -->
-            </footer>
+               
+            </footer-->
         </article>
 
         <!-- related-article -->
-        <div id="comments">
-            <h3 class="comments-title kp-title">1 comments</h3>
-            <ul class="comment-list">
-              
-                <li class="comment">
-                    <article class="comment-body">
-                        <figure class="pull-left">
-                            <img src="placeholders/avartar/img-8.jpg" alt="">
-                        </figure>
-                        <div class="comment-content item-right">
-                            <header class="clearfix">
-                                <h4>Jolie Angelina</h4>
-                                <p class="kp-metadata">10 September, 2013 at 5:26 pm</p>
-                                <p class="reply">
-                                    <a href="#" class="edit-link">Edit /</a>
-                                    <a href="#" class="reply-link">Reply</a>
-                                </p>
-                            </header>
-                            <div class="entry-content">
-                                <p>Etiam varius dui eget lorem elementum eget mattis sapien interdum. In hac habitasse
-                                    platea dictumst. Morbi sed nisi est, vitae convallis nulla. Lorem ipsum dolor sit
-                                    amet, consectetur adipiscing elit. Vivamus leo ante, consectetur sit amet vulputate
-                                    vel, dapibus sit amet lectus. Etiam varius dui eget lorem elementum eget mattis
-                                    sapien interdum. In hac habitasse platea dictumst. Morbi sed nisi est, vitae
-                                    convallis nulla.</p>
-                            </div>
-                            <!-- comment-content -->
-
-                        </div>
-                        <!-- comment-body -->
-                    </article>
-                    <ul class="children">
-                        <li class="comment">
-                            <article class="comment-body">
-                                <figure class="pull-left">
-                                    <img src="placeholders/avartar/img-9.jpg" alt="">
-                                </figure>
-                                <div class="comment-content item-right">
-                                    <header class="clearfix">
-                                        <h4>Jolie Angelina</h4>
-                                        <p class="kp-metadata">DataCalendario::date2br()</p>
-                                        <p class="reply">
-                                            <a href="#" class="edit-link">Edit /</a>
-                                            <a href="#" class="reply-link">Reply</a>
-                                        </p>
-                                    </header>
-                                    <div class="entry-content">
-                                        <p>Etiam varius dui eget lorem elementum eget mattis sapien interdum. In hac
-                                            habitasse platea dictumst. Morbi sed nisi est, vitae convallis nulla. Lorem
-                                            ipsum dolor sit amet, consectetur adipiscing elit. Vivamus leo ante,
-                                            consectetur sit amet vulputate vel, dapibus sit amet lectus. Etiam varius
-                                            dui eget lorem elementum eget mattis sapien interdum. In hac habitasse
-                                            platea dictumst. Morbi sed nisi est, vitae convallis nulla.</p>
-                                    </div>
-                                    <!-- comment-content -->
-
-                                </div>
-                                <!-- comment-body -->
-                            </article>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="pagination kopa-comment-pagination">
-                <a class="prev page-numbers" href="#comments">« Anterior</a>
-                <a class="page-numbers" href="#comments">1</a>
-                <span class="page-numbers current">2</span>
-                <a class="next page-numbers" href="#comments">Próximo »</a>
-            </div>
-            <!-- pagination kopa-comment-pagination-->
-            <div id="respond">
-                <h3 id="reply-title" class="comment-reply-title kp-title">Deixe uma resposta</h3>
-
-                <form action="https://upsidethemes.net/" method="post" class="comment-form clearfix">
-                    <p class="comment-notes">Your email address will not be published. Required fields are
-                        marked<span>*</span></p>
-                    <div class="pull-left">
-                        <div class="form-group">
-                            <label for="name">Name <span>*</span></label>
-                            <input class="form-control" name="name" type="text" id="name">
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Email <span>*</span></label>
-                            <input class="form-control" name="email" type="text" id="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Website</label>
-                            <input class="form-control" type="text" id="website">
-                        </div>
-                    </div>
-                    <!-- pull-left -->
-                    <div class="pull-right">
-                        <div class="form-group">
-                            <label for="textarea">Your comment <span>*</span></label>
-                            <textarea class="form-control" name="message" id="textarea"></textarea>
-                        </div>
-                        <input type="submit" id="input-submit" value="post comment">
-                    </div>
-                </form>
-                <div id="response"></div>
-            </div>
-            <!-- respond -->
-        </div>
+       <?php
+        //    include 'include/menu_pagina_comentario.php';
+              ?>
         <!-- comments -->
 
         <div class="clearfix"></div>
