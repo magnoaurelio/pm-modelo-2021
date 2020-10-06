@@ -5,7 +5,7 @@ define('HOST','sql155.main-hosting.eu');
 define('USER','u140601217_porta');
 define('PASS','Magno0211');
 define('TYPE_BANCO','mysql');
-define('UNIDADE_GESTORA','201002');
+define('UNIDADE_GESTORA','201175');
 define('FILES','http://transparencia.municipiaui.com/files/');
 
 

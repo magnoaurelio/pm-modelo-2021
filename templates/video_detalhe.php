@@ -138,7 +138,7 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
         <div id="sidebar" class="pull-left">
             <!-- inicio sidebar -->
               <?php 
-               include 'include/menu_sidebar_propaganda.php';
+               include 'include/menu_publicidade_sidebar.php';
  
               ?>
             <div class="widget widget-ads" >
@@ -158,11 +158,11 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
          <!-- widget-ads -->
             
             <?php
-            include_once 'include/menu_sidebar_noticia_popular.php';
+           // include_once 'include/menu_sidebar_noticia_popular.php';
            ?>
          <!-- widget-random -->
           <?php
-            include_once 'include/menu_sidebar_randon.php';
+         //   include_once 'include/menu_sidebar_randon.php';
            ?>
          <!-- widget-tabs -->
           
