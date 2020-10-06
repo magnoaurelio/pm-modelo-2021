@@ -13,7 +13,7 @@ $ano  = $hojePartes->getAno();
         <li class="col-sm col-sm-left">
           <ul class="list-unstyled">
             <?php
-                $galeriaTur = new Galeria(Galeria::MUNICIPIO . " order by RAND() limit 2");
+                $galeriaTur = new Galeria(Galeria::MUNICIPIO . " and galtipo = 0 order by RAND() limit 2");
                 foreach ($galeriaTur->getResult() as $galeria) {
              ?> 
             <li>
@@ -30,7 +30,7 @@ $ano  = $hojePartes->getAno();
         <li class="col-center">
           <div class="owl-carousel owl-carousel-photos">
                  <?php
-                    $galeriaTur = new Galeria(Galeria::MUNICIPIO . " order by RAND() limit 4");
+                    $galeriaTur = new Galeria(Galeria::MUNICIPIO . " and galtipo = 0 order by RAND() limit 4");
                     foreach ($galeriaTur->getResult() as $galeria) {
                  ?> 
                     <a title="Veja mais..." href="?p=galeria" class="caption">
@@ -47,7 +47,7 @@ $ano  = $hojePartes->getAno();
         <li class="col-sm col-sm-right">
            <ul class="list-unstyled">
            <?php
-                $galeriaTur = new Galeria(Galeria::MUNICIPIO . " order by RAND() limit 2");
+                $galeriaTur = new Galeria(Galeria::MUNICIPIO . " and galtipo = 0 order by RAND() limit 2");
                 foreach ($galeriaTur->getResult() as $galeria) {
              ?> 
             <li>

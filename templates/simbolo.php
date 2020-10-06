@@ -47,18 +47,21 @@ $simbolo = new Simbolo(UNIDADE_GESTORA);
                     <div class="col-sm-right col-12">
                    
                      <div class="item-left" >
-                         
-                        <a href="#" class="pull-left" title="<?= $simbolo['simnome'] ?>">
+                       <a target="_blank"  title="Veja mais.. <?= $simbolo['simnome'] ?>"  href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/simbolo/'. $simbolo['simfoto1'] ?>" width="250" height="250" class="pull-left" data-lightbox="example-set" alt="simbolo" >
                             <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/simbolo/'. $simbolo['simfoto1'] ?>" width="250" height="250" alt="simbolo">
                             &nbsp;&nbsp;
-                         </a>
+                       </a>
                        
                        <div class="item-right" >
-                       <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/simbolo/'. $simbolo['simfoto2'] ?>" width="470" height="250" alt="simbolo">
+                        <a target="_blank"  title=" Veja mais..  <?= $simbolo['simnome'] ?>"  href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/simbolo/'. $simbolo['simfoto2'] ?>" width="250" height="250" class="pull-left" data-lightbox="example-set" alt="simbolo" >
+                          <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/simbolo/'. $simbolo['simfoto2'] ?>" width="470" height="250" alt="simbolo">
+                        </a>
                        </div>
                          <br>
                        <div class="item-right" >
-                       <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/simbolo/'. $simbolo['simfoto3'] ?>"  alt="simbolo">
+                       <a target="_blank"  title=" Veja mais..  <?= $simbolo['simnome'] ?>"  href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/simbolo/'. $simbolo['simfoto3'] ?>" width="250" height="250" class="pull-left" data-lightbox="example-set" alt="simbolo" >
+                          <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/simbolo/'. $simbolo['simfoto3'] ?>"  alt="simbolo">
+                       </a>
                        </div>
                      
                       </div>

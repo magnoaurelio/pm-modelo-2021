@@ -55,7 +55,9 @@ $galeria = new Galeria(UNIDADE_GESTORA);
                         <li>
                             <h4> <?= $galeria['galnome'] ?> </h4>
                             <div class="mask">
-                                <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/galeria/'. $galeria['galarquivo'] ?>" width="797" height="429" alt="imagem" />
+                                 <a target="_blank"  href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/galeria/'. $galeria['galarquivo'] ?>" class="caption" data-lightbox="example-set" >
+                                    <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/galeria/'. $galeria['galarquivo'] ?>" width="797" height="429" alt="imagem" />
+                                 </a>
                             </div>
                             <div class="kp-gallery-caption">
                                 <h5>Sobre:</h5>

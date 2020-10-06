@@ -54,10 +54,16 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
                  ?>  
                      <h3 class="widget-title" style="margin-top: 3px; ">Visão Panorâmica </h3>
            <div class="widget widget-ads">
-               <a href="#">
-                   <!--img src="files/prefeituras/201002/banner/BANNER_ESQUERDA.gif" width="310" alt=""-->
-                   <img src="placeholders/gallery/igreja8.jpg"  alt="">
-               </a>
+                <?php
+                    $galeriaTur = new Galeria(Galeria::MUNICIPIO . ' and galtipo = 0 order by RAND() limit 1 ');
+                    foreach ($galeriaTur->getResult() as $galeria) {
+                    ?>
+                <a target="_blank"  href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/galeria/'. $galeria['galarquivo'] ?>" class="caption" data-lightbox="example-set" >
+                   <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/galeria/'. $galeria['galarquivo'] ?>" width="797" height="429" alt="imagem" />
+                </a>
+                <?php
+                    }
+                 ?>  
            </div>
                 </div>
               </div>
