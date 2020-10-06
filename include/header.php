@@ -56,84 +56,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                         </ul>
                     </li>
                 </ul>
-                <div class="mobile-menu clearfix">
-                    <span>Menu</span>
-                    <ul class="toggle-view-menu">
-                        <li class="clearfix">
-                            <h3><a href="#">Início</a><span>+</span></h3>
-                            <div class="menu-panel clearfix">
-                                <ul>
-                                    <li><a href="#">Index style 1</a></li>
-                                    <li><a href="#">Index style 2</a></li>
-                                    <li><a href="#">Index style 3</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <h3><a href="#">Paginas</a><span>+</span></h3>
-                            <div class="menu-panel clearfix">
-                                <ul>
-                                    <li><a href="#">Sobre page</a></li>
-                                    <li><a href="#">Elements page</a></li>
-                                    <li><a href="#">404 page</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <h3><a href="#">Portfolio</a><span>+</span></h3>
-                            <div class="menu-panel clearfix">
-                                <ul>
-                                    <li><a href="#">Portfolio 3 column</a></li>
-                                    <li><a href="#">Portfolio 2 column</a></li>
-                                    <li><a href="#">Portfolio 1 column</a></li>
-                                    <li>
-                                        <a href="#">Portfolio detail</a>
-                                        <ul>
-                                            <li><a href="#">Portfolio single</a></li>
-                                            <li><a href="single-full-width.html">Portfolio audio</a></li>
-                                            <li><a href="single.html">Portfolio gallery</a></li>
-                                            <li><a href="single-video.html">Portfolio video</a></li>
-                                            <li><a href="single-audio.html">Portfolio soundcloud</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <h3><a href="#">Blog</a><span>+</span></h3>
-                            <div class="menu-panel clearfix">
-                                <ul>
-                                    <li>
-                                        <a href="#">Blog style 1</a>
-                                        <ul>
-                                            <li><a href="#">Width left sidebar</a></li>
-                                            <li><a href="#">Width right sidebar</a></li>
-                                            <li><a href="#">Width two sidebar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="../blog-2.html">Blog style 2</a></li>
-                                    <li>
-                                        <a href="#">Blog style 3</a>
-                                        <ul>
-                                            <li><a href="#">Width one sidebar</a></li>
-                                            <li><a href="#">Width two sidebar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Blog single</a>
-                                        <ul>
-                                            <li><a href="#">Single style 1</a></li>
-                                            <li><a href="#">Single style 2</a></li>
-                                            <li><a href="#">Single style 3</a></li>
-                                            <li><a href="#">Single style 4</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="clearfix"><h3><a href="#">Contact</a></h3></li>
-                    </ul><!--toggle-view-menu-->
-                </div><!--mobile-menu-->
+               
             </nav>
             <div class="search-box pull-right">
                 <form action="https://upsidethemes.net/" method="post" class="search-form clearfix">
@@ -173,14 +96,14 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
             </p>
 
         </div>
-        <div class="logo pull-left" style="margin-left: -300px">
+        <div class="logo pull-left" style="margin-left: -120px">
             <a href="./index.php" title="Bandeira Oficial de: <?=$prefeitura->prenome?> ">
                 <img src="<?= FILES . 'prefeituras/' . UNIDADE_GESTORA . '/' . $prefeitura->prebandeira?>" width="110" height="70" alt="bandeira"
                      class="img-responsive">
             </a>
         </div>
 
-        <div class="logo pull-left" style="margin-left: -170px">
+        <div class="logo pull-left" style="margin-left: 0px">
             <a href="./index.php" title="Logomarca Oficial de: <?=$prefeitura->prenome?> ">
                 <img src="<?= FILES . 'prefeituras/' . UNIDADE_GESTORA . '/' . $prefeitura->prelogo?>" width="280" height="70" alt="logo"
                      class="img-responsive">
