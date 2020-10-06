@@ -69,7 +69,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                     <div class="item-wrapper clearfix">
 
                         <?php
-                        $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " and home != 1 "); // and home != 1
+                        $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " and home != 1 order by rand() limit 10 "); // and home != 1
                         foreach ($noticiasDestaque->getResult() as $noticia) {
                             ?>
                             <div class="item pull-left">
