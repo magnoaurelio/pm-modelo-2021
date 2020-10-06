@@ -18,7 +18,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                         </a>
                     </li>
                     <li class="current-menu-item">
-                        <a href="?p=erro_404">
+                        <a href="?p=login">
                             <button style="font-size:14px;">
                                 &nbsp<i class="fa fa-key fa-fw  fa-lg" style="font-size:16px; color:green"></i>
                                 <strong>ACESSO</strong> &nbsp;
@@ -26,13 +26,13 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                         </a>
                     </li>
                     <li>
-                        <a href="?p=erro_404"><i class="fa fa-money  fa-fw fa-lg"></i> Contra-Cheque</a>
+                        <a href="transparencia.municipiaui.com/contracheque.php?unidadeGestora=201002"><i class="fa fa-money  fa-fw fa-lg"></i> Contra-Cheque</a>
                     </li>
                     <li class="current-menu-item">
                         <a href="index.php"><i class="fa fa-book fa-fw  fa-lg"></i> DIOFE</a>
                     </li>
                     <li>
-                        <a href="portal/#/?unidade={unidadeGestora}" title="Transparência e CORONAVÍRUS - COVID 19 de {header_nome}" target="_blank" >
+                        <a href="portal/#/?unidade={unidadeGestora}" title="Transparência e CORONAVÍRUS - COVID 19 de <?=$prefeitura->prenome?> " target="_blank" >
                             <button style="font-size:12px;">
                                 &nbsp;<i class="fa fa-medkit" style="font-size:14px; color:red"></i>
                                 TRANSCOVID &nbsp;
