@@ -13,6 +13,7 @@ $igreja = new Igreja(UNIDADE_GESTORA);
     <?php
     include 'include/menu_home_topo.php';
     $noticia = new Noticia(intval($_GET['notcodigo']));
+    $notcodigo = $noticia->notcodigo;
     ?>
     <!-- main-top -->
     <div id="main-col" class="pull-left">
@@ -61,14 +62,15 @@ $igreja = new Igreja(UNIDADE_GESTORA);
                 <div class="widget-title">FOTOS RELACIONADAS</div>
                 <div class="owl-carousel owl-carousel-related">
                      <?php
-                        $galeriaTur = new Galeria(Galeria::MUNICIPIO);
-                        foreach ($galeriaTur->getResult() as $galeria) {
+                       $noticiasFoto = new NoticiaFoto(NoticiaFoto::MUNICIPIO . " and notcodigo = $notcodigo ");
+                       foreach ($noticiasFoto->getResult() as $noticiafoto) {
                      ?>  
                         <div class="item">
                           <a href="#" class="caption">
-                              <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/galeria/'. $galeria['galarquivo'] ?>" height="180" alt="imagem" />
+                              <img src="<?= FILES . 'noticia/'.UNIDADE_GESTORA.'/'. $noticiafoto['nofimagem'] ?>" height="180" alt="imagem" />
                             <span class="icon-plus"></span>
-                            <p><?= trim($galeria['galnome']) ?></p>
+                            <p><?= trim($noticiafoto['noflegenda']) ?></p>
+                            <p><?= trim($noticiafoto['noffonte']) ?></p>
                           </a>
                         </div>
                      <?php } ?>
@@ -125,7 +127,7 @@ $igreja = new Igreja(UNIDADE_GESTORA);
 
 
     <div class="widget-area-5">
-        <?php include_once 'include/menu_home_newsletter.php'; ?>
+        <?php // include  'include/menu_home_newsletter.php'; ?>
         <!-- widget-newsletter -->
 
         <!-- widget-morenews -->

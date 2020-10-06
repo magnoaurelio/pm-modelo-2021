@@ -4,6 +4,7 @@ $hoje = date('Y-m-d');
 $hojePartes = new DataCalendario($hoje);
 $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
 $ano  = $hojePartes->getAno();
+
 ?>
 <div class="widget widget-more-news multimedia">
     <h3 class="widget-title"><a href="?p=noticia_geral">Mais Notícias</a></h3>

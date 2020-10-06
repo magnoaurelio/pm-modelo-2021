@@ -4,7 +4,8 @@
 $hoje = date('Y-m-d');
 $hojePartes = new DataCalendario($hoje);
 $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
-//$ano  = $hojePartes->ano;
+$ano  = $hojePartes->getAno();
+
 ?>
 
 <body class="kp-category-1">
