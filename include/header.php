@@ -167,15 +167,15 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                 </li>
 
                 <li class="{secretaria_current}">
-                    <a href="?p=secretaria_geral"><i class="fa fa-university "></i> Secretaria</a>
+                    <a href="?p=secretaria_geral"><i class="fa fa-university fa-fw  fa-lg "></i> Secretaria</a>
                     <ul>
                          <?php
-                    $secretarias = new Secretaria(Secretaria::MUNICIPIO);
+                    $secretarias = new Secretaria(Secretaria::MUNICIPIO . " and sectipo = 'S' ");
                     foreach ($secretarias->getResult() as $secretaria) {
                         ?>
                         <li>
                             <a title="<?=$secretaria['secnome']?> de <?=$prefeitura->prenome?>" href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>">
-                                <span ><i class="fa fa-university "></i>&nbsp;&nbsp;<?=$secretaria['secnome']?></span>
+                                <span ><i class="fa fa-university fa-fw  fa-lg "></i>&nbsp;&nbsp;<?=$secretaria['secnome']?></span>
                              </a>
 
                             <ul>
@@ -306,6 +306,27 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                                 <i class="fa fa-book fa-fw  fa-lg"></i> Diário Oficial
                             </a>
                         </li>
+                         <li class="{secretaria_current}">
+                    <a href="?p=secretaria_geral"><i class="fa fa-wrench fa-fw  fa-lg "></i> Assessoria Contratada</a>
+                    <ul>
+                    <?php
+                    $secretarias = new Secretaria(Secretaria::MUNICIPIO . " and sectipo = 'C' ");
+                    foreach ($secretarias->getResult() as $secretaria) {
+                        ?>
+                        <li>
+                            <a title="<?=$secretaria['secnome']?> presta Serviço  <?= $secretaria['secusual'] ?> para  <?=$prefeitura->prenome?>" href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>">
+                                <span ><i class="fa fa-university fa-fw  fa-lg "></i>&nbsp;&nbsp;<?=$secretaria['secnome']?></span>
+                             </a>
+
+                            <ul>
+                                <li><a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>"><?= $secretaria['secusual'] ?></a></li>
+                                
+                            </ul>
+                        </li>
+                      
+                          <?php } ?>
+                    </ul>
+                </li>
                         <li>
                             <a href="?p=erro_404" title="Prefeito(a) de: <?=$prefeitura->prenome?>">
                               <i class="fa fa-user fa-fw  fa-lg red "></i> Erro 404
