@@ -61,7 +61,7 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
                        <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto2 ?>"  width="470" height="250" alt="">
                        </a>
                      <hr style="color-line: #c9c9c9;">
-                       <a target="_blank" href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto2 ?>" title=" Veja mais... <?= $esportes->espnome ?>"  data-lightbox="example-set">
+                       <a target="_blank" href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto3 ?>" title=" Veja mais... <?= $esportes->espnome ?>"  data-lightbox="example-set">
                        <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto2 ?>"  width="740" height="455" alt="">
                        </a>
                   
