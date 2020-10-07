@@ -1,26 +1,24 @@
-  <?php
- // $secretaria = new Secretaria(UNIDADE_GESTORA);
-    ?>
+
 <div class="widget widget-last-post" >
     <a href="?p=secretaria_geral">
-       <h3 class="widget-title">Secretarias e Gestores</h3>
+       <h3 class="widget-title">Assessoria Contratada</h3>
     </a>
    <ul class="list-news list-unstyled">
         <?php
-         $secretarias = new Secretaria(Secretaria::MUNICIPIO . " and sectipo = 'S' "); // 
+         $secretarias = new Secretaria(Secretaria::MUNICIPIO . " and sectipo = 'C' order by rand() limit 1 "); // 
          foreach ($secretarias->getResult() as $secretaria) {
         ?>
 
         <li>
             <div class="item clearfix">
                 <h5>
-                    <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>">
+                    <a  title="Mais Assessores Contratados..." href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>">
                         <span ><strong><?=$secretaria['secnome']?></strong></span>
                     </a>
                 </h5> 
                 <h6 class="kp-metadata">&nbsp;<i class="icon-user"></i> <span style="font-size: 14px;"> <strong> <?= $secretaria['secusual'] ?></strong></span></h6>
 
-                <a href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>" class="pull-left">
+                <a title="Mais Assessores Contratados..." href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>" class="pull-left">
                     <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/secretaria/'. $secretaria['secfotor'] ?>" width="90" height="90" alt="">
                     <!--span>
                       <i class="icon-images"></i>

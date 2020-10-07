@@ -142,9 +142,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
     <!-- inicio sidebar -->
    
     <?php include 'include/menu_home_sidebar_adm.php'; ?>
-    
    
-        
          <!-- widget-ads -->
          
     <!-- fim sidebar -->

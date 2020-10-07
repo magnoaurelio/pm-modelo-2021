@@ -85,7 +85,9 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
     </div>
    <div class="clearfix"></div>
    <?php
-  include_once 'include/menu_home_sidebar_secretaria.php';
+  include 'include/menu_home_sidebar_secretaria.php';
+  include 'include/menu_home_sidebar_assessor.php';
+ // include 'include/menu_home_sidebar_contrato.php';
   ?>
 </div>
 </div>
