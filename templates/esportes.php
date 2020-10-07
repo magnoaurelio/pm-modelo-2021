@@ -53,7 +53,10 @@ $esportes = new Esportes(UNIDADE_GESTORA);
                         <li>
                             <h4> <?= $esportes['espnome'] ?> -  <?= $esportes['espusual'] ?></h4>
                             <div class="mask">
-                                <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes['espfoto1'] ?>"  alt="imagem" />
+                                 <a href="?p=esportes_detalhe&espcodigo=<?= $esportes['espcodigo'] ?>" title=" Veja mais...  <?= $esportes['espnome']?>">
+                                   <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes['espfoto1'] ?>"  width="797" height="429" alt="esporte" />
+                                 </a>
+                              
                             </div>
                             <div class="kp-gallery-caption">
                                 <h5>Sobre:</h5>
@@ -103,48 +106,27 @@ $esportes = new Esportes(UNIDADE_GESTORA);
         
         
         <div id="sidebar" class="pull-left">
-            <div class="widget widget-ads" >
+         
              <?php
-            include_once 'include/menu_publicidade_sidebar.php';
-             ?>
-             </div>
-            <div class="widget widget-ads" >
-             <?php
-             include_once 'include/menu_home_clima_1.php';
-             ?>
-             </div>
-          
-           <?php
-            
-           
-             include_once 'include/menu_sidebar_mapa_localizacao.php';
+             include 'include/menu_publicidade_sidebar.php';
+             include 'include/menu_home_clima_1.php';
+             include 'include/menu_sidebar_mapa_localizacao.php';
            ?>
         </div>
         <!-- sidebar -->
         <!-- sidebar -->
         
-        <div class="widget-area-5">
          <div class="widget-area-5">
           <div class="multimedia clearfix">
           
             <?php
             include 'include/menu_galeria_imagem_relac.php';
-           ?>
-            <?php
             include 'include/menu_galeria_video_relac.php';
-           ?>
-            <!--h3 class="multimedia-title kp-title">áudios relacionadas
-                <a class="prev" href="#"></a>
-                <a class="next" href="#"></a>
-            </h3-->
-             <?php
-           // include_once 'include/menu_galeria_audio_relac.php';
            ?>
           </div>
           <!-- multimedia -->
         </div>
           <!-- multimedia -->
-        </div>
         <!-- widget-area-5 -->
     </div>
     <!-- main-content -->

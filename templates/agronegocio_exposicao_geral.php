@@ -95,49 +95,37 @@ $ano =  $hojePartes->getAno();
         
         
         <div id="sidebar" class="pull-left">
-            <div class="widget widget-ads" style="margin-top: -16px; margin-left: -25px">
+          
              <?php
-             include_once 'include/menu_home_clima_2.php';
+             include 'include/menu_home_clima_2.php';
             //include_once 'include/menu_sidebar_noticia_popular.php';
-             ?>
-             </div>
-           <?php
-             include_once 'include/menu_sidebar_propaganda.php';
+          
+             include 'include/menu_publicidade_sidebar.php';
            
-             include_once 'include/menu_home_video.php';
+             include 'include/menu_home_video.php';
            ?>
         </div>
         <!-- sidebar -->
         
-        <div class="widget-area-5">
          <div class="widget-area-5">
           <div class="multimedia clearfix">
-            <h3 class="multimedia-title kp-title">imagens relacionadas
-                <a class="prev" href="#"></a>
-                <a class="next" href="#"></a>
-            </h3>
+           
             <?php
             include_once 'include/menu_galeria_imagem_relac.php';
            ?>
-            <h3 class="multimedia-title kp-title">vídeos relacionadas
-               <a class="prev" href="#"></a>
-               <a class="next" href="#"></a>
-            </h3>
+            
             <?php
             include_once 'include/menu_galeria_video_relac.php';
            ?>
-            <h3 class="multimedia-title kp-title">áudios relacionadas
-                <a class="prev" href="#"></a>
-                <a class="next" href="#"></a>
-            </h3>
+            
              <?php
-            include_once 'include/menu_galeria_audio_relac.php';
+            //include_once 'include/menu_galeria_audio_relac.php';
            ?>
           </div>
           <!-- multimedia -->
         </div>
           <!-- multimedia -->
-        </div>
+        
         <!-- widget-area-5 -->
     </div>
     <!-- main-content -->

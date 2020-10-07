@@ -7,10 +7,10 @@ $hoje = date('Y-m-d');
 $hojePartes = new DataCalendario($hoje);
 $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
 
- $agronegocio= new Agronegocio(intval($_GET['agrocodigo']));
+ $esportes= new Esportes(intval($_GET['espcodigo']));
 
 ?>  
-<!-- Mirrored from upsidethemes.net/demo/news-times/html/single-agroeo.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Aug 2020 12:02:50 GMT -->
+<!-- Mirrored from upsidethemes.net/demo/news-times/html/single-espeo.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Aug 2020 12:02:50 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
 <body class="kp-single">
@@ -23,21 +23,21 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
         <!-- main-top -->
         <div id="main-col" class="pull-left">
             <?php
-               //    $agronegocioAgro = new Agronegocio(Agronegocio::MUNICIPIO,'and agrocodigo = $agrocodigo');
-               //    foreach ($agronegocioAgro->getResult() as $agronegocio) {
+               //    $esportesAgro = new Agronegocio(Agronegocio::MUNICIPIO,'and espcodigo = $espcodigo');
+               //    foreach ($esportesAgro->getResult() as $esportes) {
               ?>
              <ul class="breadcrumb">
               <li><a href="index.php">Início</a></li>
-              <li class="active" >AGRONEGÓCIO FEIRAS E EXPOSIÇÃO</li>
+              <li class="active" >Praças de Esportes</li>
             </ul>
            
             <article class="post-content">
               
               <header class="clearfix">
-                <h3 class="title-post"><?= strtoupper($agronegocio->agronome) ?>  </h3>
+                <h3 class="title-post"><?= strtoupper($esportes->espnome) ?>  </h3>
                 <div class="header-bottom">
                  <p class="kp-metadata style-2">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> <?=DataCalendario::date2br($agronegocio->agrodata ) ?> </span></a>
+                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> <?=DataCalendario::date2br($esportes->espdata ) ?> </span></a>
                     
                   </p>
                 <p class="kp-share">
@@ -52,17 +52,22 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
                 <!-- header-bottom -->                
               </header>
               <div class="kp-thumb">
-                <div class="agroeo-wrapper">
-                    <a href="?p=agronegocio_exposicao_detalhe&agrocodigo=<?= $agronegocio->agrocodigo ?>" title=" Veja mais...  <?= $agronegocio->agronome ?>">
-                           <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/agronegocio/'. $agronegocio->agrofoto1 ?>" width="250" height="250" alt="">
+                <div class="espeo-wrapper">
+                    <a target="_blank" href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto1 ?>" title=" Veja mais...  <?= $esportes->espnome ?>" data-lightbox="example-set">
+                           <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto1 ?>" width="250" height="250" alt="">
                       </a>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href="?p=agronegocio_exposicao_detalhe&agrocodigo=<?= $agronegocio->agrocodigo ?>" title=" Veja mais... <?= $agronegocio->agronome ?>">
-                       <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/agronegocio/'. $agronegocio->agrofoto2 ?>"  width="470" height="250" alt="">
+                       <a target="_blank" href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto2 ?>" title=" Veja mais... <?= $esportes->espnome ?>"  data-lightbox="example-set">
+                       <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto2 ?>"  width="470" height="250" alt="">
                        </a>
-                    <h6>
-                        <a href="#"><?=$agronegocio->agrosobre ?></a>
-                    </h6>    
+                     <hr style="color-line: #c9c9c9;">
+                       <a target="_blank" href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto2 ?>" title=" Veja mais... <?= $esportes->espnome ?>"  data-lightbox="example-set">
+                       <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto2 ?>"  width="740" height="455" alt="">
+                       </a>
+                  
+                        <h6>Sobre:</h6>  
+                        <p> <?=$esportes->espsobre ?></p>
+                           <hr style="color-line: #c9c9c9;">
                 </div>
               </div>
          
@@ -128,7 +133,7 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
           <?php
             include_once 'include/menu_sidebar_mapa_localizacao.php';
            ?>
-            <!-- widget-agroeo -->
+            <!-- widget-espeo -->
 
         </div>
         <!-- sidebar -->
@@ -141,5 +146,5 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
     <!-- main-content -->
 </body>
 
-<!-- Mirrored from upsidethemes.net/demo/news-times/html/single-agroeo.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Aug 2020 12:02:50 GMT -->
+<!-- Mirrored from upsidethemes.net/demo/news-times/html/single-espeo.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Aug 2020 12:02:50 GMT -->
 
