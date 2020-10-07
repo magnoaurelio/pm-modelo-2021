@@ -104,6 +104,9 @@ $galeria = new Galeria(UNIDADE_GESTORA);
         
         <div id="sidebar" class="pull-left">
             <?php
+            include 'include/menu_publicidade_sidebar.php';
+          ?>
+            <?php
             include 'include/menu_sidebar_randon.php';
           ?>
         <!-- widget-random -->

@@ -108,13 +108,12 @@ $simbolo = new Simbolo(UNIDADE_GESTORA);
         <!-- main-col -->
         <div id="sidebar" class="pull-left">
             <!-- inicio sidebar -->
-             <div class="widget widget-ads"  >
+             
              <?php
-           
              include 'include/menu_publicidade_sidebar.php';
             // include_once 'include/menu_home_clima_4.php';
              ?>
-             </div>
+         
             <?php
               include 'include/menu_home_sidebar_adm.php';
              ?>

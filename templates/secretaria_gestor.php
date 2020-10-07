@@ -162,7 +162,8 @@ $secretaria =  new Secretaria(intval($_GET['prenumero']));
            
              <?php
              include_once 'include/menu_home_sidebar_adm.php';
-            //include_once 'include/menu_sidebar_noticia_popular.php';
+             include 'include/menu_home_sidebar_contrato.php';
+
              ?>
             
               <?php

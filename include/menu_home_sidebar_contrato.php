@@ -1,6 +1,6 @@
 
-<div class="widget widget-last-post" >
-    <a href="?p=secretaria_geral">
+<div id="sidebar" class="pull-right">
+<a href="?p=secretaria_geral">
        <h3 class="widget-title">Assessoria Contratada</h3>
     </a>
    <ul class="list-news list-unstyled">
@@ -14,12 +14,14 @@
                 <h5>
                     <a  title="Mais Assessores Contratados..." href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>">
                         <span ><strong><?=$secretaria['secnome']?></strong></span>
+                       
                     </a>
                 </h5> 
+               
                 <h6 class="kp-metadata">&nbsp;<i class="icon-user"></i> <span style="font-size: 14px;"> <strong> <?= $secretaria['secusual'] ?></strong></span></h6>
-
+                  <br>
                 <a title="Mais Assessores Contratados..." href="?p=secretaria_gestor&prenumero=<?= $secretaria['prenumero'] ?>" class="pull-left">
-                    <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/secretaria/'. $secretaria['secfotor'] ?>" width="90" height="90" alt="">
+                    <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/secretaria/'. $secretaria['secfotor'] ?>" width="120" height="120" alt="">
                     <!--span>
                       <i class="icon-images"></i>
                     </span-->
@@ -30,6 +32,11 @@
                     <p class="kp-metadata">&nbsp;<i class="icon-email"></i> <span> <?= $secretaria['secemail'] ?></span></p>
                     <p class="kp-metadata">&nbsp;<i class="icon-home"></i> <span> <?= strtolower($secretaria['secendereco']) ?></span></p>
                     <p class="kp-metadata">&nbsp;<i class="icon-home"></i> <span> <?= $secretaria['secbairro'] ?></span></p>
+                    <p class="kp-metadata">&nbsp;<i class="fa fa-globe"></i>&nbsp;
+                        <span>
+                            <a href="<?= $secretaria['secsite'] ?>" target="_blank" title="Acesse Site... "><?= $secretaria['secsite'] ?></a>
+                        </span>
+                    </p>
                 </div>
             </div>
         </li>

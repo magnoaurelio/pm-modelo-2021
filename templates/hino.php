@@ -104,24 +104,24 @@ $prefeito = new Prefeito(UNIDADE_GESTORA);
         <!-- main-col -->
         <div id="sidebar" class="pull-left">
             <!-- inicio sidebar -->
-             <div class="widget widget-ads" style="margin-left: -25px; margin-top: -16px;" >
+           <?php
+             include 'include/menu_publicidade_sidebar.php';
+            
+           ?>
              <?php
              include 'include/menu_home_clima_2.php';
             //include_once 'include/menu_sidebar_noticia_popular.php';
              ?>
-             </div>
-             <div class="widget widget-ads" >
+           
+           
              <?php
-             include 'include/menu_home_administra.php';
-            //include_once 'include/menu_sidebar_noticia_popular.php';
+             include 'include/menu_home_sidebar_adm.php';
+             include 'include/menu_home_sidebar_contrato.php';
              ?>
-             </div>
+           
+        
            <?php
-             include 'include/menu_sidebar_propaganda.php';
-            
-           ?>
-           <?php
-           include 'include/menu_sidebar_servico.php';
+         //  include 'include/menu_sidebar_servico.php';
            ?>
        
        
