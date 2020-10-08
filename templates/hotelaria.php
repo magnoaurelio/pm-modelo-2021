@@ -77,7 +77,6 @@ $hotelaria = new Hotelaria(UNIDADE_GESTORA);
                                   <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?=  $hotelaria['hotemail'] ?> </span></a>
                                   <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?=  $hotelaria['hotsite'] ?> </span></a>
                                 </p>
-                                  <span><hr class="kp-metadata" style="color-line: #ccc;"></span>
                                   <img src="images/slider/small-flex-next-2.png" alt="proximo"/>
                                   <img src="images/slider/small-flex-prev-2.png" alt="anterior"/>
                             </div>

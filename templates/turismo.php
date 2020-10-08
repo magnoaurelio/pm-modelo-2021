@@ -4,7 +4,8 @@ include './include/head.php';
 $hoje = date('Y-m-d');
 $hojePartes = new DataCalendario($hoje);
 $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
-$pontos = new Pontos(UNIDADE_GESTORA);
+
+$pontos = new Pontos(UNIDADE_GESTORA); // pontos turisticos
 ?>
 <body class="loading">
    
@@ -54,7 +55,10 @@ $pontos = new Pontos(UNIDADE_GESTORA);
                         <li>
                             <h4> <?= $pontos['ponnome'] ?> </h4>
                             <div class="mask">
-                                <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/ponto/'. $pontos['ponfoto1'] ?>" width="797" height="429" alt="imagem" />
+                                  <a href="?p=turismo_detalhe&poncodigo=<?= $pontos['poncodigo'] ?>" title=" Veja mais...  <?= $pontos['ponnome']?>">
+                                    <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/ponto/'. $pontos['ponfoto1'] ?>" width="797" height="429" alt="pntos tur" />                                 
+                                  </a>
+                             
                             </div>
                             <div class="kp-gallery-caption">
                                 <h5>Sobre:</h5>

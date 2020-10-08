@@ -55,7 +55,9 @@ $transportes = new Transportes(UNIDADE_GESTORA);
                         <li>
                             <h4> <?= $transporte['trannome'] ?> </h4>
                             <div class="mask">
-                                <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/transporte/'. $transporte['tranfoto1'] ?>" width="797" height="429" alt="imagem" />
+                               <a href="?p=transporte_detalhe&trancodigo=<?=  $transporte['trancodigo'] ?>" title=" Veja mais...  <?=  $transporte['trannome']?>">
+                                   <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/transporte/'. $transporte['tranfoto1'] ?>" width="797" height="429" alt="imagem" />
+                               </a>
                             </div>
                             <div class="kp-gallery-caption">
                                 <h5>Sobre:</h5>
@@ -108,22 +110,12 @@ $transportes = new Transportes(UNIDADE_GESTORA);
         
         <div id="sidebar" class="pull-left">
             <div class="widget widget-ads" >
-             <?php
-               include_once 'include/menu_publicidade_sidebar.php';
-             ?>
-             </div>
-             <div class="widget widget-ads" >
-             <?php
-             include_once 'include/menu_home_clima_1.php';
-             ?>
-           </div>
-          
            <?php
-           
-           
-             include_once 'include/menu_sidebar_mapa_localizacao.php';
-           ?>
-           
+             include 'include/menu_publicidade_sidebar.php';
+             include 'include/menu_home_clima_1.php';
+             include 'include/menu_sidebar_mapa_localizacao.php';
+             ?>
+            </div> 
         </div>
         <!-- sidebar -->
         <!-- sidebar -->
@@ -131,18 +123,10 @@ $transportes = new Transportes(UNIDADE_GESTORA);
         <div class="widget-area-5">
          <div class="widget-area-5">
           <div class="multimedia clearfix">
-            
             <?php
-            include_once 'include/menu_galeria_imagem_relac.php';
-           ?>
-           
-            <?php
-            include_once 'include/menu_galeria_video_relac.php';
-           ?>
-           
-             <?php
-            //include_once 'include/menu_galeria_audio_relac.php';
-           ?>
+            include 'include/menu_galeria_imagem_relac.php';
+            include 'include/menu_galeria_video_relac.php';
+             ?>
           </div>
           <!-- multimedia -->
         </div>
