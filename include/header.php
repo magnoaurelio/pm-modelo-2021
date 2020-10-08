@@ -268,7 +268,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                                         class="fa fa-taxi fl-fg"></i> Combustível</a></li>
                         <li><a href="?p=igreja" title="Santuários e Igrejas de: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-bell-o fl-fg"></i> Igrejas</a></li>
-                        <li><a href="?p=hotel" title="Hotéis, Pensões e Pousadas em: <?=$prefeitura->prenome?>"><i
+                        <li><a href="?p=hotelaria" title="Hotéis, Pensões e Pousadas em: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-bed fl-fg"></i> Hotelaria</a></li>
                         <li><a href="?p=transporte" title="Transportes Diversos para: <?=$prefeitura->prenome?>"><i
                                         class="fa fa-bus fl-fg"></i> Transportes</a></li>

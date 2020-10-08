@@ -4,6 +4,7 @@ include './include/head.php';
 $hoje = date('Y-m-d');
 $hojePartes = new DataCalendario($hoje);
 $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
+
 $igreja = new Igreja(UNIDADE_GESTORA);
 ?>
 <body class="loading">
@@ -54,7 +55,10 @@ $igreja = new Igreja(UNIDADE_GESTORA);
                         <li>
                             <h4> <?= $igreja['igrnome'] ?> </h4>
                             <div class="mask">
-                                <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/igreja/'. $igreja['igrfoto1'] ?>" width="797" height="429" alt="imagem" />
+                                <a href="?p=igreja_detalhe&igrcodigo=<?= $igreja['igrcodigo'] ?>" title=" Veja mais...  <?= $igreja['igrnome']?>">
+                                <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/igreja/'. $igreja['igrfoto1'] ?>" width="797" height="429" alt="igreja" />                                
+                                </a>
+                            
                             </div>
                             <div class="kp-gallery-caption">
                                 <h5>Sobre:</h5>
@@ -106,22 +110,11 @@ $igreja = new Igreja(UNIDADE_GESTORA);
         
         
         <div id="sidebar" class="pull-left">
-            <div class="widget widget-ads" >
              <?php
-               include_once 'include/menu_publicidade_sidebar.php';
+             include 'include/menu_publicidade_sidebar.php';
+             include 'include/menu_home_clima_1.php';
+             include 'include/menu_sidebar_mapa_localizacao.php';
              ?>
-           </div>
-            <div class="widget widget-ads" >
-             <?php
-             include_once 'include/menu_home_clima_1.php';
-             ?>
-              </div>
-          
-           <?php
-           
-           
-             include_once 'include/menu_sidebar_mapa_localizacao.php';
-           ?>
            
         </div>
         <!-- sidebar -->
@@ -130,18 +123,10 @@ $igreja = new Igreja(UNIDADE_GESTORA);
         <div class="widget-area-5">
          <div class="widget-area-5">
           <div class="multimedia clearfix">
-            
             <?php
-            include_once 'include/menu_galeria_imagem_relac.php';
-           ?>
-           
-            <?php
-            include_once 'include/menu_galeria_video_relac.php';
-           ?>
-           
-             <?php
-            //include_once 'include/menu_galeria_audio_relac.php';
-           ?>
+            include 'include/menu_galeria_imagem_relac.php';
+            include 'include/menu_galeria_video_relac.php';
+             ?>
           </div>
           <!-- multimedia -->
         </div>

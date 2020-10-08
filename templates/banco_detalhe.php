@@ -7,10 +7,10 @@ $hoje = date('Y-m-d');
 $hojePartes = new DataCalendario($hoje);
 $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
 
- $esportes= new Esportes(intval($_GET['espcodigo']));
+ $banco= new Bancos(intval($_GET['bancodigo']));
 
 ?>  
-<!-- Mirrored from upsidethemes.net/demo/news-times/html/single-espeo.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Aug 2020 12:02:50 GMT -->
+<!-- Mirrored from upsidethemes.net/demo/news-times/html/single-baneo.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Aug 2020 12:02:50 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
 <body class="kp-single">
@@ -23,21 +23,21 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
         <!-- main-top -->
         <div id="main-col" class="pull-left">
             <?php
-               //    $esportesAgro = new Agronegocio(Agronegocio::MUNICIPIO,'and espcodigo = $espcodigo');
-               //    foreach ($esportesAgro->getResult() as $esportes) {
+               //    $bancoAgro = new Agronegocio(Agronegocio::MUNICIPIO,'and bancodigo = $bancodigo');
+               //    foreach ($bancoAgro->getResult() as $banco) {
               ?>
              <ul class="breadcrumb">
               <li><a href="index.php">Início</a></li>
-              <li class="active" >Praças de Esportes</li>
+              <li class="active" >Bancos Diversos</li>
             </ul>
            
             <article class="post-content">
               
               <header class="clearfix">
-                <h3 class="title-post"><?= strtoupper($esportes->espnome) ?>  </h3>
+                <h3 class="title-post"><?= strtoupper($banco->bannome) ?>  </h3>
                 <div class="header-bottom">
                  <p class="kp-metadata style-2">
-                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> <?=DataCalendario::date2br($esportes->espdata ) ?> </span></a>
+                        <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i> <?=DataCalendario::date2br($banco->bandata ) ?> </span></a>
                     
                   </p>
                 <p class="kp-share">
@@ -52,32 +52,26 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
                 <!-- header-bottom -->                
               </header>
               <div class="kp-thumb">
-                <div class="espeo-wrapper">
-                    <a target="_blank" href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto1 ?>" title=" Veja mais...  <?= $esportes->espnome ?>" data-lightbox="example-set">
-                           <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto1 ?>" width="250" height="250" alt="">
+                <div class="video-wrapper">
+                    <a target="_blank" href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/banco/'. $banco->banfoto1 ?>" title=" Veja mais...  <?= $banco->bannome ?>" data-lightbox="example-set">
+                           <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/banco/'. $banco->banfoto1 ?>" width="250" height="250" alt="">
                       </a>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a target="_blank" href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto2 ?>" title=" Veja mais... <?= $esportes->espnome ?>"  data-lightbox="example-set">
-                       <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto2 ?>"  width="470" height="250" alt="">
+                       <a target="_blank" href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/banco/'. $banco->banfoto2 ?>" title=" Veja mais... <?= $banco->bannome ?>"  data-lightbox="example-set">
+                       <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/banco/'. $banco->banfoto2 ?>"  width="470" height="250" alt="">
                        </a>
                        <br> <br>
-                       <a target="_blank" href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto3 ?>" title=" Veja mais... <?= $esportes->espnome ?>"  data-lightbox="example-set">
-                       <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto3 ?>"  width="740" height="455" alt="">
+                       <a target="_blank" href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/banco/'. $banco->banfoto3 ?>" title=" Veja mais... <?= $banco->bannome ?>"  data-lightbox="example-set">
+                       <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/banco/'. $banco->banfoto3 ?>"  width="740" height="455" alt="">
                        </a>
                   
                         <h6>Sobre:</h6>  
-                        <p> <?=$esportes->espsobre ?></p>
+                        <p> <?=$banco->bansobre ?></p>
                            <hr style="color-line: #c9c9c9;">
                 </div>
               </div>
-         
-              
               <!-- entry-content -->
-              
-
-              
-              
-               <footer>
+                <footer>
              
                 <!-- kp-author -->
               </footer>

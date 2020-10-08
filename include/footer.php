@@ -57,7 +57,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                         </ul>
                     </li>
                      <li class="current-menu-item">
-                        <a href="?p=povoado" title="Povoados e Localidades de: <?= $prefeitura->prenome ?>"><i class="fa fa-home fl-fg"></i></i> Povoado</a>                            
+                        <a href="?p=hotelaria" title="Hotéis e Pensões de: <?= $prefeitura->prenome ?>"><i class="fa fa-home fl-fg"></i></i> Hotelaria</a>                            
                     </li>
                     <li>
                         <a href="?p=video_bloco" title="Vídeos Oficiais de <?= $prefeitura->prenome ?>"><i class="fa fa-vid fa-video-camera fl-fg"></i> Vídeo</a>

@@ -5,8 +5,7 @@ $hoje = date('Y-m-d');
 $hojePartes = new DataCalendario($hoje);
 $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de " . $hojePartes->getMes() . " de " . $hojePartes->getAno();
 
-$povoado = new Povoado(UNIDADE_GESTORA);
-$prefeitura = new Prefeitura(UNIDADE_GESTORA);
+$hotelaria = new Hotelaria(UNIDADE_GESTORA);
 ?>
 <body class="loading">
    
@@ -19,12 +18,12 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
         <div id="main-col" class="pull-left">
             <ul class="breadcrumb">
               <li><a href="index.php">Início</a></li>
-              <li class="active">Localidades e Povoados</li>
+              <li class="active">HOTÉIS E POUSADAS</li>
             </ul>
             <article class="post-content">
               
               <header class="clearfix">
-                <h3 class="title-post">Localidade e Povoados de <strong><?= strtoupper($prefeitura->prenome) ?></strong> </h3>
+                <h3 class="title-post">Hotéis, Pousadas, Pensões e Casas de Apoio </h3>
                 <div class="header-bottom">
                   <p class="kp-metadata style-2">
                    <i class="fa fa-calendar fa-fw fa-lg"></i><span><?=$data?></span>
@@ -50,28 +49,35 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                    
                     <ul class="slides">
                     <?php
-                    $povoadoTur = new Povoado(Povoado::MUNICIPIO);
-                    foreach ($povoadoTur->getResult() as $povoado) {
+                    $hotelariaTur = new Hotelaria(Hotelaria::MUNICIPIO);
+                    foreach ($hotelariaTur->getResult() as $hotelaria) {
                     ?>  
                         <li>
-                            <h4> <?= $povoado['povnome'] ?> </h4>
+                            <h4> <?=  $hotelaria['hotnome'] ?> </h4>
                             <div class="mask">
-                                  <a href="?p=povoado_detalhe&povcodigo=<?= $povoado['povcodigo'] ?>" title=" Veja mais...  <?= $povoado['povnome']?>">
-                                   <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/povoado/'. $povoado['povfoto1'] ?>" width="797" height="429" alt="povoado" />
-                                 </a>
+                                <a href="?p=hotelaria_detalhe&hotcodigo=<?=  $hotelaria['hotcodigo'] ?>" title=" Veja mais...  <?=  $hotelaria['hotnome']?>">
+                                <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/hotelaria/'.  $hotelaria['hotfoto1'] ?>" width="797" height="429" alt="hotelaria" />                                
+                                </a>
+                            
                             </div>
                             <div class="kp-gallery-caption">
                                 <h5>Sobre:</h5>
-                                <p> <?= trim($povoado['povsobre']) ?></p>
+                                <p> <?= trim( $hotelaria['hotsobre']) ?></p>
+                                   <span><hr class="kp-metadata" style="color-line: #ccc;"></span>
                                 <p class="kp-social">
-                                     
-                                  <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= DataCalendario::date2br($povoado['povdata']) ?> </span></a>
-                                  <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?= $povoado['povzona'] ?> </span></a>
-                                  <a href="#" class="kp-metadata"><span><i class="icon-home  fa-lg"></i>&nbsp;&nbsp;<?= $povoado['povdistancia'] ?></span></a>
-                                  <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= strtolower($povoado['povorientacao']) ?> </span></a>
-                                  <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= $povoado['povcontato'] ?> </span></a>
-                                  <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?= $povoado['povfone'] ?> </span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?=  DataCalendario::date2br( $hotelaria['hotdata']) ?> </span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?=  $hotelaria['hotcep'] ?> </span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-user  fa-lg"></i>&nbsp;&nbsp;<?=  $hotelaria['hotquartos'] ?></span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?=  $hotelaria['hotcelular'] ?></span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-user  fa-lg"></i>&nbsp;&nbsp;<?=  $hotelaria['hotresponsavel'] ?></span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?=  $hotelaria['hotfone'] ?></span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-user  fa-lg"></i>&nbsp;&nbsp;<?=  $hotelaria['hottipo'] ?></span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?= strtolower( $hotelaria['hotendereco']) ?> </span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-phone2  fa-lg"></i>&nbsp;&nbsp;<?=  $hotelaria['hotbairro'] ?> </span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?=  $hotelaria['hotemail'] ?> </span></a>
+                                  <a href="#" class="kp-metadata"><span><i class="icon-email  fa-lg"></i>&nbsp;&nbsp;<?=  $hotelaria['hotsite'] ?> </span></a>
                                 </p>
+                                  <span><hr class="kp-metadata" style="color-line: #ccc;"></span>
                                   <img src="images/slider/small-flex-next-2.png" alt="proximo"/>
                                   <img src="images/slider/small-flex-prev-2.png" alt="anterior"/>
                             </div>
@@ -84,10 +90,10 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                  
                     <ul class="slides">
                           <?php
-                    $povoadoTur = new Povoado(Povoado::MUNICIPIO);
-                    foreach ($povoadoTur->getResult() as $povoado) {
+                    $hotelariaTur = new Hotelaria(Hotelaria::MUNICIPIO);
+                    foreach ( $hotelariaTur->getResult() as  $hotelaria) {
                     ?>
-                        <li><img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/povoado/'. $povoado['povfoto1'] ?>" width="200" height="120" alt="" />
+                        <li><img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/hotelaria/'.  $hotelaria['hotfoto1'] ?>" width="200" height="120" alt="" />
                             <span class="kp-mask"></span>
                         </li>
                        <?php } ?>
@@ -110,7 +116,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
         
         
         <div id="sidebar" class="pull-left">
-            <?php
+             <?php
              include 'include/menu_publicidade_sidebar.php';
              include 'include/menu_home_clima_1.php';
              include 'include/menu_sidebar_mapa_localizacao.php';
@@ -123,7 +129,6 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
         <div class="widget-area-5">
          <div class="widget-area-5">
           <div class="multimedia clearfix">
-            
             <?php
             include 'include/menu_galeria_imagem_relac.php';
             include 'include/menu_galeria_video_relac.php';
