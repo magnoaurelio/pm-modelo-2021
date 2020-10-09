@@ -67,11 +67,11 @@ $agroprocodigo = $agronegociotipo->agronegocio_produto_id;
               </header>
               <div class="kp-thumb">
                 <div class="agroeo-wrapper">
-                    <a href="?p=agronegocio_exposicao_detalhe&agrocodigo=<?=  $agronegociotipo->agrotipocodigo ?>" title=" Veja mais...  <?=  $agronegociotipo->agrotiponome ?>">
+                    <a  target="_blank" href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/agronegocio/'.  $agronegociotipo->agrotipofoto1 ?>" title=" Veja mais...  <?=  $agronegociotipo->agrotiponome ?>" data-lightbox="example-set">
                            <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/agronegocio/'.  $agronegociotipo->agrotipofoto1 ?>" width="250" height="250" alt="">
                       </a>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href="?p=agronegocio_exposicao_detalhe&agrocodigo=<?=  $agronegociotipo->agrotipocodigo ?>" title=" Veja mais... <?=  $agronegociotipo->agrotiponome ?>">
+                       <a  target="_blank" href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/agronegocio/'.  $agronegociotipo->agrotipofoto2 ?>" title=" Veja mais... <?=  $agronegociotipo->agrotiponome ?>" data-lightbox="example-set">
                        <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/agronegocio/'.  $agronegociotipo->agrotipofoto2 ?>"  width="470" height="250" alt="">
                        </a>
                     <h6>
@@ -258,42 +258,12 @@ $agroprocodigo = $agronegociotipo->agronegocio_produto_id;
         <div id="sidebar" class="pull-left">
             <!-- inicio sidebar -->
               <?php 
-               include 'include/menu_sidebar_propaganda.php';
- 
-              ?>
-            <div class="widget widget-ads" >
-             <?php
-             include_once 'include/menu_home_clima_1.php';
-            //include_once 'include/menu_sidebar_noticia_popular.php';
-             ?>
-             </div>
-           
-           <?php
-       //      include_once 'include/menu_sidebar_servico.php';
-            //include_once 'include/menu_sidebar_noticia_popular.php';
-             ?>
-
-        <!-- fim sidebar -->
-        <!-- widget-random -->
-         <!-- widget-ads -->
-            
-            <?php
-      //      include_once 'include/menu_sidebar_noticia_popular.php';
+               include 'include/menu_publicidade_sidebar.php';
+               include 'include/menu_home_clima_1.php';
+               include_once 'include/menu_sidebar_mapa_localizacao.php';
            ?>
-         <!-- widget-random -->
-          <?php
-        //    include_once 'include/menu_sidebar_randon.php';
-      //     ?>
-         <!-- widget-tabs -->
-          
-           
-          <?php
-            include_once 'include/menu_sidebar_mapa_localizacao.php';
-           ?>
-            <!-- widget-agroeo -->
 
         </div>
-        <!-- sidebar -->
         
       <!-- inicio widget-area-5 BOLETIM DE NOTICIAS -->
         <?php include_once 'include/menu_home_newsletter.php'; ?>

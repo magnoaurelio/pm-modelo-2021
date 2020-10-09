@@ -53,7 +53,7 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
               </header>
               <div class="kp-thumb">
                 <div class="espeo-wrapper">
-                    <a target="_blank" href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto1 ?>" title=" Veja mais...  <?= $esportes->espnome ?>" data-lightbox="example-set">
+                       <a target="_blank" href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto1 ?>" title=" Veja mais...  <?= $esportes->espnome ?>" data-lightbox="example-set">
                            <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/esporte/'. $esportes->espfoto1 ?>" width="250" height="250" alt="">
                       </a>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

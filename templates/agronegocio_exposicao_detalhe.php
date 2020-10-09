@@ -53,11 +53,11 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
               </header>
               <div class="kp-thumb">
                 <div class="agroeo-wrapper">
-                    <a href="?p=agronegocio_exposicao_detalhe&agrocodigo=<?= $agronegocio->agrocodigo ?>" title=" Veja mais...  <?= $agronegocio->agronome ?>">
+                    <a  target="_blank" href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/agronegocio/'. $agronegocio->agrofoto1 ?>" title=" Veja imagem completa...  <?= $agronegocio->agronome ?>" data-lightbox="example-set">
                            <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/agronegocio/'. $agronegocio->agrofoto1 ?>" width="250" height="250" alt="">
                       </a>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href="?p=agronegocio_exposicao_detalhe&agrocodigo=<?= $agronegocio->agrocodigo ?>" title=" Veja mais... <?= $agronegocio->agronome ?>">
+                       <a  target="_blank" href="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/agronegocio/'. $agronegocio->agrofoto2 ?>" title=" Veja imagem completa... <?= $agronegocio->agronome ?>" data-lightbox="example-set">
                        <img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/agronegocio/'. $agronegocio->agrofoto2 ?>"  width="470" height="250" alt="">
                        </a>
                     <h6>
