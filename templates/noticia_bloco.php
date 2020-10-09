@@ -33,8 +33,11 @@ $ano  =  $hojePartes->getAno();
               <div class="item pull-left">
                  <p class="kp-metadata style-2">
                     <i class="fa fa-calendar fa-fw fa-lg"></i><span><?=DataCalendario::date2br($noticia['notdata']) ?></span>
-                    <i class="fa fa-home fa-fw fa-lg"></i><span><?=$noticia['notcategoria']?></span><br>
-                    <i class="fa fa-feed fa-fw fa-lg"></i><span><?=$noticia['notfonte']?></span>
+                    <i class="fa fa-pencil fa-fw fa-lg"></i><span><?= DadosFixos::TipoNoticia($noticia['notcategoria'])?></span><br>
+                    <i class="fa fa-feed fa-fw fa-lg"></i>
+                     <span>
+                         <a target="_blank" href="#" title="Acesse a Fonte <?=$noticia['notfonte']?> " ><?= substr($noticia['notfonte'],0,100)?></a>
+                    </span>
                   </p>
                   <a href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" title="Veja Mais..." class="caption">
                     <img src="<?= FILES . 'noticia/' . UNIDADE_GESTORA . '/' . $noticia['notfoto'] ?>" height="240" alt="">
@@ -70,7 +73,6 @@ $ano  =  $hojePartes->getAno();
      <?php include_once 'include/menu_home_newsletter.php'; ?>
         <!-- fim widget-area-5 -->
         <!-- widget-area-5 -->
-    </div>
     <!-- main-content -->
     
 </body>

@@ -10,7 +10,7 @@ $ano  = $hojePartes->getAno();
     <h3 class="widget-title"><a href="?p=noticia_geral">Mais Notícias</a></h3>
     <ul class="list-unstyled clearfix">
          <?php
-            $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " and notcategoria = 1");
+            $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " order by rand() limit 6 "); //and notcategoria = $notcategoria
             foreach ($noticiasDestaque->getResult() as $noticia) {
           ?>
       <li>
@@ -20,9 +20,11 @@ $ano  = $hojePartes->getAno();
             <span class="icon-plus"></span>
          </a>
           <p class="kp-metadata style-2">
-            <i class="fa fa-calendar fa-fw fa-lg"></i><span><?= DataCalendario::date2br($noticia['notdata']) ?></span>
-            <i class="fa fa-home fa-fw fa-lg"></i><span><?=$noticia['notcategoria']?></span><br>
-            <i class="fa fa-feed fa-fw fa-lg"></i><span><?=$noticia['notfonte']?></span>
+            <i class="fa fa-calendar fa-fw fa-lg"></i><span><?= DataCalendario::date2br($noticia['notdata']) ?></span><br>
+            <i class="fa fa-pencil fa-fw fa-lg"></i><span><?= DadosFixos::TipoNoticia($noticia['notcategoria'])?></span><br>
+            <i class="fa fa-feed fa-fw fa-lg"></i><span>
+                <a target="_blank" href="<?=$noticia['notfonte']?>" title="Acesse a Fonte <?=$noticia['notfonte']?> " ><?=$noticia['notfonte']?></a>
+            </span>
           </p>
       
           <h3>

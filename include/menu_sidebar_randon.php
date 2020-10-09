@@ -28,7 +28,9 @@ $ano  = $hojePartes->getAno();
                             <span><i class="icon-calendar"></i>
                             <?= DataCalendario::date2br($noticia['notdata']) ?>
                             </span>
-                            <span> <i class="fa fa-feed fa-fw fa-lg"></i><?=$noticia['notcategoria']?></span>
+                            <span> 
+                                <i class="fa fa-pencil fa-fw fa-lg"></i><span><?= DadosFixos::TipoNoticia($noticia['notcategoria'])?></span><br>
+                            </span>
                         </p>
                       </div>
                   </div>

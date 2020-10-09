@@ -1,7 +1,33 @@
 <?php
 class DadosFixos {
 
-
+ static function tipoAssessor($id=null){
+        $tipo_c = [
+            'A'=>'Assessor',
+            'C'=>'Contrato',
+            'S'=>'Secretaria'
+           
+        ];
+        if($id==null){
+            return $tipo_c;
+        }else{
+            return $tipo_c[$id];
+        }
+    }
+    static function tipoImagem($id=null){
+        $tipo_c = [
+            '0'=>'Inspiradora',
+            '1'=>'Relacionada',
+            '2'=>'Unidades',
+            '3'=>'Turismo'
+        ];
+        if($id==null){
+            return $tipo_c;
+        }else{
+            return $tipo_c[$id];
+        }
+    }
+    
  static function ObjetoArray($data)
 {
     if (is_array($data) || is_object($data))
@@ -323,16 +349,48 @@ class DadosFixos {
             return $etiqueta[$id];
         }
     }
+    static function Categoria($id=null){
+        $tipo_c = array(
+            1=> 'Saúde',
+                'Educação',
+                'Cidadania',
+                'Obras',
+                'Esportes',
+                'Religioso',
+                'Turismo',
+                'Lazer',
+                'Tecnologia',
+                'Finanças',
+                'Política',
+                'Agronegócio',
+                'Cultura',
+                'Geral'
+            );
+        if($id==null){
+            asort($tipo_c);
+            return $tipo_c;
+        }else{
+            return $tipo_c[$id];
+        }
+    }
 
+    
     public static function TipoNoticia($id = null) {
         $noticias = [
-            1 => "Administração",
-            "Saúde",
-            "Finanças",
-            "Obras",
-            "Esportes",
-            "Cidadania",
-            "Educação",
+            1=> 'Saúde',
+                'Educação',
+                'Cidadania',
+                'Obras',
+                'Esportes',
+                'Religioso',
+                'Turismo',
+                'Lazer',
+                'Tecnologia',
+                'Finanças',
+                'Política',
+                'Agronegócio',
+                'Cultura',
+                'Geral'
         ];
         if ($id == null) {
             return $noticias;

@@ -75,7 +75,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                             <div class="item pull-left">
                                   <p class="kp-metadata style-2">
                                     <i class="fa fa-calendar fa-fw fa-lg"></i><span><?= DataCalendario::date2br($noticia['notdata']) ?></span>
-                                    <i class="fa fa-home fa-fw fa-lg"></i><span><?=$noticia['notcategoria']?></span><br>
+                                    <i class="fa fa-pencil fa-fw fa-lg"></i><span><?= DadosFixos::TipoNoticia($noticia['notcategoria'])?></span><br>
                                     <i class="fa fa-feed fa-fw fa-lg"></i><span><?=$noticia['notfonte']?></span>
                                   </p>
                                 <a title="Veja mais..." href="?p=noticia_detalhe&notcodigo=<?= $noticia['notcodigo'] ?>" class="caption">

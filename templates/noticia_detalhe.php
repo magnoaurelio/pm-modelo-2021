@@ -13,7 +13,9 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
     <?php
     include 'include/menu_home_topo.php';
     $noticia = new Noticia(intval($_GET['notcodigo']));
-    $notcodigo = $noticia->notcodigo;
+    $notcodigo = intval($noticia->notcodigo);
+   // var_dump($notcodigo);
+    $notcategoria = $noticia->notcategoria;
     ?>
     <!-- main-top -->
     <div id="main-col" class="pull-left">
@@ -28,8 +30,11 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
                 <div class="header-bottom">
                     <p class="kp-metadata style-2">
                         <i class="fa fa-calendar fa-fw fa-lg"></i><span><?= DataCalendario::date2br($noticia->notdata) ?></span>
-                        <i class="fa fa-home fa-fw fa-lg"></i><span><?= $noticia->notcategoria ?></span>
-                        <i class="fa fa-feed fa-fw fa-lg"></i><span><?= $noticia->notfonte ?></span>
+                        <i class="fa fa-pencil fa-fw fa-lg"></i><span><?= DadosFixos::TipoNoticia($noticia->notcategoria)?></span>
+                        <i class="fa fa-feed fa-fw fa-lg"></i>
+                         <span>
+                        <a target="_blank" href="#" title="Acesse a Fonte <?=$noticia->notfonte ?> " ><?=$noticia->notfonte?></a>
+                        </span>
                     </p>
                     <p class="kp-share">
                         <span>Compartilhar:</span>
@@ -53,21 +58,21 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
             <!-- entry-content -->
 
             <ul class="page-numbers clearfix">
-                <li><span>Page:</span></li>
+                <li><span>Página:</span></li>
                 <li><a href="#" class="page-numbers">1</a></li>
                 <li><span class="page-numbers current">2</span></li>
                 <li><a href="#" class="page-numbers">3</a></li>
             </ul>
             <div class="related-article">
-                <div class="widget-title">FOTOS RELACIONADAS</div>
+                <div class="widget-title">Fotos RELACIONADAS A esta <strong>NOTÍCIA</strong> DA SEC DE <strong><?= DadosFixos::TipoNoticia($noticia->notcategoria)?></strong>  </div>
                 <div class="owl-carousel owl-carousel-related">
                      <?php
                        $noticiasFoto = new NoticiaFoto(NoticiaFoto::MUNICIPIO . " and notcodigo = $notcodigo ");
                        foreach ($noticiasFoto->getResult() as $noticiafoto) {
                      ?>  
                         <div class="item">
-                          <a href="#" class="caption">
-                              <img src="<?= FILES . 'noticia/'.UNIDADE_GESTORA.'/'. $noticiafoto['nofimagem'] ?>" height="180" alt="imagem" />
+                          <a target="_blank" href="<?= FILES . 'noticia/'.UNIDADE_GESTORA.'/'. $noticiafoto['nofimagem'] ?>" title=" Veja imagem...  " data-lightbox="example-set">
+                             <img src="<?= FILES . 'noticia/'.UNIDADE_GESTORA.'/'. $noticiafoto['nofimagem'] ?>" height="180" alt="imagem" data-lightbox="example-set" />
                             <span class="icon-plus"></span>
                             <p><?= trim($noticiafoto['noflegenda']) ?></p>
                             <p><?= trim($noticiafoto['noffonte']) ?></p>
