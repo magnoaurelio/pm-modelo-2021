@@ -1,4 +1,4 @@
-ErrorDocument 404 /404.php
+ErrorDocument 404 /erro_404.php
 ErrorDocument 500 http://example.com/500/
 # or map them to one error document:
 # ErrorDocument 404 /pages/errors/error_redirect.php
@@ -8,7 +8,7 @@ RewriteEngine On
 RewriteBase /
 
 RewriteCond %{REQUEST_URI} ^/404/$
-RewriteRule ^(.*)$ /404.php [L]
+RewriteRule ^(.*)$ /erro.404.php [L]
 
 RewriteCond %{REQUEST_URI} ^/500/$
 RewriteRule ^(.*)$ /500.php [L]

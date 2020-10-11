@@ -99,7 +99,13 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
       </a>
       <a target="blank" href="#" title="Ministério Público do Piauí"><img src="./images/social/minpublico.jpg" width="35" height="35" alt="BNB"></a>
       <a target="blank" href="#" title="Tribunal de Contas do Estado do Piauí"><img src="./images/social/tce.jpg" width="35" height="35" alt="BNB"></a>
-      <a target="blank" href="#" title="Tribunal Regional Eleitoral - Piauí"><img src="./images/social/trepi.jpg" width="35" height="35" alt="BNB"></a>
+      <a target="blank" href="https://www.tre-pi.jus.br/" title="Tribunal Regional Eleitoral - Piauí">
+          <img src="./images/social/trepi.jpg" width="35" height="35" alt="TRE">
+      </a>
+      <a href="http://www.cidades.ibge.gov.br/xtras/perfil.php?lang=&codmun=<?=$prefeitura->preibge?>&search=piaui|<?=$prefeitura->precidade?>"
+        target="_blank" title="IBGE-Dados Estatísticos de: <?=$prefeitura->prenome?> veja mais...">
+         <img src="images/social/ibge.jpg" width="35" height="35" alt="IBGE" />
+      </a>
       <a target="blank" href="#" title="Senado Federal"><img src="./images/social/senado.jpg" width="35" height="35" alt="CAIXA"></a>
       <a target="blank" href="#" title="Câmara do Deputados"><img src="./images/social/camara.jpg" width="35" height="35" alt="BNB"></a>
       <a target="blank" href="#" title="ALEPI - Assembléia Legislativa do Estado do Piauí"><img src="./images/social/alepi.jpg" width="35" height="35" alt="AMPAR"></a>

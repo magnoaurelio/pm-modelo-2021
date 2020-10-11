@@ -130,7 +130,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
         <nav class="clearfix">
             <a href="./index.php" class="icon-home kp-icon-home"></a>
             <ul class="sf-menu main-menu">
-                <li class="{home_current}">
+                <li class="{cidade_current}">
                     <a href="index.php"><i class="fa fa-hospital-o"></i></i> Cidade</a>
                     <ul>
                         <li><a href="?p=simbolo" title="Simbolos de: <?=$prefeitura->prenome?> "><i class="fa fa-flag  fl-fg"></i> Simbolos
@@ -142,7 +142,9 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                         <li>
                             <a href="http://www.cidades.ibge.gov.br/xtras/perfil.php?lang=&codmun=<?=$prefeitura->preibge?>&search=piaui|<?=$prefeitura->precidade?>"
                                target="_blank" title="IBGE-Dados Estatísticos de: <?=$prefeitura->prenome?>"><i
-                                        class="fa fa-line-chart fl-fg"></i> Perfil IBGE</a></li>
+                                        class="fa fa-line-chart fl-fg"></i> Perfil IBGE
+                            </a>
+                        </li>
                         <li><a href="https://www.melhoresrotas.com/s/distancia-entre-cidades" target="_blank"
                                title="Distâncias de <?=$prefeitura->prenome?>  a ..."><i class="fa fa-map-o  fl-fg"></i> Mapa-Localização</a></li>
                         <li><a href="?p=esportes" title="Campos de Futebol e Ginásios de ESPORTE de: <?=$prefeitura->prenome?> "><i

@@ -67,80 +67,79 @@ class Layout
      
     }
     
-    
-     public  static function  menuHolder($content){
+     public  static function  Header($content){
          $class = isset($_GET['class']) ? $_GET['class'] : null;
          switch ($class):
-            case 'HomeView':
+            case 'Home':
                 $menuSelecionado = 'home';
                 break;
-            case 'CidadeView':
+            case 'Cidade':
                 $menuSelecionado = 'cidade';
                 break;
-            case 'EsportesView':
+            case 'Esportes':
                 $menuSelecionado = 'cidade';
                 break;
-            case 'EsporteView':
+            case 'Esporte':
                 $menuSelecionado = 'cidade';
                 break;
-            case 'PovoadosView':
+            case 'Povoados':
                 $menuSelecionado = 'cidade';
                 break;
             case 'PovoadoView':
                 $menuSelecionado = 'cidade';
                 break;
-            case 'GestorView':
+            case 'Gestor':
                 $menuSelecionado = 'gestor';
                 break;
-            case 'SecretariasView':
+            case 'secretaria_geral':
                 $menuSelecionado = 'secretaria';
                 break;
-            case 'NegociosView':
+            case 'Negocios':
                 $menuSelecionado = 'negocio';
                 break;
-            case 'HotelariasView':
+            case 'Hotelarias':
                 $menuSelecionado = 'turismo';
                 break;
-            case 'IgrejasView':
+            case 'Igrejas':
                 $menuSelecionado = 'turismo';
                 break;
-            case 'IgrejaView':
+            case 'Igreja':
                 $menuSelecionado = 'turismo';
                 break;
-            case 'AlimentosView':
+            case 'Alimentos':
                 $menuSelecionado = 'turismo';
                 break;
-            case 'AlimentoView':
+            case 'Alimento':
                 $menuSelecionado = 'turismo';
                 break;
-            case 'PontosView':
+            case 'Pontos':
                 $menuSelecionado = 'turismo';
                 break;
-            case 'PontoView':
+            case 'Ponto':
                 $menuSelecionado = 'turismo';
                 break;
-            case 'BancoSitesView':
+            case 'Banco':
                 $menuSelecionado = 'turismo';
                 break;
-            case 'BancoSiteView':
+            case 'Banco':
                 $menuSelecionado = 'turismo';
                 break;
-            case 'CombustivelsView':
+            case 'Combustivel':
                 $menuSelecionado = 'turismo';
                 break;
-            case 'CombustivelView':
+            case 'Combustivel':
                 $menuSelecionado = 'turismo';
                 break;
-            case 'NoticiasView':
+            case 'Noticias':
                 $menuSelecionado = 'comunicacao';
                 break;
-            case 'NoticiaDetalheView':
+            case 'NoticiaDetalhe':
                 $menuSelecionado = 'comunicacao';
                 break;
-            case 'VideosView':
+            case 'Videos':
                 $menuSelecionado = 'comunicacao';
                 break;
-            case 'GaleriaView':
+            case 'Galeria':
                 $menuSelecionado = 'comunicacao';
                 break;
             

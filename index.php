@@ -4,6 +4,7 @@ include_once 'app/config/Config.php';
 include 'include/head.php';
 include_once 'include/classes.php';
 include_once 'app/control/Router.class.php';
+include 'templates/Layout.class.php';
 
 
 //require 'vendor/autoload.php';

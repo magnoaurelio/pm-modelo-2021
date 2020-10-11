@@ -79,8 +79,12 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                 </li>
               </ul>
               </div>
+                
                <div class="col-sm-left col-6">
+                    <br> <br> 
                    <img src="images/contato.jpg" height="150" alt="">
+                     <br><br><br><br> <br><br>
+
                </div>
             </div>
             <!-- company-info -->
@@ -88,35 +92,93 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
           <!-- entry-content -->
        </article>
         <br>
+      
         <div id="comments">
          <div id="respond">
+            
           <h3 id="reply-title" class="comment-reply-title kp-title">ENVIE-NOS MENSAGEM</h3>
 
-          <form action="https://upsidethemes.net/" method="post" class="contact-form clearfix">
-            <p class="comment-notes">Seu endereço de e-mail não será publicado. Os campos obrigatórios estão marcados<span>*</span></p>
-            <div class="pull-left">
-              <div class="form-group">
-                <label for="name">Nome <span>*</span></label>
-                <input class="form-control" name="name" type="text" id="name">
-              </div>
-              <div class="form-group">
-                <label for="name">E-mail <span>*</span></label>
-                <input class="form-control" name="email" type="text" id="email">
-              </div>
-              <div class="form-group">
-                <label for="name">Website</label>
-                <input class="form-control" type="text" id="website">
-              </div>
-            </div>
-            <!-- pull-left -->
-            <div class="pull-right">
-              <div class="form-group">
-                <label for="textarea">Seu Comentário <span>*</span></label>
-                <textarea class="form-control" name="message" id="textarea"></textarea>
-              </div>
-              <input type="submit" id="input-submit" value="postar comentário">
-            </div>
-          </form>
+          <div class="pt-site">
+            <div class="row">
+       <!-- AQUI COMEÇA O COMENTARIO DA AMPAR -->
+        <div class="col-lg-7 " >
+            <img src="imagens/contato.jpg" alt="">
+            <?php
+            $param = $_POST;         
+            
+            $EMAIL_RECEPT = [
+                ['email' => 'marceloalvessoft@gmail.com', 'nome' => 'Marcelo Alves'],
+                ['email' => 'magnusoft1@hotmail.com', 'nome' => 'Magno Aurélio']
+            ];
+            
+            
+            if(isset($param['.UNIDADE_GESTORA.']) && $param['.UNIDADE_GESTORA.']):
+                $prefeitura = new Prefeitura($param['.UNIDADE_GESTORA.']);
+                $EMAIL_RECEPT[] =  ['email' => $prefeitura->preemail, 'nome' => $prefeitura->prenome];
+            endif;
+            if (isset($param['email']) && !empty($param['email'])):
+                try {
+                    $mail = new TMail;
+                    $mail->setFrom($param['email'], $param['nome']);
+                    $mail->setSubject($param['assunto']);
+                    $mail->setHtmlBody("<b>Fale Conosco!</b><br><b>Nome Usuário: {$param['nome']} <br>Email do Usuário: {$param['email']}</b><br>{$param['mensagem']}");
+
+                    foreach ($EMAIL_RECEPT as $email):
+                        $mail->addAddress($email['email'], $email['nome']);
+                    endforeach;
+                    $mail->SetUseSmtp();
+                    $mail->SetSmtpHost('smtp.gmail.com', 465);
+                    $mail->SetSmtpUser('esicouvidoria@gmail.com', 'marcelo10');
+                    $mail->send();
+                    echo "<p class='alert alert-success'>{$param['nome']}! Obrigado por entrar em contato conosco retornaremos o mais breve possível!<p>";
+                } catch (Exception $e) {
+                    echo "<p class='alert alert-warning'>{$e->getMessage()}</p>";
+                }
+
+            endif;
+            ?>
+            <form action="?p=contato" method="post">
+                <div class="form-group">
+                    <label for="email">Nome</label><br><br>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="nome" aria-describedby="emailHelp" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label><br><br>
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="">
+                </div>
+                 <div class="form-group" id="entidade">
+                        <label for="entidade">Destino</label><br><br>
+                       
+                        <select class="form-control"  name=".UNIDADE_GESTORA.">
+                            <option value="0">Selecione uma Entidade</option>     
+                            <?php
+                            $prefeituras = new Prefeitura(null,"ampar");
+                            foreach ($prefeituras->getResult() as $prefeitura) {
+
+                                echo "<option  value='{$prefeitura['.UNIDADE_GESTORA.']}'>{$prefeitura['prenome']}</option>";
+                            }
+                            ?>   
+                        </select>
+                    </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade</label><br><br>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="cidade" aria-describedby="emailHelp" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="objeto">Assunto</label><br><br>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="assunto" aria-describedby="emailHelp" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleTextarea">Mensagem</label><br><br>
+                    <textarea name="mensagem" class="form-control" id="exampleTextarea" rows="3"></textarea>
+                </div>
+
+                <button type="submit" name="enviar" value="true" class="btn btn-primary"><i class="fa fa-send"></i> Enviar</button>
+            </form>
+        </div>
+    </div>
+           </div>
           <div id="response"></div>
         </div>
         <!-- respond -->
@@ -159,7 +221,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
     <!-- sidebar -->
 
    <!-- inicio widget-area-5 BOLETIM DE NOTICIAS -->
-        <?php include_once 'include/menu_home_newsletter.php'; ?>
+        <?php// include_once 'include/menu_home_newsletter.php'; ?>
         <!-- fim widget-area-5 -->
        <!-- widget-area-5 -->
    </div>

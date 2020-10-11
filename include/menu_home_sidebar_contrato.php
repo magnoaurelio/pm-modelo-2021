@@ -26,6 +26,8 @@
                       <i class="icon-images"></i>
                     </span-->
                 </a>
+                  <h6>
+                      
                 <div class="item-right">
                     <p class="kp-metadata">&nbsp;<i class="icon-phone"></i> <span> <?= $secretaria['secfone'] ?> </span></p>
                     <p class="kp-metadata">&nbsp;<i class="icon-phone"></i> <span> <?= $secretaria['seccelular'] ?></span></p>
@@ -38,6 +40,7 @@
                         </span>
                     </p>
                 </div>
+                   </h6>
             </div>
         </li>
     <?php } ?>
