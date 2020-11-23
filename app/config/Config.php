@@ -6,7 +6,7 @@ define('USER','u140601217_porta');
 define('PASS','Magno0211');
 define('TYPE_BANCO','mysql');
 define('UNIDADE_GESTORA',$_GET['unidade']);
-define('FILES','http://transparencia.municipiaui.com/files/');
+define('FILES','http://api.municipiaui.com/files/');
 
 
 
