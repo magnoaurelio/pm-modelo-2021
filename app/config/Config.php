@@ -1,11 +1,20 @@
 <?php
+session_start();
+if (!$_SESSION['unidadeGestora']){
+    if (isset($_GET['unidade'])){
+        $_SESSION['unidadeGestora'] = $_GET['unidade'];
+    }else{
+        echo  "<h1>Não identificamos a unidade Gestora</h1>";
+        die();
+    }
+}
 date_default_timezone_set('America/Sao_Paulo');
 define('DBNAME','u140601217_porta');
 define('HOST','sql155.main-hosting.eu');
 define('USER','u140601217_porta');
 define('PASS','Magno0211');
 define('TYPE_BANCO','mysql');
-define('UNIDADE_GESTORA',$_GET['unidade']);
+define('UNIDADE_GESTORA',$_SESSION['unidadeGestora']);
 define('FILES','http://api.municipiaui.com/files/');
 
 
