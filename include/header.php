@@ -26,7 +26,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                         </a>
                     </li>
                     <li>
-                        <a href="http://api.municipiaui.com/contracheque.php?unidadeGestora=<?=$prefeitura->codigoUnidGestora?>"><i class="fa fa-money  fa-fw fa-lg"></i> Contra-Cheque</a>
+                        <a href="http://api.municipiaui.com/cc.php?unidadeGestora=<?=$prefeitura->codigoUnidGestora?>"><i class="fa fa-money  fa-fw fa-lg"></i> Contra-Cheque</a>
                     </li>
                     <li class="current-menu-item">
                         <a href="index.php"><i class="fa fa-book fa-fw  fa-lg"></i> DIOFE</a>
