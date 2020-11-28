@@ -26,13 +26,13 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                         </a>
                     </li>
                     <li>
-                        <a href="transparencia.municipiaui.com/contracheque.php?unidadeGestora=<?=$prefeitura->codigoUnidGestora?>"><i class="fa fa-money  fa-fw fa-lg"></i> Contra-Cheque</a>
+                        <a href="http://api.municipiaui.com/contracheque.php?unidadeGestora=<?=$prefeitura->codigoUnidGestora?>"><i class="fa fa-money  fa-fw fa-lg"></i> Contra-Cheque</a>
                     </li>
                     <li class="current-menu-item">
                         <a href="index.php"><i class="fa fa-book fa-fw  fa-lg"></i> DIOFE</a>
                     </li>
                     <li>
-                        <a href="portal/#/?unidade={unidadeGestora}" title="Transparência e CORONAVÍRUS - COVID 19 de <?=$prefeitura->prenome?> " target="_blank" >
+                        <a href="http://api.municipiaui.com/portal/#/?unidade=<?=UNIDADE_GESTORA?>" title="Transparência e CORONAVÍRUS - COVID 19 de <?=$prefeitura->prenome?> " target="_blank" >
                             <button style="font-size:12px;">
                                 &nbsp;<i class="fa fa-medkit" style="font-size:14px; color:red"></i>
                                 TRANSCOVID &nbsp;
@@ -59,7 +59,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                
             </nav>
             <div class="search-box pull-right">
-                <form action="https://upsidethemes.net/" method="post" class="search-form clearfix">
+                <form action="" method="post" class="search-form clearfix">
                     <div class="form-group">
                         <input type="text" name="search-text" class="form-control" onBlur="if (this.value == '')
                 this.value = this.defaultValue;" onFocus="if (this.value == this.defaultValue)
