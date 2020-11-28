@@ -18,7 +18,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                         </a>
                     </li>
                     <li class="current-menu-item">
-                        <a href="?p=login">
+                        <a  target="_blank" href="http://api.municipiaui.com/acesso.php?unidadeGestora=<?=$prefeitura->codigoUnidGestora?>">
                             <button style="font-size:14px;">
                                 &nbsp<i class="fa fa-key fa-fw  fa-lg" style="font-size:16px; color:green"></i>
                                 <strong>ACESSO</strong> &nbsp;
