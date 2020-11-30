@@ -11,6 +11,7 @@ define('FILES','http://transparencia.municipiaui.com/files/');
 
 
 /**
+ * ***C:\wamp\www\portaltransparencia\portal>npm run build
  * Arquivo resposnsaveis pelas configurações iniciais do site;
  */
 function __autoload($Class) {

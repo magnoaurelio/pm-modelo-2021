@@ -32,7 +32,7 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                 <div class="owl-carousel owl-carousel-images">
                     <!-- item -->
                     <?php
-                    $noticiasHome = new Noticia(Noticia::MUNICIPIO . " and home = 1 ");
+                    $noticiasHome = new Noticia(Noticia::MUNICIPIO . " and home = 1 order by notdata desc ");
                     foreach ($noticiasHome->getResult() as $noticia) {
                         ?>
 
