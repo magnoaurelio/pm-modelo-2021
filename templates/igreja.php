@@ -62,7 +62,9 @@ $igreja = new Igreja(UNIDADE_GESTORA);
                             </div>
                             <div class="kp-gallery-caption">
                                 <h5>Sobre:</h5>
-                                <p> <?= trim($igreja['igrhistorico']) ?></p>
+                                <p> <?= substr(trim($igreja['igrhistorico']),0,500) ?> 
+                                    <a href="?p=igreja_detalhe&igrcodigo=<?= $igreja['igrcodigo'] ?>" title=" Veja mais...  <?= $igreja['igrnome']?>">mais...</a>
+                                </p>
                                    <span><hr class="kp-metadata" style="color-line: #ccc;"></span>
                                 <p class="kp-social">
                                   <a href="#" class="kp-metadata"><span><i class="icon-phone  fa-lg"></i>&nbsp;&nbsp;<?=  DataCalendario::date2br($igreja['igrdata']) ?> </span></a>
@@ -84,19 +86,22 @@ $igreja = new Igreja(UNIDADE_GESTORA);
                  
                     <ul class="slides">
                           <?php
+                          
+                    $n = 0;
                     $igrejaTur = new Igreja(Igreja::MUNICIPIO);
                     foreach ($igrejaTur->getResult() as $igreja) {
                     ?>
                         <li><img src="<?= FILES . 'prefeituras/'.UNIDADE_GESTORA.'/igreja/'. $igreja['igrfoto1'] ?>" width="200" height="120" alt="" />
                             <span class="kp-mask"></span>
                         </li>
-                       <?php } ?>
+                       <?php $n++;
+                    } ?>
                     </ul>
                    
                 </div><!--kp-gallery-slider-->
 
                 <nav>
-                  <span class="total">Total: <span>1119</span> fotos</span>
+                  <span class="total">Total: <span> <?php $n ?> </span> fotos</span>
                   <span class="status-caption" data-hide="Ocultar legendas" data-show="Mostrar legendas">Ocultar legendas</span>
                   <span class="status-slide" data-play="Reprodução automática" data-pause="Pausa"> Pausa </span>
                 </nav>

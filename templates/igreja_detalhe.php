@@ -66,7 +66,7 @@ $data = $hojePartes->getDiaSemana($hoje) . ", " . $hojePartes->getDia() . " de "
                        </a>
                   
                         <h6>Sobre:</h6>  
-                        <p> <?=$igreja->igrsobre ?></p>
+                        <p> <?=$igreja->igrhistorico ?></p>
                            <hr style="color-line: #c9c9c9;">
                 </div>
               </div>

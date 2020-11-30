@@ -96,16 +96,16 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
             </p>
 
         </div>
-        <div class="logo pull-left" style="margin-left: -120px">
+        <div class="logo pull-left" style="margin-left:-300px">
             <a href="./index.php" title="Bandeira Oficial de: <?=$prefeitura->prenome?> ">
                 <img src="<?= FILES . 'prefeituras/' . UNIDADE_GESTORA . '/' . $prefeitura->prebandeira?>" width="110" height="70" alt="bandeira"
                      class="img-responsive">
             </a>
         </div>
 
-        <div class="logo pull-left" style="margin-left: 0px">
+        <div class="logo pull-left" style="margin-left: -180px">
             <a href="./index.php" title="Logomarca Oficial de: <?=$prefeitura->prenome?> ">
-                <img src="<?= FILES . 'prefeituras/' . UNIDADE_GESTORA . '/' . $prefeitura->prelogo?>" width="280" height="70" alt="logo"
+                <img src="<?= FILES . 'prefeituras/' . UNIDADE_GESTORA . '/' . $prefeitura->prelogo?>" width="300" height="70" alt="logo"
                      class="img-responsive">
             </a>
         </div>

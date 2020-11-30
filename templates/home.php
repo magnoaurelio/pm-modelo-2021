@@ -22,7 +22,6 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
     include_once 'include/menu_home_topo.php';
     ?>
     <!-- fim main-top -->
-
     <!-- inicio  main-col -->
     <div id="main-col" class="pull-left">
 
