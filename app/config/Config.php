@@ -1,12 +1,13 @@
 <?php
+session_start();
 date_default_timezone_set('America/Sao_Paulo');
 define('DBNAME','u140601217_porta');
 define('HOST','sql155.main-hosting.eu');
 define('USER','u140601217_porta');
 define('PASS','Magno0211');
 define('TYPE_BANCO','mysql');
-define('UNIDADE_GESTORA','201002');
-define('FILES','http://transparencia.municipiaui.com/files/');
+define('UNIDADE_GESTORA',201002);
+define('FILES','http://api.municipiaui.com/files/');
 
 
 
