@@ -12,9 +12,9 @@ $publicidade = new Publicidade(UNIDADE_GESTORA);
     $publicidadeHome = new Publicidade(Publicidade::MUNICIPIO . " and pubtipocodigo = 'MS' ");
     foreach ($publicidadeHome->getResult() as $publicidade) {
   ?>
-      <h4 class="widget-title"><?=$publicidade['pubtitulo'] ?></h4>
+      <h4 class="widget-title">Publicidade: 1<br/> <strong> <?=$publicidade['pubtitulo'] ?></strong></h4>
      <div class="caption" style="width: 100%; text-align: center;">
-         <img src="<?= FILES . 'prefeituras/' . UNIDADE_GESTORA . '/publicidade/' . $publicidade['pubimagem'] ?>"  alt="">
+         <img src="<?= FILES .'prefeituras/' . UNIDADE_GESTORA . '/publicidade/' . $publicidade['pubimagem'] ?>"  alt="superior">
      </div>
            
 

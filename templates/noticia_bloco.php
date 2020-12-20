@@ -26,7 +26,7 @@ $ano  =  $hojePartes->getAno();
                 <a href="?p=noticia_detalhe" class="next"></a>
               </p>
                <?php
-                    $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " ");
+                    $noticiasDestaque = new Noticia(Noticia::MUNICIPIO . " order by notdata desc ");
                     foreach ($noticiasDestaque->getResult() as $noticia) {
                  //   $notdata1 = MDate::date2d($noticia->notdata);
                ?>

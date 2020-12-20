@@ -26,10 +26,12 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
                         </a>
                     </li>
                     <li>
-                        <a href="http://api.municipiaui.com/cc.php?unidadeGestora=<?=$prefeitura->codigoUnidGestora?>"><i class="fa fa-money  fa-fw fa-lg"></i> Contra-Cheque</a>
+                        <a href="http://api.municipiaui.com/cc.php?unidadeGestora=<?=$prefeitura->codigoUnidGestora?>">
+                            <i class="fa fa-money  fa-fw fa-lg"></i> Contra-Cheque
+                        </a>
                     </li>
                     <li class="current-menu-item">
-                        <a href="index.php"><i class="fa fa-book fa-fw  fa-lg"></i> DIOFE</a>
+                        <a href="diario.php"><i class="fa fa-book fa-fw  fa-lg"></i> DIOFE</a>
                     </li>
                     <li>
                         <a href="http://api.municipiaui.com/portal/#/?unidade=<?=UNIDADE_GESTORA?>" title="Transparência e CORONAVÍRUS - COVID 19 de <?=$prefeitura->prenome?> " target="_blank" >
@@ -96,14 +98,14 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
             </p>
 
         </div>
-        <div class="logo pull-left" style="margin-left:-300px">
+        <div class="logo pull-left" style="margin-left:-320px">
             <a href="./index.php" title="Bandeira Oficial de: <?=$prefeitura->prenome?> ">
                 <img src="<?= FILES . 'prefeituras/' . UNIDADE_GESTORA . '/' . $prefeitura->prebandeira?>" width="110" height="70" alt="bandeira"
                      class="img-responsive">
             </a>
         </div>
 
-        <div class="logo pull-left" style="margin-left: -180px">
+        <div class="logo pull-left" style="margin-left: -200px">
             <a href="./index.php" title="Logomarca Oficial de: <?=$prefeitura->prenome?> ">
                 <img src="<?= FILES . 'prefeituras/' . UNIDADE_GESTORA . '/' . $prefeitura->prelogo?>" width="300" height="70" alt="logo"
                      class="img-responsive">

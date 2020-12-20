@@ -15,7 +15,7 @@ $publicidade = new Publicidade(UNIDADE_GESTORA);
             $publicidadeHome = new Publicidade(Publicidade::MUNICIPIO . " and pubtipocodigo = 'ES' ");
             foreach ($publicidadeHome->getResult() as $publicidade) {
             ?>
-                <h4 class="widget-title" style="margin-top: -17px"><?=$publicidade['pubtitulo'] ?> 3</h4>
+               <h4 class="widget-title" style="margin-top: -17px">Publicidade: 3<br/><strong> <?=$publicidade['pubtitulo'] ?></strong></h4>
                 <div class="caption" style="width: 100%; text-align: center;">
                     <img src="<?= FILES . 'prefeituras/' . UNIDADE_GESTORA . '/publicidade/' . $publicidade['pubimagem'] ?>"  alt="">
                 </div>

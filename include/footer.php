@@ -123,14 +123,14 @@ $prefeitura = new Prefeitura(UNIDADE_GESTORA);
       <a href="#" class="icon-dribbble"></a>
     </p>
     <ul class="kp-links list-inline">
-      <li><a href="#">Site Institucional de <strong>AGRICOLÂNDIA-<?= $ano ?></strong></a></li>
+      <li><a href="#">Site Institucional de <strong><?= $prefeitura->prenome ?> 2017 - <?= $ano ?></strong></a></li>
       <li><a href="#">Política de privacidade</a></li>
       <li><a href="#">Seus direitos de privacidade</a></li>
       <li><a href="#">Termos de uso</a></li>
     </ul>
      <p class="copy-center">
         <a href="http://magnusoft.com.br/" target="_blank">
-            Copyright &copy; <strong> 2017 - <i class="icon-calendar"></i> <?= $data ?></strong> Todos direitos Reservados. <span>MAGNUSOFT desenvolvimento</span>
+            Copyright &copy;    <?= $ano ?>  - <i class="icon-calendar"></i> <?= $data ?></strong> Todos direitos Reservados. <span>MAGNUSOFT desenvolvimento</span>
             <img src="./images/magnusoft_marca.png" width="120" height="35" alt="MAGNUSOFT">
         </a> 
          

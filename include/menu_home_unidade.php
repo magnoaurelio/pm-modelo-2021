@@ -24,6 +24,7 @@ $secretaria =  new Secretaria(intval($_GET['prenumero']));
           ?>
        <li>
         <div class="item">
+            <p class="kp-metadata"><i class="icon-home" style="color: #000; font-size: 16px;"> <strong> <?=$unidade['uninome'] ?></strong></i></p>
             <p class="kp-metadata"><span><i class="icon-user"></i><strong> <?=$unidade['unifuncao'] ?></strong></span></p>
             <a target="_blank"  href="<?= $uniimagem ?>" class="caption" data-lightbox="example-set" >
             
